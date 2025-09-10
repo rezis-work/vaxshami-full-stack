@@ -1,13 +1,6 @@
+import { SecondaryCardProps } from "@/types/secondaryCardTypes";
 import Image from "next/image";
 import Link from "next/link";
-
-type Props = {
-  image: string;
-  title: string;
-  date: string;
-  theme: "light" | "dark";
-  flexReverse: boolean;
-};
 
 const SecondaryPostPard = ({
   image,
@@ -15,7 +8,8 @@ const SecondaryPostPard = ({
   date,
   theme,
   flexReverse,
-}: Props) => {
+  width = "sm:w-[140px]",
+}: SecondaryCardProps) => {
   return (
     <li
       className={`flex items-center ${
@@ -24,7 +18,7 @@ const SecondaryPostPard = ({
     >
       <div
         className={` leading-4 ${
-          theme === "dark" ? "text-white" : "text-black"
+          theme === "dark" ? "text-white bg-black" : "text-black bg-white"
         }`}
       >
         <Link href="#" className="text-wrap font-bold underlineHover ">
@@ -34,7 +28,7 @@ const SecondaryPostPard = ({
         <span className="block mt-[6px] text-sm">{date}</span>
       </div>
 
-      <Link href="#" className="flex-shrink-0 w-[120px] sm:w-[140px]">
+      <Link href="#" className={`flex-shrink-0 w-[120px] ${width}`}>
         <Image
           src={image}
           width={200}

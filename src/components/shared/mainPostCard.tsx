@@ -1,13 +1,6 @@
+import { MainCardProps } from "@/types/mainCardTypes";
 import Image from "next/image";
 import Link from "next/link";
-
-type Props = {
-  title: string;
-  image: string;
-  date: string;
-  category: string;
-  height?: string;
-};
 
 const MainPostCard = ({
   title,
@@ -15,7 +8,7 @@ const MainPostCard = ({
   date,
   category,
   height = "h-full",
-}: Props) => {
+}: MainCardProps) => {
   return (
     <div className="relative h-full rounded-sm overflow-hidden">
       <Image
@@ -28,7 +21,7 @@ const MainPostCard = ({
 
       <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black to-transparent" />
 
-      <div className="absolute bottom-0 p-6 max-h-[94.5%] overflow-auto">
+      <div className="absolute bottom-0 p-6 max-h-[94.5%] overflow-auto text-white">
         <div className="mb-4 flex items-center gap-4">
           <Link
             href="#"
