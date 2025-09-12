@@ -5,17 +5,17 @@ import { galleryItems } from "@/constants/galleryData";
 const Gallery = () => {
   return (
     <section className="my-8 bg-[#03071E] text-white">
-      <div className="relative grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 gap-4 sm:w-[510px] md:w-[690px] lg:w-[960px] xl:w-[1280px] px-6 pt-30 pb-16 mx-auto">
+      <div className="relative grid grid-cols-1 md:grid-cols-7 xl:grid-cols-3 gap-4 sm:w-[600px] md:w-full lg:w-[960px] xl:w-[1280px] px-6 pt-30 pb-16 mx-auto">
         <div className="absolute left-6 top-16 flex items-end">
           <h3 className="text-xl font-semibold">Gallery</h3>
           <div className="ml-2 mb-1 h-[3px] w-4 -skew-x-[45deg] bg-[#6D62FF]" />
         </div>
 
-        <div className="lg:col-span-3 xl:col-span-2">
+        <div className="md:col-span-4 xl:col-span-2">
           <MainPostCard {...galleryItems[0]} />
         </div>
 
-        <div className="rounded-sm borderGradient p-1 lg:col-span-2 xl:col-span-1">
+        <div className="rounded-sm borderGradient p-1 md:col-span-3 xl:col-span-1">
           <ul className="flex flex-col gap-4 rounded-sm bg-black px-6 py-4">
             {galleryItems.slice(1).map((item) => (
               <SecondaryPostPard

@@ -4,7 +4,7 @@ import SecondaryPostPard from "./secondaryPostCard";
 
 const HighlightedItems = ({ title, items }: HighlightedProps) => {
   return (
-    <div className="w-full max-w-[400px]">
+    <div className="w-full ">
       <div className="flex items-end mb-4">
         <h3 className="text-xl font-bold">{title}</h3>
         <div className="ml-2 mb-1 h-[3px] w-4 -skew-x-[45deg] bg-[#6D62FF]" />
@@ -19,7 +19,7 @@ const HighlightedItems = ({ title, items }: HighlightedProps) => {
             {...item}
             theme="light"
             flexReverse={true}
-            width="w-120px"
+            width="!w-[120px]"
           />
         ))}
       </ul>

@@ -10,10 +10,10 @@ const AdvertisementBanner = ({ image }: { image: string | null }) => {
 
       <Image
         src={image || "/ad_placeholder.png"}
-        width={300}
+        width={290}
         height={500}
         alt="ad image"
-        className="w-[300px] h-[500px]"
+        className="w-[290px] h-[500px]"
       />
     </div>
   );
