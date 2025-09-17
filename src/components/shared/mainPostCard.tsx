@@ -20,7 +20,7 @@ const MainPostCard = ({
 
     const observer = new ResizeObserver((entries) => {
       const width = entries[0].contentRect.width;
-      setSmalTxt(width <= 400);
+      setSmalTxt(width <= 250);
     });
 
     observer.observe(ref.current);
@@ -40,7 +40,7 @@ const MainPostCard = ({
 
       <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black to-transparent" />
 
-      <div className="absolute bottom-0 p-5 max-h-[94.5%] overflow-auto text-white">
+      <div className="absolute bottom-0 p-6 max-h-[94.5%] overflow-auto text-white">
         <div
           className={`${smallTxt ? "mb-1" : "mb-4"} flex items-center gap-4`}
         >
@@ -57,7 +57,7 @@ const MainPostCard = ({
         <Link
           href="#"
           className={`font-semibold underlineHover ${
-            smallTxt ? " text-[14px]" : "text-2xl"
+            smallTxt ? " text-[14px]" : "text-xl"
           }`}
         >
           {title}

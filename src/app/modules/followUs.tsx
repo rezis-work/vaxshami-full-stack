@@ -33,7 +33,7 @@ const FollowUs = () => {
         {socialMediaData.map((link) => (
           <li
             key={link.id}
-            className="border border-gray-200 rounded-sm group hover:border-transparent hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]  hover:-translate-y-[2px] hover:scale-[1.005] transition-all duration-300"
+            className="border border-gray-200 rounded-sm group hover:border-transparent hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]  hover:-translate-y-[2px] hover:scale-[1.005] transition-all ease-in-out duration-300"
           >
             <Link
               href={link.link}
@@ -45,7 +45,7 @@ const FollowUs = () => {
                   link.id === "instagram" && "instagramBg"
                 }`}
               >
-                <link.icon className=" text-white w-[15px] h-[15px]" />
+                <link.icon className=" text-white w-[17px] h-[17px]" />
               </div>
 
               <p className="text-sm group-hover:text-[#6D62FF] transition duration-300 flex-wrap">

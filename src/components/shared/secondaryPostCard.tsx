@@ -36,7 +36,7 @@ const SecondaryPostPard = ({
       }  gap-4`}
     >
       <div
-        className={`leading-4 ${
+        className={`leading-5 ${
           theme === "dark" ? "text-white bg-black" : "text-black bg-white"
         }`}
       >
