@@ -1,4 +1,4 @@
-import client from "./lib/honoClient";
+import client from "../lib/honoClient";
 
 export default async function Home() {
   const res = await client.api.test.$get();
