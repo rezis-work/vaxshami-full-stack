@@ -3,7 +3,7 @@ import { socialMediaData } from "@/constants/followUsData";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-const FollowUs = () => {
+const FollowUs = ({ breakpoint }: { breakpoint: number }) => {
   const ref = useRef<HTMLUListElement>(null);
   const [twoCols, setTwoCols] = useState(false);
 
@@ -12,7 +12,7 @@ const FollowUs = () => {
 
     const observer = new ResizeObserver((entries) => {
       const width = entries[0].contentRect.width;
-      setTwoCols(width >= 330);
+      setTwoCols(width >= breakpoint);
     });
 
     observer.observe(ref.current);

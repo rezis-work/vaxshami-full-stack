@@ -1,9 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
-const AdvertisementBanner = ({ image }: { image: string | null }) => {
+const AdvertisementBanner = ({
+  image,
+  position,
+}: {
+  image: string | null;
+  position: "sticky" | "auto";
+}) => {
   return (
-    <div className=" sticky top-0 w-max mx-auto">
+    <div className={`${position} top-0 w-max mx-auto`}>
       <h4 className="w-min text-[10px] tracking-widest mb-1 mx-auto uppercase">
         sponsored
       </h4>

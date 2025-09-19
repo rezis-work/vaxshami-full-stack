@@ -6,16 +6,12 @@ import Gallery from "./modules/gallery";
 export default function Home() {
   return (
     <>
-      <div className="w-[275px] mx-auto">
-        <FollowUs />
+      <div className="w-full mx-auto">
+        <FollowUs breakpoint={300} />
       </div>
 
       <Gallery />
       <Business />
-
-      <div className="h-[2000px]">
-        <AdvertisementBanner image={null} />
-      </div>
     </>
   );
 }

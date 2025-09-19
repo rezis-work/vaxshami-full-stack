@@ -1,27 +1,26 @@
 @import "tailwindcss";
 
 .underlineHover {
-  background-size: 0% 1px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  transition: background-size 300ms ease;
-}
-
-.underlineHover:hover {
-  background-size: 100% 1px;
+  @apply bg-gradient-to-r from-current to-current 
+    bg-[length:0%_1px] bg-no-repeat bg-left-bottom 
+    transition-[background-size] duration-300 ease-in-out 
+    hover:bg-[length:100%_1px];
 }
 
 .borderGradient {
-  background: linear-gradient(45deg, #521d91, #7062fd, #a63d87, #fe5f7d);
+  @apply bg-[linear-gradient(45deg,#521d91,#7062fd,#a63d87,#fe5f7d)];
 }
 
 .instagramBg {
-  background: radial-gradient(
-    circle at 10% 100%,
-    #fcff2d 0%,
-    #ffae00 30%,
-    #ff005b 52%,
-    #880aff 85%,
-    #740294
-  );
+  @apply bg-[radial-gradient(circle_at_10%_100%,#fcff2d_0%,#ffae00_30%,#ff005b_52%,#880aff_85%,#740294)];
+}
+
+@theme {
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1366px;
+  --breakpoint-3xl: 1636px;
+  --breakpoint-4xl: 1920px;
 }

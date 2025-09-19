@@ -42,7 +42,7 @@ const SecondaryPostPard = ({
       >
         <Link
           href="#"
-          className={`block ${
+          className={`inline ${
             smallTxt
               ? "text-[11px] max-h-[65px] overflow-y-auto leading-3.5"
               : "text-[16px] mb-3"
