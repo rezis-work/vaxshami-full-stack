@@ -1,5 +1,5 @@
 import { CardProps } from "./CardProps";
 export interface CardGalleryProps {
   cards: CardProps[];
-  theme: "purple" | "pink";
+  theme: "dark" | "light";
 }

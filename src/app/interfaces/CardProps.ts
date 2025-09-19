@@ -3,5 +3,5 @@ export interface CardProps {
   Title: string;
   Text: string;
   Date: string;
-  type: number;
+  type: 1 | 2;
 }
