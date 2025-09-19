@@ -45,7 +45,7 @@ const SecondaryPostPard = ({
           className={`inline ${
             smallTxt
               ? "text-[11px] max-h-[65px] overflow-y-auto leading-3.5"
-              : "text-[16px] mb-3"
+              : "text-[15px] mb-3"
           }  text-wrap font-bold underlineHover `}
         >
           {title}
