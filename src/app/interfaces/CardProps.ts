@@ -3,5 +3,6 @@ export interface CardProps {
   Title: string;
   Text: string;
   Date: string;
-  type: number;
+  theme: "light" | "dark";
+  type: 1 | 2;
 }

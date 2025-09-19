@@ -27,12 +27,20 @@ export default function Card(props: CardProps) {
         className="w-full h-full rounded-md mb-5 object-cover object-center cursor-pointer"
       />
       <div className="flex w-full justify-start items-center gap-5 mb-4">
-        <button className="p-2 bg-[rgb(255,240,240)] rounded-xl text-white font-bold text-sm">
-          <p className="text-red-400">{props.Title}</p>
+        <button
+          className={`p-2 ${
+            props.theme === "dark" ? "bg-[#ffe1df]" : "bg-white"
+          } rounded-xl font-bold text-sm`}
+        >
+          <p className="text-[#e34e36]">{props.Title}</p>
         </button>
         <p className="text-sm text-white">{props.Date}</p>
       </div>
-      <a className="pb-1 text-white break-words w-auto font-bold text-lg cursor-pointer bg-gradient-to-r from-[#FFFFFF] to-[#FFFFFF] bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-[background-size] duration-[400ms] ease-in-out hover:bg-[length:100%_2px]">
+      <a
+        className={`pb-1 ${
+          props.theme === "dark" ? "text-white" : "text-black"
+        } break-words w-auto font-bold text-lg cursor-pointer bg-gradient-to-r from-[#FFFFFF] to-[#FFFFFF] bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-[background-size] duration-[400ms] ease-in-out hover:bg-[length:100%_2px]`}
+      >
         {props.Text}
       </a>
     </div>
