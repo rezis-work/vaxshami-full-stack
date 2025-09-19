@@ -1,14 +1,20 @@
 import { CardGalleryProps } from "@/app/interfaces/CardGalleryProps";
+import Card from "../card-component/Card";
 
 export default function CardGallery({ cards }: CardGalleryProps) {
   return (
-    <div className="w-full max-w-[1280px] h-[500px] flex flex-col justify-center items-center bg-[radial-gradient(circle_at_top_right,theme(colors.purple.600),theme(colors.purple.900))] rounded-[90px]">
+    <div className="p-15 w-full max-w-[1280px] max-[1200px]:rounded-none flex flex-col justify-start items-start gap-5 bg-[radial-gradient(circle_at_top_right,#6d62ff,#521d91_100%)] rounded-[90px]">
       <div>
-        <h4>Don't Miss</h4>
+        <h4 className="leading-tight text-2xl font-bold">Don't Miss</h4>
       </div>
-      <div>
+      <div className=" flex items-center justify-center gap-7 max-[1200px]:grid grid-cols-2 max-[1200px]:justify-start max-[1200px]:items-start  max-[575px]:grid-cols-1">
         {cards.map((card, index) => (
-          <h1>{card.Text}</h1>
+          <div
+            key={card.Title}
+            className="w-full h-auto min-[1200px]:max-h-[388px]"
+          >
+            <Card {...card} />
+          </div>
         ))}
       </div>
     </div>

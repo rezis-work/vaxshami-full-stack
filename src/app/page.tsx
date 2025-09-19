@@ -7,34 +7,35 @@ export default function Home() {
     {
       Title: "Title1",
       Text: "this is some random text 1, hello.",
-      Image: "img.",
+      Image: "/img1.jpg",
       Date: "27-06-2009",
-      type: 1,
+      type: 2,
     },
     {
       Title: "Title2",
       Text: "this is some random text 2, LEBRON JAMES!.",
-      Image: "img.",
+      Image: "/img2.jpg",
       Date: "27-06-2009",
-      type: 1,
+      type: 2,
     },
     {
       Title: "Title3",
       Text: "this is some random text 3, TRUCK KUN ISEKAI!.",
-      Image: "img.",
+      Image: "/img3.jpeg",
       Date: "27-06-2009",
-      type: 1,
+      type: 2,
     },
     {
       Title: "Title4",
       Text: "this is some random text 4, I REALLY NEED SOME SLEEP.",
-      Image: "img.",
+      Image: "/img4.jpeg",
       Date: "27-06-2009",
-      type: 1,
+      type: 2,
     },
   ];
   return (
-    <div className="flex items-center justify-center h-[1000px]">
+    <div className="flex flex-col items-center justify-center">
+      <div className="w-full h-[200px]">asdasd</div>
       <CardGallery cards={cards}></CardGallery>
     </div>
   );
