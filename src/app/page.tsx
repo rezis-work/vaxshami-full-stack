@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="w-full h-[200px]">asdasd</div>
-      <CardGallery cards={cards}></CardGallery>
+      <CardGallery cards={cards} theme="purple"></CardGallery>
     </div>
   );
 }
