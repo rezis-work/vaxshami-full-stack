@@ -19,7 +19,7 @@ const AdvertisementBanner = ({
         width={290}
         height={500}
         alt="ad image"
-        className="w-[290px] h-[500px]"
+        className="w-[300px] h-[500px]"
       />
     </div>
   );

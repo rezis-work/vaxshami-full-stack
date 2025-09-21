@@ -10,7 +10,11 @@ const MainPostCard = ({
   image,
   date,
   category,
-  height = "h-full",
+  height = "h-auto",
+  ratio,
+  textMin,
+  textMax,
+  breakpoint,
 }: MainCardProps) => {
   const ref = useRef<HTMLImageElement>(null);
   const [smallTxt, setSmalTxt] = useState(false);
@@ -20,7 +24,7 @@ const MainPostCard = ({
 
     const observer = new ResizeObserver((entries) => {
       const width = entries[0].contentRect.width;
-      setSmalTxt(width <= 250);
+      setSmalTxt(width <= breakpoint);
     });
 
     observer.observe(ref.current);
@@ -28,21 +32,23 @@ const MainPostCard = ({
   }, []);
 
   return (
-    <div className="relative h-full rounded-sm overflow-hidden">
+    <div className="relative h-full rounded-md overflow-hidden">
       <Image
         src={image}
         ref={ref}
         width={400}
         height={200}
         alt="post image"
-        className={`w-full ${height} object-cover`}
+        className={`w-full object-cover ${ratio} ${height}`}
       />
 
-      <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black to-transparent" />
 
       <div className="absolute bottom-0 p-6 max-h-[94.5%] overflow-auto text-white">
         <div
-          className={`${smallTxt ? "mb-1" : "mb-4"} flex items-center gap-4`}
+          className={`${
+            smallTxt ? "mb-[10px]" : "mb-4"
+          } flex items-center gap-4`}
         >
           <Link
             href="#"
@@ -57,7 +63,7 @@ const MainPostCard = ({
         <Link
           href="#"
           className={`font-semibold underlineHover ${
-            smallTxt ? " text-[14px]" : "text-xl"
+            smallTxt ? textMin : textMax
           }`}
         >
           {title}

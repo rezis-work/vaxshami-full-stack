@@ -12,6 +12,9 @@ const SecondaryPostPard = ({
   theme,
   flexReverse,
   width = "sm:w-[130px]",
+  textMax,
+  textMin,
+  styles,
 }: SecondaryCardProps) => {
   const ref = useRef<HTMLLIElement>(null);
   const [smallTxt, setSmalTxt] = useState(false);
@@ -38,15 +41,15 @@ const SecondaryPostPard = ({
       <div
         className={`leading-5 ${
           theme === "dark" ? "text-white bg-black" : "text-black bg-white"
-        }`}
+        } ${styles}`}
       >
         <Link
           href="#"
           className={`inline ${
             smallTxt
-              ? "text-[11px] max-h-[65px] overflow-y-auto leading-3.5"
-              : "text-[15px] mb-3"
-          }  text-wrap font-bold underlineHover `}
+              ? `${textMin} max-h-[65px] overflow-y-auto leading-3.5`
+              : ` ${textMax} mb-3`
+          } break-words font-bold underlineHover `}
         >
           {title}
         </Link>

@@ -3,8 +3,7 @@ export const galleryItems = [
     id: 1,
     category: "CARS",
     date: "2023-02-20",
-    title:
-      "Is Britain’s likely next leader a great brain? Is Britain’s likely next leader a great brain?",
+    title: "Is Britain’s likely next leader a great brain?",
     image:
       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
   },
