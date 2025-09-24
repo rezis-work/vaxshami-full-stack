@@ -1,10 +1,42 @@
+import CardGallery from "@/app/components/card-gallery-component/CardGallery";
+import { CardProps } from "@/app/interfaces/CardProps";
 import { NoSidebarProps } from "@/app/interfaces/NoSidebarProps";
 
 export default function NoSidebarPage({ params }: NoSidebarProps) {
   const id = params.id;
+  let cards: CardProps[] = [
+    {
+      Title: "Business",
+      Image: "/img1.jpg",
+      Text: "Some text here",
+      Date: "2025-09-24",
+      type: 2,
+    },
+    {
+      Title: "Business",
+      Image: "/img2.jpg",
+      Text: "Some text here",
+      Date: "2025-09-24",
+      type: 2,
+    },
+    {
+      Title: "Business",
+      Image: "/img3.jpeg",
+      Text: "Some text here",
+      Date: "2025-09-24",
+      type: 2,
+    },
+    {
+      Title: "Business",
+      Image: "/img4.jpeg",
+      Text: "Some text here",
+      Date: "2025-09-24",
+      type: 2,
+    },
+  ];
   return (
-    <div className="w-full h-full flex items-start justify-center">
-      <div className="w-full max-w-[823px] flex flex-col items-center justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
+      <div className="w-full max-w-[823px] flex flex-col items-center justify-center mb-[25px]">
         <div className="article flex flex-col items-center justify-center">
           <div className="featuredImageContainer flex flex-col gap-[20px] mb-[calc(10px*3)]">
             <nav className="fbt-breadcrumbs flex justify-start items-center gap-[10px]">
@@ -71,7 +103,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                 src={
                   "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxDJL4IkGIw7s36TKu2Nieq1Dqtg4LcT-5O1V_SXskTR3lV3rPyjKDKnt1-yucqVBKf1D-2saQ1Y85CDhSROCt9A-3aX6tGMgccA9u0_k0nrbzmNPX_7AfquhWJuLcnO4ZECgGcCZWCKdr1OHuEmoU_WDmK2tMbMK-UYQAnArQCJ9FbwcKv3csWu6R2ks/w900/kate-trysh-CXYsPmtjxxk-unsplash-1000.webp"
                 }
-                className=" w-full object-cover object-center max-h-[576px]"
+                className=" w-full object-cover object-center max-h-[576px] align-middle"
               ></img>
             </div>
           </div>
@@ -84,7 +116,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                 viverra molestie nunc. Sed quis aliquet leo. In vel posuere
                 tortor. Donec eros turpis, dictum vel vehicula viverra,
                 facilisis in mauris.
-                <a className="font-bold underline cursor-pointer">
+                <a className="font-bold underline cursor-pointer hover:text-[#6d62ff] transition-all duration-300">
                   Nullam rhoncus enim ligula
                 </a>
                 , sit amet suscipit turpis dignissim non. Proin consequat purus
@@ -119,9 +151,10 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                 enim etiam dolor. Aenean ipsum augue, mollis at sodales mollis,
                 varius eu erat.
               </p>
-              <blockquote>
-                <div className="bg-[#f1f4f9] p-[3rem]">
-                  <p>
+              <blockquote className="relative mb-[25px]">
+                <div className="bg-[#f1f4f9] p-[3rem] flex items-start justify-center gap-[10px]">
+                  <img src={"/quotes.png"} className="w-[150px]"></img>
+                  <p className="text-black font-[700] text-[20px]">
                     Proin consequat purus sit amet blandit sollicitudin. Aliquam
                     in consequat libero. Morbi sollicitudin dignissim erat
                     laoreet interdum. Phasellus magna velit, consectetur iaculis
@@ -129,9 +162,71 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                   </p>
                 </div>
               </blockquote>
+              <p className="mb-[25px]">
+                <i>
+                  <u className="underline">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </u>
+                  Donec facilisis leo et bibendum pretium. Suspendisse ligula
+                  neque, ultrices nec interdum faucibus, pharetra et libero.
+                  Vestibulum viverra molestie nunc. Sed quis aliquet leo. In vel
+                  posuere tortor. Donec eros turpis, dictum vel vehicula
+                  viverra, facilisis in mauris. Praesent id aliquam eros, in
+                  semper est.
+                </i>
+              </p>
+              <p className="mb-[25px]">
+                <b>
+                  <span>
+                    Aenean pellentesque magna ut nibh lobortis, sit amet
+                    vulputate sem tristique.
+                  </span>
+                </b>
+                Ut ac ultrices lectus, id volutpat nisi. Aenean ipsum augue,
+                mollis at sodales mollis, varius eu erat. Fusce accumsan rhoncus
+                risus non feugiat. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Donec facilisis leo et bibendum pretium.
+                Suspendisse ligula neque, ultrices nec interdum faucibus,
+                pharetra et libero. Vestibulum viverra molestie nunc.
+                <span className="bg-[#b5838d] text-white">
+                  Sed quis aliquet leo. In vel posuere tortor.
+                </span>
+                Donec eros turpis, dictum vel vehicula viverra, facilisis in
+                mauris. Nullam rhoncus enim ligula, sit amet suscipit turpis
+                dignissim non.
+              </p>
+              <div className="flex flex-col items-center justify-center">
+                <img
+                  src={
+                    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2khcgtJ8RTbzKE6zKerbDTc4ycaBlkVXjO3k8p98FtsKwc056BPGczEDVU9J_T8bLec4_K0tM9E6gkGEPEkRnrWKjf-1LrQDvmU1Nh3OCmUdlzaFmshLZ1kIK4aEa5ifgUmcx-ClEz2W-kA_RJzT-Hcz6ThyQuSZYizlB6PHYdEWdc-WtrCVn5iwF/w640-h427/single-1-min.jpg"
+                  }
+                ></img>
+                <span className="text-[12px] text-black mb-[25px]">
+                  Image by{" "}
+                  <a className="underline hover:text-[#6d62ff] transition-all duration-300 font-bold cursor-pointer">
+                    Freepik
+                  </a>
+                </span>
+              </div>
+              <p>
+                Proin consequat purus sit amet blandit sollicitudin. Aliquam in
+                consequat libero. Morbi sollicitudin dignissim erat laoreet
+                interdum. Phasellus magna velit, consectetur iaculis tincidunt
+                placerat, semper non sem. Mauris in eleifend libero. Mauris
+                vitae nibh sed felis aliquet dictum sed egestas mauris. Sed
+                varius est ac nulla eleifend sagittis. Praesent id aliquam eros,
+                in semper est. Maecenas ex enim, ornare ac auctor sit amet,
+                interdum et justo. Aenean pellentesque magna ut nibh lobortis,
+                sit amet vulputate sem tristique. Ut ac ultrices lectus, id
+                volutpat nisi. Aenean ipsum augue, mollis at sodales mollis,
+                varius eu erat.
+              </p>
             </div>
           </div>
         </div>
+      </div>
+      <div className="mb-[25px]">
+        <CardGallery cards={cards} theme="light"></CardGallery>
       </div>
     </div>
   );
