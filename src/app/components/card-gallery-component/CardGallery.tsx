@@ -22,7 +22,7 @@ export default function CardGallery({ cards, theme }: CardGalleryProps) {
       </div>
       <div className=" flex items-center justify-center gap-7 max-[1200px]:grid grid-cols-2 max-[1200px]:justify-start max-[1200px]:items-start max-[575px]:grid-cols-1">
         {cards.map((card, index) => (
-          <div key={card.Title} className="w-full min-[1200px]:max-h-[388px]">
+          <div key={card.Id} className="w-full min-[1200px]:max-h-[388px]">
             <Card {...card} theme={theme} />
           </div>
         ))}

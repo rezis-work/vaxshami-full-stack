@@ -1,3 +1,4 @@
+import Card from "@/app/components/card-component/Card";
 import CardGallery from "@/app/components/card-gallery-component/CardGallery";
 import { CardProps } from "@/app/interfaces/CardProps";
 import { NoSidebarProps } from "@/app/interfaces/NoSidebarProps";
@@ -6,13 +7,15 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
   const id = params.id;
   let cards: CardProps[] = [
     {
+      Id: 1,
       Title: "Business",
       Image: "/img1.jpg",
-      Text: "Some text here",
+      Text: "Some text here asdasdasd as da sd a s d as d asda sd",
       Date: "2025-09-24",
       type: 2,
     },
     {
+      Id: 2,
       Title: "Business",
       Image: "/img2.jpg",
       Text: "Some text here",
@@ -20,6 +23,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
       type: 2,
     },
     {
+      Id: 3,
       Title: "Business",
       Image: "/img3.jpeg",
       Text: "Some text here",
@@ -27,6 +31,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
       type: 2,
     },
     {
+      Id: 4,
       Title: "Business",
       Image: "/img4.jpeg",
       Text: "Some text here",
@@ -35,10 +40,10 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
     },
   ];
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center font-sans">
       <div className="w-full h-full flex flex-col items-center justify-center overflow-x-hidden px-[15px]">
         <div className="w-full max-w-[823px] max-[1365px]:max-w-[730px] max-[1200px]:max-w-[609px] max-[767px]:max-w-[510px] max-[575px]:max-w-[823px] flex flex-col items-center justify-center mb-[25px]">
-          <div className="article flex flex-col items-center justify-center">
+          <div className="article flex flex-col items-center justify-center mb-[25px]">
             <div className="featuredImageContainer flex flex-col gap-[20px] mb-[calc(10px*3)]">
               <nav className="fbt-breadcrumbs flex justify-start items-center gap-[10px]">
                 <span>
@@ -108,7 +113,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                 ></img>
               </div>
             </div>
-            <div className="post-body w-full">
+            <div className="post-body w-full mb-[25px]">
               <div className="is-content font-[400] text-[17px] leading-[1.55] text-[#333333] whitespace-normal text-left break-words">
                 <p className=" mb-[25px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -202,6 +207,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                     src={
                       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2khcgtJ8RTbzKE6zKerbDTc4ycaBlkVXjO3k8p98FtsKwc056BPGczEDVU9J_T8bLec4_K0tM9E6gkGEPEkRnrWKjf-1LrQDvmU1Nh3OCmUdlzaFmshLZ1kIK4aEa5ifgUmcx-ClEz2W-kA_RJzT-Hcz6ThyQuSZYizlB6PHYdEWdc-WtrCVn5iwF/w640-h427/single-1-min.jpg"
                     }
+                    className="mb-[10px] rounded-[4px]"
                   ></img>
                   <span className="text-[12px] text-black mb-[25px]">
                     Image by{" "}
@@ -223,6 +229,84 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                   lectus, id volutpat nisi. Aenean ipsum augue, mollis at
                   sodales mollis, varius eu erat.
                 </p>
+              </div>
+            </div>
+            <div className="post-footer w-full flex flex-col gap-[15px]">
+              <div className="row flex flex-col items-start justify-center gap-[25px]">
+                <div className="red-line bg-[#ff607d] w-[50px] h-[3px]"></div>
+                <div className="tags flex items-center justify-start gap-[10px]">
+                  <span className="text-[16px] flex items-center gap-[3px] font-[200]">
+                    <img src={"/tag.png"} className="w-[16px] h-[16px]"></img>
+                    Tags:
+                  </span>
+                  <span className="font-[700] flex gap-[5px]">
+                    <a className="cursor-pointer transition-all duration-[400ms] ease-in-out hover:text-[#6366F1] bg-gradient-to-r from-[#6366F1] to-[#6366F1] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_2px]">
+                      Lifestyle,
+                    </a>
+                    <a className="cursor-pointer transition-all duration-[400ms] ease-in-out hover:text-[#6366F1] bg-gradient-to-r from-[#6366F1] to-[#6366F1] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_2px]">
+                      People
+                    </a>
+                  </span>
+                </div>
+                <div className="share-box w-full border border-[#eeeeee] p-[15px] flex items-center justify-between max-[480px]:justify-center">
+                  <div className="share1 flex items-center justify-center gap-[10px] max-[480px]:hidden flex-wrap">
+                    <img
+                      src="/share.png"
+                      className="w-[22.5px] h-[21px] font-[700] cursor-pointer"
+                    />
+                    <span className="font-[700] cursor-pointer">Share</span>
+                  </div>
+                  <div className="share2 flex items-center justify-center gap-[8px] flex-wrap">
+                    <img
+                      src={"/facebook.png"}
+                      className="w-[32px] h-[32px] cursor-pointer"
+                    ></img>
+                    <img
+                      src={"/twitter.png"}
+                      className="w-[32px] h-[32px] cursor-pointer"
+                    ></img>
+                    <img
+                      src={"/whatsapp.png"}
+                      className="w-[32px] h-[32px] cursor-pointer"
+                    ></img>
+                    <img
+                      src={"/linkedin.png"}
+                      className="w-[32px] h-[32px] cursor-pointer"
+                    ></img>
+                    <img
+                      src={"/pinterest.png"}
+                      className="w-[32px] h-[32px] cursor-pointer"
+                    ></img>
+                    <span className="w-[32px] h-[32px] cursor-pointer flex items-center justify-center bg-[#676869] text-white">
+                      <img
+                        src={"/gmail.png"}
+                        className="w-[16px] h-[16px] cursor-pointer"
+                      ></img>
+                    </span>
+                  </div>
+                </div>
+                <div className="fbt-item-post-pager pb-[10px] w-full flex items-start justify-between gap-[30px] max-[768px]:flex-col min-[768px]:border-b min-[768px]:border-[#eeeeee]">
+                  <div className="previous pb-[30px] flex flex-col gap-[15px] max-w-[50%] text-left max-[768px]:max-w-[100%] max-[768px]:w-full  max-[768px]:border-b max-[768px]:border-[#eeeeee]">
+                    <strong className="cursor-pointer transition-all duration-[400ms] ease-in-out hover:text-[#6366F1]">
+                      {"< Newer"}
+                    </strong>
+                    <div className="relative">
+                      <span className="entry-link leading-[1.2] font-[500] text-[18px] cursor-pointer transition-all duration-[400ms] ease-in-out hover:text-[#6366F1] bg-gradient-to-r from-[#6366F1] to-[#6366F1] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_2px]">
+                        Creative pretty photography ideas from smart devices
+                      </span>
+                    </div>
+                  </div>
+                  <div className="next pb-[30px] flex flex-col max-w-[50%] gap-[15px] text-right max-[768px]:max-w-[100%] max-[768px]:w-full max-[768px]:border-b max-[768px]:border-[#eeeeee]">
+                    <strong className="cursor-pointer text-right transition-all duration-[400ms] ease-in-out hover:text-[#6366F1]">
+                      {"older >"}
+                    </strong>
+                    <div className="relative flex items-center justify-center">
+                      <span className="entry-link leading-[1.2] font-[500] text-[18px] text-right cursor-pointer transition-all duration-[400ms] ease-in-out hover:text-[#6366F1] bg-gradient-to-r from-[#6366F1] to-[#6366F1] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_2px]">
+                        Corporate Workflow make a difference.
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
