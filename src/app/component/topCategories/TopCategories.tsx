@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { categories } from "./dummy/topCategories-dummy-data";
 
 const TopCategories = () => {
@@ -13,9 +14,9 @@ const TopCategories = () => {
       </div>
       <div className="w-full max-w-sm cursor-pointer space-y-3">
         {categories.map((category, index) => (
-          <a
+          <Link
           key={index}
-            href="#"
+            href={category.link}
             className="flex items-center justify-between 
              bg-gray-100 px-4 py-4 
              rounded-lg font-medium text-black 
@@ -29,7 +30,7 @@ const TopCategories = () => {
             >
               {category.count}
             </span>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
