@@ -1,9 +1,14 @@
-import Card from "@/app/components/card-component/Card";
+"use client";
 import CardGallery from "@/app/components/card-gallery-component/CardGallery";
 import { CardProps } from "@/app/interfaces/CardProps";
 import { NoSidebarProps } from "@/app/interfaces/NoSidebarProps";
+import { useEffect, useState } from "react";
 
 export default function NoSidebarPage({ params }: NoSidebarProps) {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
   const id = params.id;
   let cards: CardProps[] = [
     {
@@ -104,12 +109,14 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                   </span>
                 </div>
               </div>
-              <div className=" pt-[30px] max-w-[100vw] ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+              <div className="pt-[30px] max-w-[100vw] ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] transition-all duration-300 ease-in-out">
                 <img
                   src={
                     "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxDJL4IkGIw7s36TKu2Nieq1Dqtg4LcT-5O1V_SXskTR3lV3rPyjKDKnt1-yucqVBKf1D-2saQ1Y85CDhSROCt9A-3aX6tGMgccA9u0_k0nrbzmNPX_7AfquhWJuLcnO4ZECgGcCZWCKdr1OHuEmoU_WDmK2tMbMK-UYQAnArQCJ9FbwcKv3csWu6R2ks/w900/kate-trysh-CXYsPmtjxxk-unsplash-1000.webp"
                   }
-                  className=" w-full object-cover object-center max-h-[576px] align-middle"
+                  className={`w-full object-cover object-center max-h-[576px] align-middle transition-all duration-300 ease-in-out ${
+                    loaded ? "opacity-100 scale-100" : "opacity-0 scale-80"
+                  }`}
                 ></img>
               </div>
             </div>
@@ -231,7 +238,7 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                 </p>
               </div>
             </div>
-            <div className="post-footer w-full flex flex-col gap-[15px]">
+            <div className="post-footer w-full flex flex-col gap-[15px] mb-[25px]">
               <div className="row flex flex-col items-start justify-center gap-[25px]">
                 <div className="red-line bg-[#ff607d] w-[50px] h-[3px]"></div>
                 <div className="tags flex items-center justify-start gap-[10px]">
@@ -307,6 +314,18 @@ export default function NoSidebarPage({ params }: NoSidebarProps) {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="blog-post-comments w-full p-[50px] bg-[#f7f8f9] rounded-[4px] flex flex-col items-start justify-center gap-[20px] ">
+              <div className="blog-post-comments-header flex items-center justify-start gap-[3px]">
+                <h4 className="font-[700] text-[22px]">Comments</h4>
+                <div className="line bg-[#6d62ff] align-baseline skew-x-[-45deg] w-[12px] h-[3px] mt-[8px]"></div>
+              </div>
+              <div className="comment-form w-full">
+                <iframe
+                  className="w-full h-[80px] "
+                  src="https://www.blogger.com/comment/frame/2777290614146396302?po=6745008353106494000&hl=en&saa=85391&origin=https%3A%2F%2Fmorena-fbt.blogspot.com&skin=contempo&blogspotRpcToken=7349048"
+                ></iframe>
               </div>
             </div>
           </div>
