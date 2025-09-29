@@ -32,7 +32,7 @@ export default function ContactForm() {
   };
   const handleError = (formErrors: typeof form.formState.errors) => {
     if (Object.keys(formErrors).length >= 2) {
-      toast.error("All fields are required", { duration: 2000 });
+      toast.error("All fields are required");
     } else if (!formErrors.email && formErrors.name) {
       toast.error("Name is required");
     } else if (!formErrors.name && formErrors.email) {
@@ -54,7 +54,7 @@ export default function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="font-[400] text-[17px] !text-[#333333]">
-                Name
+                Name<span className="font-bold">*</span>
               </FormLabel>
               <FormControl>
                 <Input
