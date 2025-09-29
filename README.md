@@ -34,3 +34,42 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+
+# Project Frontend (Next.js)
+
+## 📂 Project Structure
+
+
+
+src/
+├── app/                 # Next.js App Router (pages & layouts)
+│   └── pageName/        # Example route folder (e.g., /contact, /about)
+│       └── page.tsx     # Page entry for that route
+│
+├── components/          # Reusable UI building blocks
+│   ├── ui/              # shadcn/ui or design system components
+│   └── shared/          # Shared components used across features (e.g., Loader, Modal)
+│
+├── constants/           # Static data and configuration constants
+│   └── index.ts         # e.g., navigation links, enums, API endpoints
+│
+├── features/            # Feature-based structure (modular & scalable)
+│   └── exampleFeature/
+│       └── ui/
+│           ├── components/  # Small pieces of the feature
+│           └── views/       # Composed components forming full feature UI
+│
+├── lib/                 # Core library helpers
+│   ├── rpc.ts           # API/RPC client setup
+│   ├── middleware.ts    # Middleware utilities
+│   └── utils.ts         # Generic utility functions
+│
+└── types/               # TypeScript types
+    └── componentTypes.ts
+
