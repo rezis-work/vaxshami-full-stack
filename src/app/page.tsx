@@ -1,18 +1,17 @@
+import BreakingNews from "@/features/breakingNews/ui/views/breakingNews-view";
 import Business from "@/features/business/ui/views/business-view";
-import FollowUs from "@/features/followUs/ui/views/followUs-view";
+import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
 import Gallery from "@/features/gallery/ui/views/gallery-view";
-import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
+import Hero from "@/features/hero/ui/views/hero-view";
 
 export default function Home() {
   return (
     <>
-      <div className="w-[500px] flex mx-auto gap-10">
-        <ShareLinks theme="dark" flexDirection="flex-col" />
-
-        <FollowUs breakpoint={300} />
-      </div>
+      <BreakingNews />
+      <Hero />
       <Gallery />
       <Business />
+      <DontMiss className="purpleLinearBackground" />
     </>
   );
 }
