@@ -14,7 +14,7 @@ export default function BlogCardContainer({
   categoryTitle,
 }: BlogCardWrapperProps) {
   return (
-    <Wrapper>
+    <Wrapper className="mt-16">
       {categoryTitle && (
         <div className="mb-[15px]">
           <h4 className="font-[700] text-[22px] bg-transparent relative mr-[10px]  after:w-[14px] after:h-[3px] after:bg-[#6d62ff]  after:ml-[10px] content-[''] after:inline-flex after:skew-x-[-45deg]">
