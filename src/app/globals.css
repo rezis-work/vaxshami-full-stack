@@ -1,26 +1,27 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.underlineHover {
+  @apply bg-gradient-to-r from-current to-current 
+    bg-[length:0%_2px] bg-no-repeat bg-left-bottom 
+    transition-[background-size] duration-300 ease-in-out 
+    hover:bg-[length:100%_2px];
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.borderGradient {
+  @apply bg-[linear-gradient(45deg,#521d91,#7062fd,#a63d87,#fe5f7d)];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.instagramBg {
+  @apply bg-[radial-gradient(circle_at_10%_100%,#fcff2d_0%,#ffae00_30%,#ff005b_52%,#880aff_85%,#740294)];
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1366px;
+  --breakpoint-3xl: 1636px;
+  --breakpoint-4xl: 1920px;
 }
