@@ -1,5 +1,4 @@
 import SectionTitle from "@/components/shared/sectionTitle";
-import Wrapper from "@/components/shared/wrapper";
 import DontMissCards from "../components/dontMissCards";
 
 const DontMiss = ({ className }: { className: string }) => {

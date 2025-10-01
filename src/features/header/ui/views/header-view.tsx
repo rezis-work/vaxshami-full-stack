@@ -6,10 +6,12 @@ import DesktopNavigation from "../components/desktopNavigation";
 const Header = () => {
   return (
     <header className=" purpleLinearBackground text-white">
-      <Wrapper>
-        <MobileNavigation />
-        <DesktopNavigation />
-      </Wrapper>
+      <nav>
+        <Wrapper>
+          <MobileNavigation />
+          <DesktopNavigation />
+        </Wrapper>
+      </nav>
     </header>
   );
 };
