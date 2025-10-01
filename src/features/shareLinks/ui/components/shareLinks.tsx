@@ -7,7 +7,7 @@ const ShareLinksCards = ({ flexDirection, theme }: Props) => {
   return (
     <ul className={`flex ${flexDirection} items-center justify-center gap-2`}>
       {shareLinksData.map((link) => (
-        <li>
+        <li key={link.id}>
           <Link
             href={link.id}
             className={` flex items-center justify-center rounded-full hover:opacity-80 transition-opacity duration-300 ease-in ${

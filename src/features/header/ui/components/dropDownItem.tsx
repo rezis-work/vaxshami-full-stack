@@ -3,13 +3,14 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { SubmenuProps } from "@/types/submenuTypes";
+import { DropDownItemProps } from "@/types/navbarTypes";
 import { FaAngleDown } from "react-icons/fa";
+import Megamenu from "./megamenu";
 
-const DropDownItem = ({ title, children }: SubmenuProps) => {
+const DropDownItem = ({ id, title, children }: DropDownItemProps) => {
   return (
     <HoverCard openDelay={0} closeDelay={0}>
-      <HoverCardTrigger className="block h-full ">
+      <HoverCardTrigger className="block h-full" asChild>
         <div className="relative h-full flex items-center cursor-pointer">
           <span className="text-lg font-bold tracking-tight underlineHover">
             {title}
@@ -18,27 +19,31 @@ const DropDownItem = ({ title, children }: SubmenuProps) => {
         </div>
       </HoverCardTrigger>
 
-      <HoverCardContent
-        align="start"
-        sideOffset={0}
-        className=" bg-white border-none rounded-md px-0 py-2 w-[200px]"
-      >
-        <ul>
-          {children.map((item) => (
-            <li
-              key={item.id}
-              className=" group hover:bg-gray-100 px-5 py-[2px] transition duration-200"
-            >
-              <a
-                href={item.href}
-                className="block py-1 text-sm font-medium text-gray-900 group-hover:text-[#6610f2] group-hover:opacity-75 transition duration-200"
+      {id === "megamenu" ? (
+        <Megamenu items={children} />
+      ) : (
+        <HoverCardContent
+          align="start"
+          sideOffset={0}
+          className=" bg-white border-none rounded-md px-0 py-2 w-[200px]"
+        >
+          <ul>
+            {children.map((item) => (
+              <li
+                key={item.id}
+                className=" group hover:bg-gray-100 px-5 py-[2px] transition duration-200"
               >
-                {item.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </HoverCardContent>
+                <a
+                  href={item.href}
+                  className="block py-1 text-sm font-medium text-gray-900 group-hover:text-[#6610f2] group-hover:opacity-75 transition duration-200"
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </HoverCardContent>
+      )}
     </HoverCard>
   );
 };

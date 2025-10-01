@@ -6,12 +6,12 @@ import TopStory from "@/features/topStory/ui/views/topStory-view";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <BreakingNews />
       <TopStory />
       <Gallery />
       <Business />
       <DontMiss className="purpleLinearBackground" />
-    </>
+    </main>
   );
 }
