@@ -1,6 +1,15 @@
 import ContactUs from "@/features/contactUs/ui/views/contact-view";
-import React from "react";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function ContactPage() {
-  return <ContactUs />;
+  return (
+    <>
+      <Toaster
+        richColors
+        position="top-right"
+        toastOptions={{ duration: 2000 }}
+      />
+      <ContactUs />
+    </>
+  );
 }
