@@ -1,30 +1,9 @@
-"use client";
-
 import { socialMediaData } from "@/constants/followUsData";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
 
-const LinkCards = ({ breakpoint }: { breakpoint: number }) => {
-  const ref = useRef<HTMLUListElement>(null);
-  const [twoCols, setTwoCols] = useState(false);
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new ResizeObserver((entries) => {
-      const width = entries[0].contentRect.width;
-      setTwoCols(width >= breakpoint);
-    });
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
+const LinkCards = ({ gridCols }: { gridCols: string }) => {
   return (
-    <ul
-      ref={ref}
-      className={`grid gap-4 ${twoCols ? "grid-cols-2" : "grid-cols-1"}`}
-    >
+    <ul className={`grid gap-4 ${gridCols}`}>
       {socialMediaData.map((link) => (
         <li
           key={link.id}

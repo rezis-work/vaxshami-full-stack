@@ -11,13 +11,13 @@ export const navItems = [
       { id: "default", title: "Default", href: "/default" },
       { id: "noSideBar", title: "No Sidebar", href: "/no-sidebar" },
       { id: "sideBarLeft", title: "Sidebar Left", href: "/sidebar-left" },
-      { id: "heroImage", title: "Hero Image", href: "/hero-image" },
+      { id: "heroImage", title: "Hero Image", href: "/heroPage" },
     ],
   },
   {
     id: "policy",
     title: "Policy",
-    href: "/policy",
+    href: "#",
   },
   {
     id: "features",

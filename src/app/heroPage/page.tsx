@@ -9,7 +9,10 @@ export default function page() {
       <HeroBanner />
       <HeroArticle />
       <ShareBar />
-      <DontMiss className="bg-[#FFE1DF] !text-black" />
+      <DontMiss
+        className="bg-[#FFE1DF] !text-black"
+        categoryBg="bg-[#FFFFFF]"
+      />
     </main>
   );
 }

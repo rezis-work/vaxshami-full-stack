@@ -13,4 +13,4 @@ export const paragraph4 =
 export const paragraph5 =
   "Proin consequat purus sit amet blandit sollicitudin. Aliquam in consequat libero. Morbi sollicitudin dignissim erat laoreet interdum. Phasellus magna velit, consectetur iaculis tincidunt placerat, semper non sem. Mauris in eleifend libero. Mauris vitae nibh sed felis aliquet dictum sed egestas mauris. Sed varius est ac nulla eleifend sagittis. Praesent id aliquam eros, in semper est. Maecenas ex enim, ornare ac auctor sit amet, interdum et justo. Aenean pellentesque magna ut nibh lobortis, sit amet vulputate sem tristique. Ut ac ultrices lectus, id volutpat nisi. Aenean ipsum augue, mollis at sodales mollis, varius eu erat. Image by lookstudio on Freepik";
 
-export const tags = [{ id: "frieds", tag: "Friends" }];
+export const tags = [{ id: "frieds", tag: "Friends", link: "#" }];

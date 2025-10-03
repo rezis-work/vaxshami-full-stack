@@ -1,8 +1,8 @@
 import PostsPageWrapper from "@/components/shared/postsPageWrapper";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import Tags from "../components/tags";
-import NewOld from "../components/newOld";
 import MayLike from "../components/mayLike";
+import NextPostLinks from "@/components/shared/nextPostLinkes";
 
 const ShareBar = () => {
   return (
@@ -14,7 +14,9 @@ const ShareBar = () => {
           <ShareLinks flexDirection="flex-row" theme="dark" />
         </div>
 
-        <NewOld />
+        <div className="flex flex-col md:flex-row font-bold">
+          <NextPostLinks id={5} />
+        </div>
 
         <MayLike />
       </PostsPageWrapper>

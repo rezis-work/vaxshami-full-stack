@@ -1,12 +1,12 @@
 import SectionTitle from "@/components/shared/sectionTitle";
 import LinkCards from "../components/linkCards";
 
-const FollowUs = ({ breakpoint }: { breakpoint: number }) => {
+const FollowUs = ({ gridCols }: { gridCols: string }) => {
   return (
     <aside className="w-full">
       <SectionTitle title="Follow Us" />
 
-      <LinkCards breakpoint={breakpoint} />
+      <LinkCards gridCols={gridCols} />
     </aside>
   );
 };

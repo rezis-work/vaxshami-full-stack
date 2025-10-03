@@ -11,7 +11,7 @@ const HeroContent = () => {
         <span className="text-sm mb-4 ml-4">August 05, 2024</span>
 
         <h2 className="max-w-[600px] text-xl sm:text-4xl font-semibold mb-6 leading-tight tracking-tighter">
-          <Link href="/hero-image" className="underlineHover">
+          <Link href="/heroPage" className="underlineHover">
             New Study Reveals Surprising Benefits of Meditation on Brain Health
           </Link>
         </h2>

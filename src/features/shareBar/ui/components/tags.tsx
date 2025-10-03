@@ -1,4 +1,5 @@
 import { tags } from "@/constants/postsDats";
+import Link from "next/link";
 import { BsTags } from "react-icons/bs";
 const Tags = () => {
   return (
@@ -7,13 +8,17 @@ const Tags = () => {
         <BsTags /> <span className="text-lg">Tags: </span>
       </div>
 
-      <ul>
+      <div>
         {tags.map((tag) => (
-          <li key={tag.id} className="font-semibold text-lg">
+          <Link
+            href={tag.link}
+            key={tag.id}
+            className="font-semibold text-lg underlineHover hover:text-[#6B5DF7]"
+          >
             {tag.tag}
-          </li>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

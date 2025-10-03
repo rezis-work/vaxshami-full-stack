@@ -5,11 +5,13 @@ import Link from "next/link";
 import { blogCardStyles } from "@/constants/blogCardStyles";
 import { BlogCardProps } from "@/types/blogCardTypes";
 import { cn, formatDate } from "@/lib/utils";
+import HoverTitle from "./hoverTitle";
 
 export default function BlogCard({
   blog,
-  variant = "blog",
+  variant,
   className,
+  tagBg,
 }: BlogCardProps) {
   const { created_at, title, image, category, description } = blog;
 
@@ -25,17 +27,17 @@ export default function BlogCard({
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <span className={s.categoryBg}>{category.toUpperCase()}</span>
+          <span className={`${s.categoryBg} !${tagBg}`}>
+            {category.toUpperCase()}
+          </span>
           <span className="text-sm">{date}</span>
         </div>
-        <Link
-          href={`/blog/${encodeURIComponent(blogTitle)}`}
-          className="block underlineHover"
-        >
-          {title}
+        <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
+          <HoverTitle
+            text={title}
+            titleClassname={cn(s.title, "hover:text-[#6d62ff] cursor-pointer")}
+          />
         </Link>
-
-        {/* <h3 className={s.title}>{title}</h3> */}
 
         {description && <p className={s.description}>{description}</p>}
       </div>
