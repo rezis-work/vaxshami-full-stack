@@ -2,6 +2,7 @@ import React from "react";
 import { Tag } from "lucide-react";
 import Link from "next/link";
 import HoverTitle from "@/components/shared/hoverTitle";
+import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 
 export default function DefaultPostFooter({ category }: { category: string }) {
   return (
@@ -20,18 +21,8 @@ export default function DefaultPostFooter({ category }: { category: string }) {
           </span>
         </div>
       </div>
-      <div className="px-[15px] h-[64px]! w-full border border-[#eeeeee] bg-white flex items-center">
-        <div className="hidden sm:flex items-center">
-          <i
-            className="text-[20px] text-black 
-      before:inline-block fa-regular fa-share-from-square"
-          ></i>
-          <p className="text-[16px] font-[700] text-black ml-[10px]">Share</p>
-        </div>
-        {/* social links */}
-        <div className="mx-auto sm:ml-auto sm:mr-0">
-          <ul className="w-[230px] h-[32px] bg-blue-200"></ul>
-        </div>
+      <div className="px-[15px] h-[64px]! w-full border border-[#eeeeee] bg-white ">
+        <ShareLinks flexDirection="flex-row" theme="dark" />
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
 import DefaultPostFooter from "./defaultPostFooter";
 import Wrapper from "@/components/shared/wrapper";
+import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 
 export default function DefaultPost({ post }: { post: DefaultPostType }) {
   const { category, title, description, created_at, image, id } = post;
@@ -34,11 +35,13 @@ export default function DefaultPost({ post }: { post: DefaultPostType }) {
       </div>
       <div className="flex font-[400] text-[17px] md:gap-[30px]">
         {/* Social links */}
-        <div className="hidden md:block sticky top-5 flex-shrink-0  w-[50px] bg-blue-200 h-[327px] "></div>
+        <div className="hidden md:block sticky top-5 flex-shrink-0  w-[50px]  h-[327px] ">
+          <ShareLinks flexDirection="flex-col" theme="light" />
+        </div>
         <DefaultPostBody image={image} />
       </div>
       {/* post footer */}
-      <DefaultPostFooter category="" />
+      <DefaultPostFooter category={category} />
       {/* prev/next post links */}
       <NextPostLinks id={id} />
     </div>
