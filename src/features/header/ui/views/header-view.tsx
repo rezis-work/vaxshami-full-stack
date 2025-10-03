@@ -1,5 +1,4 @@
 import Wrapper from "@/components/shared/wrapper";
-import React from "react";
 import MobileNavigation from "../components/mobileNavigation";
 import DesktopNavigation from "../components/desktopNavigation";
 

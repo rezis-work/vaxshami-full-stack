@@ -32,53 +32,7 @@ export const navItems = [
   {
     id: "megamenu",
     title: "Megamenu",
-    children: [
-      {
-        id: 2,
-        category: "ECONOMY",
-        created_at: "2024-07-12",
-        title: "Go For Western Economy With These Pioneering",
-        image:
-          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
-        href: "#",
-      },
-      {
-        id: 3,
-        category: "ECONOMY",
-        created_at: "2024-07-12",
-        title: "Go For Western Economy With These Pioneering",
-        image:
-          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
-        href: "#",
-      },
-      {
-        id: 4,
-        category: "ECONOMY",
-        created_at: "2024-07-12",
-        title: "Go For Western Economy With These Pioneering",
-        image:
-          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
-        href: "#",
-      },
-      {
-        id: 5,
-        category: "ECONOMY",
-        created_at: "2024-07-12",
-        title: "Go For Western Economy With These Pioneering",
-        image:
-          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
-        href: "#",
-      },
-      {
-        id: 6,
-        category: "ECONOMY",
-        created_at: "2024-07-12",
-        title: "Go For Western Economy With These Pioneering",
-        image:
-          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqDfX8h87X2c2faL1UIi8cxmqjFl8qqd5Ih5YqlqywvJ58nHmlDaQ13Ze-IobvtKKBQ24rS00BLJnsxGBQ6KpjBHM_RQXsp7KOueigSfBDtC-JF-nOZbl2G-tZArsf-nZd3MDv5ka98tsXuexB42Y34L7mJ3QBoHVZCZLJvqiFh2v0L96_YaoBfIglN5c/w900/img-4.jpg",
-        href: "#",
-      },
-    ],
+    href: "#",
   },
   {
     id: "contact",

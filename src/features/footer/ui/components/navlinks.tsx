@@ -1,6 +1,5 @@
 import { footerNavLinks } from "@/constants/footerData";
 import Link from "next/link";
-import React from "react";
 
 const NavLinks = () => {
   return (

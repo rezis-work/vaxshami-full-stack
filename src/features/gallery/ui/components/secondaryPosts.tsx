@@ -1,6 +1,5 @@
 import SecondaryPostPard from "@/components/shared/secondaryPostCard";
 import { galleryItems } from "@/constants/galleryData";
-import React from "react";
 
 const SecondaryPosts = () => {
   return (

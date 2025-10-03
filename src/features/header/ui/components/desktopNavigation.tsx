@@ -4,7 +4,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
-import React from "react";
 import SearchBar from "./searchBar";
 import Link from "next/link";
 import NavLinks from "./navLinks";

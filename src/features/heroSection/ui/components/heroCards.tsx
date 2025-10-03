@@ -1,7 +1,6 @@
 import { heroCards } from "@/constants/heroData";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const HeroCards = () => {
   return (

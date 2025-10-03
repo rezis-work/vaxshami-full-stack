@@ -41,9 +41,7 @@ const MainPostCard = ({
         className={`w-full object-cover ${ratio} ${height}`}
       />
 
-      <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black to-transparent" />
-
-      <div className="absolute bottom-0 p-6 max-h-[94.5%] overflow-auto text-white">
+      <div className="absolute bottom-0 w-full max-h-[94.5%]  p-6 overflow-auto text-white bg-gradient-to-t from-black to-transparent">
         <div
           className={`${
             isSmall ? "mb-[10px]" : "mb-4"

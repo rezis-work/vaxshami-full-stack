@@ -1,6 +1,5 @@
 import MainPostCard from "@/components/shared/mainPostCard";
 import { galleryItems } from "@/constants/galleryData";
-import React from "react";
 
 const MainPost = () => {
   return (

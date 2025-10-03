@@ -17,22 +17,26 @@ const NewsCarousel = () => {
       opts={{ loop: true }}
       plugins={[
         Autoplay({
-          delay: 5000,
+          delay: 4000,
         }),
       ]}
-      className="flex-1 flex justify-between items-center"
+      className="w-full overflow-hidden flex justify-between items-center"
     >
       <CarouselContent>
         {carouselData.map((carousel) => (
           <CarouselItem key={carousel.id}>
-            <Link href="#" className="hover:text-[#007bff] underlineHover">
+            <Link
+              href="#"
+              className="block truncate max-w-full hover:text-[#007bff] underlineHover"
+              title={carousel.title}
+            >
               {carousel.title}
             </Link>
           </CarouselItem>
         ))}
       </CarouselContent>
 
-      <div className="flex gap-2">
+      <div className="hidden lg:flex gap-2">
         <CarouselPrevious className=" relative top-0 left-0 right-0 bottom-0 translate-0 cursor-pointer" />
         <CarouselNext className="relative top-0 left-0 right-0 bottom-0 translate-0 cursor-pointer" />
       </div>

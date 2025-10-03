@@ -6,7 +6,6 @@ import {
   paragraph4,
   paragraph5,
 } from "@/constants/postsDats";
-import React from "react";
 
 const Article = () => {
   return (

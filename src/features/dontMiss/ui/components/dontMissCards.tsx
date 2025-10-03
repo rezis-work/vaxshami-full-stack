@@ -3,7 +3,7 @@ import { galleryItems } from "@/constants/galleryData";
 
 const DontMissCards = () => {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
       {galleryItems.slice(0, 4).map((item) => (
         <li key={item.id}>
           <BlogCard

@@ -1,6 +1,5 @@
 import { footerSocialLinks } from "@/constants/footerData";
 import Link from "next/link";
-import React from "react";
 
 const SocLinks = () => {
   return (

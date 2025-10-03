@@ -12,7 +12,7 @@ import NavLinks from "./navLinks";
 
 const MobileNavigation = () => {
   return (
-    <nav className="relative flex flex-col lg:hidden py-5">
+    <div className="relative flex flex-col lg:hidden py-5">
       <Image src="/header-logo.png" width={125} height={20} alt="morena logo" />
 
       <Accordion type="single" collapsible>
@@ -28,7 +28,7 @@ const MobileNavigation = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </nav>
+    </div>
   );
 };
 

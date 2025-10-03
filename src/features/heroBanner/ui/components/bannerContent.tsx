@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import PostsPageWrapper from "@/components/shared/postsPageWrapper";
 import { MdAccessTime } from "react-icons/md";

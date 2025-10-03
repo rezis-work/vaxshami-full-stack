@@ -1,7 +1,6 @@
 import BlogCard from "@/components/shared/blogCard";
 import SectionTitle from "@/components/shared/sectionTitle";
 import { galleryItems } from "@/constants/galleryData";
-import React from "react";
 
 const MayLike = () => {
   return (

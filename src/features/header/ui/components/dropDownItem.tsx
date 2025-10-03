@@ -3,11 +3,10 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { DropDownItemProps } from "@/types/navbarTypes";
+import { SubmenuProps } from "@/types/navbarTypes";
 import { FaAngleDown } from "react-icons/fa";
-import Megamenu from "./megamenu";
 
-const DropDownItem = ({ id, title, children }: DropDownItemProps) => {
+const DropDownItem = ({ title, children }: SubmenuProps) => {
   return (
     <HoverCard openDelay={0} closeDelay={0}>
       <HoverCardTrigger className="block h-full" asChild>
@@ -19,31 +18,27 @@ const DropDownItem = ({ id, title, children }: DropDownItemProps) => {
         </div>
       </HoverCardTrigger>
 
-      {id === "megamenu" ? (
-        <Megamenu items={children} />
-      ) : (
-        <HoverCardContent
-          align="start"
-          sideOffset={0}
-          className=" bg-white border-none rounded-md px-0 py-2 w-[200px]"
-        >
-          <ul>
-            {children.map((item) => (
-              <li
-                key={item.id}
-                className=" group hover:bg-gray-100 px-5 py-[2px] transition duration-200"
+      <HoverCardContent
+        align="start"
+        sideOffset={0}
+        className=" bg-white border-none rounded-md px-0 py-2 w-[200px]"
+      >
+        <ul>
+          {children.map((item) => (
+            <li
+              key={item.id}
+              className=" group hover:bg-gray-100 px-5 py-[2px] transition duration-200"
+            >
+              <a
+                href={item.href}
+                className="block py-1 text-sm font-medium text-gray-900 group-hover:text-[#6610f2] group-hover:opacity-75 transition duration-200"
               >
-                <a
-                  href={item.href}
-                  className="block py-1 text-sm font-medium text-gray-900 group-hover:text-[#6610f2] group-hover:opacity-75 transition duration-200"
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </HoverCardContent>
-      )}
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </HoverCardContent>
     </HoverCard>
   );
 };
