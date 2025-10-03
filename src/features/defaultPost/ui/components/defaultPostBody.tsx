@@ -1,3 +1,4 @@
+import Quote from "@/components/shared/quote";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -42,18 +43,12 @@ export default function DefaultPostBody({ image }: { image: string }) {
         iaculis tincidunt placerat, semper non sem. Mauris in eleifend libero.
       </p>
       <blockquote className="mb-[25px] ">
-        <div className="bg-[#f1f4f9] px-[48px] pt-[48px] pb-[24px]">
-          <p
-            className="font-[700] text-[20px] tracking-[-0.06rem]! pl-12 relative before:content-['\f10d'] before:font-[FontAwesome] 
-                 before:absolute before:-top-2 before:-left-[15px] 
-                 before:text-[40px] before:text-black"
-          >
-            Proin consequat purus sit amet blandit sollicitudin. Aliquam in
-            consequat libero. Morbi sollicitudin dignissim erat laoreet
-            interdum. Phasellus magna velit, consectetur iaculis tincidunt
-            placerat, semper non sem.
-          </p>
-        </div>
+        <Quote>
+          Proin consequat purus sit amet blandit sollicitudin. Aliquam in
+          consequat libero. Morbi sollicitudin dignissim erat laoreet interdum.
+          Phasellus magna velit, consectetur iaculis tincidunt placerat, semper
+          non sem.
+        </Quote>
       </blockquote>
       <p className="mb-[25px] text-[#333333] text-[17px] leading-[1.55]!">
         <i>
