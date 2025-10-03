@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 .underlineHover {
-  @apply bg-gradient-to-r from-current to-current 
-    bg-[length:0%_2px] bg-no-repeat bg-left-bottom 
-    transition-[background-size] duration-600 ease-out 
+  @apply bg-gradient-to-r from-current to-current
+    bg-[length:0%_2px] bg-no-repeat bg-left-bottom
+    transition-[background-size] duration-600 ease-out
     hover:bg-[length:100%_2px];
 }
 
@@ -21,6 +21,7 @@
 .purpleLinearBackground {
   @apply bg-[radial-gradient(circle_at_top_right,_#6d62ff_0%,_#521d91_100%)];
 }
+
 
 @theme {
   --breakpoint-sm: 575px;
