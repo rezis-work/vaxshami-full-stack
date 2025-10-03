@@ -1,6 +1,5 @@
-import DefaultPost from "@/features/defaultPost/ui/components/defaultPost";
-import { blogCardsData } from "@/constants/blogCardsData";
+import DefaultPostView from "@/features/defaultPost/ui/views/defaultPost-view";
 
 export default function Home() {
-  return <DefaultPost post={blogCardsData[9]} />;
+  return <DefaultPostView />;
 }
