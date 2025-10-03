@@ -7,11 +7,7 @@ import { BlogCardProps } from "@/types/blogCardTypes";
 import { cn, formatDate } from "@/lib/utils";
 import HoverTitle from "./hoverTitle";
 
-export default function BlogCard({
-  blog,
-  variant = "blog",
-  className,
-}: BlogCardProps) {
+export default function BlogCard({ blog, variant, className }: BlogCardProps) {
   const { created_at, title, image, category, description } = blog;
 
   const date = formatDate(created_at);
@@ -35,8 +31,6 @@ export default function BlogCard({
             titleClassname={cn(s.title, "hover:text-[#6d62ff] cursor-pointer")}
           />
         </Link>
-
-        {/* <h3 className={s.title}>{title}</h3> */}
 
         {description && <p className={s.description}>{description}</p>}
       </div>
