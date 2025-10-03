@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   const handleSubmit = (values: z.infer<typeof contactFormSchema>) => {
     console.log(values);
-    toast("Message was sent successfully");
+    toast("Message was sent successfully", { style: { background: "white" } });
   };
   const handleError = (formErrors: typeof form.formState.errors) => {
     if (Object.keys(formErrors).length >= 2) {
