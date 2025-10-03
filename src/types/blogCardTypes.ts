@@ -7,6 +7,7 @@ export type BlogCardProps = {
     category: string;
     created_at: string;
   };
+  tagBg?: string;
   variant: "reverse" | "horizontal" | "vertical" | "blog";
   className?: string;
 };

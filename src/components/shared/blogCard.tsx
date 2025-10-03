@@ -7,7 +7,12 @@ import { BlogCardProps } from "@/types/blogCardTypes";
 import { cn, formatDate } from "@/lib/utils";
 import HoverTitle from "./hoverTitle";
 
-export default function BlogCard({ blog, variant, className }: BlogCardProps) {
+export default function BlogCard({
+  blog,
+  variant,
+  className,
+  tagBg,
+}: BlogCardProps) {
   const { created_at, title, image, category, description } = blog;
 
   const date = formatDate(created_at);
@@ -22,7 +27,9 @@ export default function BlogCard({ blog, variant, className }: BlogCardProps) {
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <span className={s.categoryBg}>{category.toUpperCase()}</span>
+          <span className={`${s.categoryBg} ${tagBg}`}>
+            {category.toUpperCase()}
+          </span>
           <span className="text-sm">{date}</span>
         </div>
         <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
