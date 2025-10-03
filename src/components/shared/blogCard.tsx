@@ -35,7 +35,7 @@ export default function BlogCard({
         <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
           <HoverTitle
             text={title}
-            titleClassname={cn(s.title, "hover:text-[#6d62ff] cursor-pointer")}
+            titleClassname={cn(s.title, "hover:text-white cursor-pointer")}
           />
         </Link>
 
