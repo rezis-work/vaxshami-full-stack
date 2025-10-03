@@ -10,6 +10,7 @@ export type BlogCardProps = {
   tagBg?: string;
   variant: "reverse" | "horizontal" | "vertical" | "blog";
   className?: string;
+  titleClassName?: string;
 };
 
 export type BlogCardVariantStyles = {

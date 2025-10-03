@@ -11,6 +11,7 @@ export default function BlogCard({
   blog,
   variant,
   className,
+  titleClassName,
   tagBg,
 }: BlogCardProps) {
   const { created_at, title, image, category, description } = blog;
@@ -27,7 +28,7 @@ export default function BlogCard({
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <span className={`${s.categoryBg} ${tagBg}`}>
+          <span className={`${s.categoryBg} !${tagBg}`}>
             {category.toUpperCase()}
           </span>
           <span className="text-sm">{date}</span>
@@ -35,7 +36,11 @@ export default function BlogCard({
         <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
           <HoverTitle
             text={title}
-            titleClassname={cn(s.title, "hover:text-[#6d62ff] cursor-pointer")}
+            titleClassname={cn(
+              s.title,
+              "hover:text-[#6d62ff] cursor-pointer",
+              titleClassName
+            )}
           />
         </Link>
 
