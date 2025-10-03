@@ -6,12 +6,13 @@ import React from "react";
 
 export default function TravelNews() {
   return (
-    <Wrapper className="mt-16">
-      <BlogCardContainer categoryTitle="Travel News" className="md:grid-cols-3">
-        {blogCardsData.slice(6, 9).map((blog) => (
-          <BlogCard key={blog.id} blog={blog} variant="vertical" />
-        ))}
-      </BlogCardContainer>
-    </Wrapper>
+    <BlogCardContainer
+      categoryTitle="Travel News"
+      className="md:grid-cols-3 mb-[60px]"
+    >
+      {blogCardsData.slice(6, 9).map((blog) => (
+        <BlogCard key={blog.id} blog={blog} variant="vertical" />
+      ))}
+    </BlogCardContainer>
   );
 }
