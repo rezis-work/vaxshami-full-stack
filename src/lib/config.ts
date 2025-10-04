@@ -1,18 +1,4 @@
-const env = {
-  apiConnectionUrl: process.env.API_CONNECTION_URL!,
+export const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!;
+export const USERTABLE_ID = process.env.NEXT_PUBLIC_APPWRITE_USERTABLE_ID!;
+export const POSTSTABLE_ID = process.env.NEXT_PUBLIC_APPWRITE_POSTSTABLE_ID!;
 
-  appwrite: {
-    appwriteProjectId: process.env.APPWRITE_PROJECT_ID!,
-    appwriteProjectName: process.env.APPWRITE_PROJECT_NAME!,
-    appwriteEndpoint: process.env.APPWRITE_ENDPOINT!,
-  },
-
-  databases: {
-    testDB: {
-      databaseId: process.env.DATABASE_ID!,
-      tableId: process.env.TABLE_ID!,
-    },
-  },
-};
-
-export default env;

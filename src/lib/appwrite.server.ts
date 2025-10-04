@@ -1,8 +1,16 @@
-import { Client, TablesDB } from "appwrite";
-import env from "./config";
+import "server-only";
 
-const client = new Client()
-  .setEndpoint(env.appwrite.appwriteEndpoint)
-  .setProject(env.appwrite.appwriteProjectId);
+import { Client, Account } from "node-appwrite";
 
-export const tablesDB = new TablesDB(client);
+export async function createAdminClient() {
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
+    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!)
+    .setKey(process.env.NEXT_APPWRITE_KEY!);
+
+  return {
+    get account() {
+      return new Account(client);
+    },
+  };
+}

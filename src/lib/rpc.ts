@@ -1,6 +1,4 @@
-import { AppType } from "@/app/api/[[...route]]/route";
 import { hc } from "hono/client";
+import { AppType } from "@/app/api/[[...route]]/route";
 
-const client = hc<AppType>(process.env.API_CONNECTION_URL!);
-
-export default client;
+export const client = hc<AppType>(process.env.NEXT_PUBLIC_APP_URL!);
