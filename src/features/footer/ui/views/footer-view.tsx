@@ -3,6 +3,7 @@ import Image from "next/image";
 import SocLinks from "../components/soclinks";
 import NavLinks from "../components/navlinks";
 import Copyright from "../components/copyright";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,12 +12,14 @@ const Footer = () => {
         <div className="w-full flex flex-col xl:flex-row items-center xl:justify-between gap-6 border-b border-gray-300 pb-8 mb-6">
           <SocLinks />
 
-          <Image
-            src="/vaxshami_logo4.png"
-            width={170}
-            height={25}
-            alt="footer logo"
-          />
+          <Link href="/">
+            <Image
+              src="/vaxshami_logo4.png"
+              width={170}
+              height={25}
+              alt="footer logo"
+            />
+          </Link>
 
           <NavLinks />
         </div>
