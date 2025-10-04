@@ -37,7 +37,7 @@ export const navItems = [
   {
     id: "contact",
     title: "Contact",
-    href: "#",
+    href: "/contact",
   },
   {
     id: "blog",

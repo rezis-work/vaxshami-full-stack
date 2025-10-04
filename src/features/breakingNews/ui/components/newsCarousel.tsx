@@ -27,7 +27,7 @@ const NewsCarousel = () => {
           <CarouselItem key={carousel.id}>
             <Link
               href="#"
-              className="block truncate max-w-full hover:text-[#007bff] underlineHover"
+              className="inline-block truncate max-w-full hover:text-[#007bff] underlineHover"
               title={carousel.title}
             >
               {carousel.title}

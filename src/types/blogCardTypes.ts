@@ -6,7 +6,9 @@ export type BlogCardProps = {
     image: string;
     category: string;
     created_at: string;
+    link: string;
   };
+  hoverTextColor?: string;
   tagBg?: string;
   variant: "reverse" | "horizontal" | "vertical" | "blog";
   className?: string;

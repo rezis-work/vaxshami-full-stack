@@ -1,7 +1,5 @@
 import Image from "next/image";
-
 import Link from "next/link";
-
 import { blogCardStyles } from "@/constants/blogCardStyles";
 import { BlogCardProps } from "@/types/blogCardTypes";
 import { cn, formatDate } from "@/lib/utils";
@@ -12,8 +10,9 @@ export default function BlogCard({
   variant,
   className,
   tagBg,
+  hoverTextColor,
 }: BlogCardProps) {
-  const { created_at, title, image, category, description } = blog;
+  const { created_at, title, image, category, description, link } = blog;
 
   const date = formatDate(created_at);
   const s = blogCardStyles[variant];
@@ -21,21 +20,21 @@ export default function BlogCard({
 
   return (
     <div className={cn("gap-5 lg:gap-[30px]  flex", s.wrapper, className)}>
-      <div className={`relative flex-shrink-0 ${s.imageWrapper}`}>
+      <Link href={link} className={`relative flex-shrink-0 ${s.imageWrapper}`}>
         <Image src={image} alt={title} fill className={s.image} />
-      </div>
+      </Link>
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <span className={`${s.categoryBg} !${tagBg}`}>
+          <Link href="#" className={`${s.categoryBg} !${tagBg}`}>
             {category.toUpperCase()}
-          </span>
+          </Link>
           <span className="text-sm">{date}</span>
         </div>
         <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
           <HoverTitle
             text={title}
-            titleClassname={cn(s.title, "hover:text-white cursor-pointer")}
+            titleClassname={cn(s.title, hoverTextColor, "cursor-pointer")}
           />
         </Link>
 
