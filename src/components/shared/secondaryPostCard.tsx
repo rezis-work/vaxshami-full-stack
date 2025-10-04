@@ -15,8 +15,8 @@ const SecondaryPostPard = ({
   return (
     <li
       className={` flex items-center ${
-        flexReverse ? "flex-row-reverse justify-end" : "justify-between"
-      }  gap-4`}
+        flexReverse ? "flex-row-reverse justify-end" : "justify-between "
+      } items-start xs:items-center gap-4`}
     >
       <div
         className={`leading-5 ${
@@ -25,7 +25,7 @@ const SecondaryPostPard = ({
       >
         <Link
           href="#"
-          className={`inline max-h-[65px] overflow-y-auto leading-3.5 font-bold underlineHover ${titleClassname}`}
+          className={`inline max-h-[65px] overflow-y-auto leading-3.5 font-bold underlineHover break-all xs:break-normal ${titleClassname}`}
         >
           {title}
         </Link>

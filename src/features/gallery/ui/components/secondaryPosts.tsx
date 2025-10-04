@@ -11,7 +11,7 @@ const SecondaryPosts = () => {
             {...item}
             theme="dark"
             flexReverse={false}
-            styles="bg-transparent"
+            styles="bg-transparent text-sm xs:text-[16px]"
           />
         ))}
       </ul>

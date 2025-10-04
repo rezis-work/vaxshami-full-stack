@@ -10,7 +10,7 @@ const AdvertComponent = ({ image, link, text, classname }: AdvertTypes) => {
       <Link
         href={link}
         target="_blank"
-        className="w-[300px] h-[500px] flex flex-col items-center justify-center text-center gap-12 bg-[#FFE1DF] rounded-4xl border px-6"
+        className={`max-w-[300px] h-[500px] flex flex-col items-center justify-center text-center gap-12 bg-[#FFE1DF] rounded-4xl border px-6 ${classname}`}
       >
         <Image src={image} width={100} height={50} alt="sponsore image" />
 

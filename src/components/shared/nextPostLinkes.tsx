@@ -31,11 +31,11 @@ export default function NextPostLinks({ id }: { id: number }) {
       <div className="text-right w-full shrink-0 md:w-1/2">
         <Link
           href="/"
-          className="text-black flex flex-col hover:text-[#6d62ff]"
+          className="text-black flex flex-col items-end hover:text-[#6d62ff]"
         >
           <div className="flex items-center gap-2">
-            <FaAngleRight />
             <span className="text-[16px] mr-1 ml-[-4px]">Older</span>
+            <FaAngleRight />
           </div>
 
           <HoverTitle
