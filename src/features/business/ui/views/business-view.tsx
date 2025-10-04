@@ -1,7 +1,7 @@
-import AdvertisementBanner from "@/components/shared/advertisementBanner";
 import ContentBlock from "@/features/business/ui/components/contentBlock";
 import Wrapper from "@/components/shared/wrapper";
 import { businessNews, petFriends } from "@/constants/bussinessData";
+import AdvertComponent from "@/components/shared/advertComponent";
 
 const Business = () => {
   return (
@@ -10,7 +10,12 @@ const Business = () => {
         <ContentBlock title="Business News" items={businessNews} />
 
         <div className="w-[300px] self-stretch mx-auto flex-shrink-0 py-4">
-          <AdvertisementBanner image={null} position="auto" />
+          <AdvertComponent
+            classname=""
+            image="/linedev.png"
+            link="https://www.linkedin.com/company/linedevltd/posts/?feedView=all"
+            text="We are software development company. we build amazing human made websites"
+          />
         </div>
 
         <ContentBlock title="Pet Friends" items={petFriends} />

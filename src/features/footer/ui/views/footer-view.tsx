@@ -12,7 +12,7 @@ const Footer = () => {
           <SocLinks />
 
           <Image
-            src="/logo-morena-dark.png"
+            src="/vaxshami_logo4.png"
             width={170}
             height={25}
             alt="footer logo"

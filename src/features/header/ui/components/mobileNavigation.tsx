@@ -13,11 +13,17 @@ import NavLinks from "./navLinks";
 const MobileNavigation = () => {
   return (
     <div className="relative flex flex-col lg:hidden py-5">
-      <Image src="/header-logo.png" width={125} height={20} alt="morena logo" />
+      <Image
+        src="/image5.png"
+        width={125}
+        height={20}
+        alt="morena logo"
+        className="w-[100px] h-[40px] bg-transparent object-cover"
+      />
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger className="absolute right-0 top-3.5 cursor-pointer text-3xl">
+          <AccordionTrigger className="absolute right-0 top-5 cursor-pointer text-3xl">
             <RxHamburgerMenu />
           </AccordionTrigger>
 
