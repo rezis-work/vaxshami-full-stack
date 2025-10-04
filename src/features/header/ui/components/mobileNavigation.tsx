@@ -9,17 +9,20 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import SearchBar from "./searchBar";
 
 import NavLinks from "./navLinks";
+import Link from "next/link";
 
 const MobileNavigation = () => {
   return (
     <div className="relative flex flex-col lg:hidden py-5">
-      <Image
-        src="/image5.png"
-        width={125}
-        height={20}
-        alt="morena logo"
-        className="w-[100px] h-[40px] bg-transparent object-cover"
-      />
+      <Link href="/">
+        <Image
+          src="/image5.png"
+          width={125}
+          height={20}
+          alt="morena logo"
+          className="w-[100px] h-[40px] bg-transparent object-cover"
+        />
+      </Link>
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
