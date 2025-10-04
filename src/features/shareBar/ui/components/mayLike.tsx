@@ -13,6 +13,7 @@ const MayLike = () => {
             <BlogCard
               blog={{ ...item, created_at: "2025-09-11" }}
               variant={"vertical"}
+              hoverTextColor="hover:text-[#6d62ff]"
             />
           </li>
         ))}

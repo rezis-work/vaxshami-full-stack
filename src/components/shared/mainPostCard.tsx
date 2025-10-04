@@ -1,9 +1,6 @@
-"use client";
-
 import { MainCardProps } from "@/types/mainCardTypes";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 
 const MainPostCard = ({
   title,
@@ -12,56 +9,35 @@ const MainPostCard = ({
   category,
   height = "h-auto",
   ratio,
-  textMin,
-  textMax,
-  breakpoint,
+  titleClassname,
 }: MainCardProps) => {
-  const ref = useRef<HTMLImageElement>(null);
-  const [isSmall, setIsSmall] = useState(false);
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new ResizeObserver((entries) => {
-      const width = entries[0].contentRect.width;
-      setIsSmall(width <= breakpoint);
-    });
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className="relative h-full rounded-md overflow-hidden">
-      <Image
-        src={image}
-        width={400}
-        height={200}
-        alt="post image"
-        className={`w-full object-cover ${ratio} ${height}`}
-      />
+    <div className="relative h-full rounded-md overflow-hidden">
+      <Link href="#">
+        <Image
+          src={image}
+          width={400}
+          height={200}
+          alt="post image"
+          className={`w-full object-cover ${ratio} ${height}`}
+        />
+      </Link>
 
       <div className="absolute bottom-0 w-full max-h-[94.5%]  p-6 overflow-auto text-white bg-gradient-to-t from-black to-transparent">
-        <div
-          className={`${
-            isSmall ? "mb-[10px]" : "mb-4"
-          } flex items-center gap-4`}
-        >
+        <div className="mb-4 flex items-center gap-4">
           <Link
             href="#"
-            className="rounded-full bg-[#FFE1DF] px-3 py-[2px] text-[13px] font-medium text-[#e34e36]"
+            className="rounded-full bg-[#FFE1DF] px-3 py-[2px] text-[13px] font-medium text-[#e34e36] uppercase"
           >
             {category}
           </Link>
 
-          <span className={`${isSmall ? "text-xs" : "text-sm"}`}>{date}</span>
+          <span className="text-sm">{date}</span>
         </div>
 
         <Link
           href="#"
-          className={`font-semibold underlineHover ${
-            isSmall ? textMin : textMax
-          }`}
+          className={`font-semibold underlineHover ${titleClassname}`}
         >
           {title}
         </Link>

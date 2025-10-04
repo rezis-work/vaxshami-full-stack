@@ -12,6 +12,7 @@ export default function page() {
       <DontMiss
         className="bg-[#FFE1DF] !text-black"
         categoryBg="bg-[#FFFFFF]"
+        hoverTextColor="hover:text-[#6d62ff]"
       />
     </main>
   );

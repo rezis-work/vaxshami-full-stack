@@ -11,9 +11,7 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
       <MainPostCard
         {...items[0]}
         ratio="aspect-[3/2]"
-        textMax="text-xl"
-        textMin="text-[14px]"
-        breakpoint={250}
+        titleClassname="text-xl "
       />
 
       <ul className="flex flex-col gap-5 rounded-sm py-4">
@@ -24,8 +22,7 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
             theme="light"
             flexReverse={true}
             width="!w-[120px]"
-            textMin="text-[11px]"
-            textMax="text-[15px]"
+            titleClassname="text-[15px] "
           />
         ))}
       </ul>

@@ -8,9 +8,7 @@ const MainPost = () => {
         {...galleryItems[0]}
         height="h-full"
         ratio="aspect-block"
-        textMin="text-[22px]"
-        textMax="text-4xl"
-        breakpoint={500}
+        titleClassname="text-[22px] sm:text-[40px] leading-5 sm:leading-10"
       />
     </div>
   );
