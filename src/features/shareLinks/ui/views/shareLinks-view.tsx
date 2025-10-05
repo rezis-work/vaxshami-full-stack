@@ -1,4 +1,3 @@
-import React from "react";
 import { FaRegShareSquare } from "react-icons/fa";
 import ShareLinksCards from "../components/shareLinks";
 import { Props } from "@/types/shareLinksTypes";

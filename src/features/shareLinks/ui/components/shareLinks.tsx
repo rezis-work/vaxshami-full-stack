@@ -1,8 +1,6 @@
 import { shareLinksData } from "@/constants/shareLinks";
 import { Props } from "@/types/shareLinksTypes";
-
 import Link from "next/link";
-import React from "react";
 
 const ShareLinksCards = ({ flexDirection, theme }: Props) => {
   return (

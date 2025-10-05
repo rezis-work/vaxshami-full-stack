@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/features/footer/ui/views/footer-view";
+import Header from "@/features/header/ui/views/header-view";
+import { QueryProvider } from "@/lib/query-provaider";
 
-const dmSans = DM_Sans({
-  weight: [
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900",
-    "1000",
-  ],
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -31,7 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className} antialiased`}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <QueryProvider>
+        <Header />
+        {children}
+        <Footer />
+        </QueryProvider>
+      </body>
     </html>
   );
 }
