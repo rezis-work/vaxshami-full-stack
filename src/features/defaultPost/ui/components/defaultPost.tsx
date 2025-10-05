@@ -2,13 +2,16 @@ import React from "react";
 import BreadCrumbs from "@/components/shared/breadCrumbs";
 import Image from "next/image";
 import { DefaultPostType } from "@/types/postTypes";
-import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
 import DefaultPostFooter from "./defaultPostFooter";
 
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
+import NextPostLinks from "@/components/shared/nextPostLinks";
+import MayLike from "@/features/shareBar/ui/components/mayLike";
+import BlogCardContainer from "@/components/shared/blogContainer";
+import DefaultMayLIke from "./defaultMayLIke";
 
 export default function DefaultPost({ post }: { post: DefaultPostType }) {
   const { category, title, description, created_at, image, id } = post;
@@ -40,6 +43,7 @@ export default function DefaultPost({ post }: { post: DefaultPostType }) {
       <DefaultPostFooter category={category} />
 
       <NextPostLinks id={id} />
+      <DefaultMayLIke />
     </MainSectionWrapper>
   );
 }

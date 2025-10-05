@@ -8,6 +8,7 @@ export const blogCardsData = [
       "Golden rays paint the sky as the sun sets over rolling hills, a view that feels timeless.",
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const blogCardsData = [
       "Freshly brewed coffee steaming in a quiet café, the perfect start to a productive day.",
     image:
       "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const blogCardsData = [
       "The charm of old brick buildings and narrow alleys draws wanderers into the heart of the city.",
     image:
       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const blogCardsData = [
       "The rhythm of waves against the shore creates a melody of peace and serenity.",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const blogCardsData = [
       "A bowl of greens, fruits, and cheese, bursting with flavor and color.",
     image:
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const blogCardsData = [
       "A clear view of the Milky Way reminds us how small we are in the vast cosmos.",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export const blogCardsData = [
       "Snow caps glistening in the sun invite hikers to take on their next adventure.",
     image:
       "https://images.unsplash.com/photo-1631017799599-aca9dfa42f20?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ export const blogCardsData = [
       "A cozy cabin tucked away in the forest, offering warmth in the heart of nature.",
     image:
       "https://images.unsplash.com/photo-1703782997454-8eb0d4d94e9c?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ export const blogCardsData = [
       "Endless sand dunes under the scorching sun hold secrets of ancient travelers.",
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 10,
@@ -98,6 +107,7 @@ export const blogCardsData = [
       "Fruits, spices, and laughter fill the bustling market square with vibrant life.",
     image:
       "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 11,
@@ -108,6 +118,7 @@ export const blogCardsData = [
       "Stacks of books, warm lighting, and a comfy chair—paradise for any reader.",
     image:
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 12,
@@ -118,6 +129,7 @@ export const blogCardsData = [
       "Mist rises from the lake as birds welcome the new day with song.",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 13,
@@ -128,6 +140,7 @@ export const blogCardsData = [
       "Cycling through winding country roads offers freedom and discovery.",
     image:
       "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 14,
@@ -138,6 +151,7 @@ export const blogCardsData = [
       "The forest floor is covered with golden leaves, crunching under each step.",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 15,
@@ -148,6 +162,7 @@ export const blogCardsData = [
       "The sizzling sound of skewers grilling fills the night air with aroma.",
     image:
       "https://images.unsplash.com/photo-1619683815335-2b5b130a1baf?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 16,
@@ -158,6 +173,7 @@ export const blogCardsData = [
       "Bright petals bloom in the morning light, signaling the arrival of spring.",
     image:
       "https://images.unsplash.com/photo-1592729645009-b96d1e63d14b?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 17,
@@ -168,6 +184,7 @@ export const blogCardsData = [
       "A cup of tea and a good novel create the perfect quiet afternoon.",
     image:
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 18,
@@ -178,6 +195,7 @@ export const blogCardsData = [
       "Carved stones and towering pillars whisper stories of civilizations long gone.",
     image:
       "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 19,
@@ -188,6 +206,7 @@ export const blogCardsData = [
       "The forest fades into mist, a dreamy passage into the unknown.",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 20,
@@ -198,6 +217,7 @@ export const blogCardsData = [
       "Clean lines, neutral colors, and just the essentials to focus on creativity.",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 21,
@@ -208,6 +228,7 @@ export const blogCardsData = [
       "Palm trees, turquoise waters, and warm sand under your feet—pure bliss.",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 22,
@@ -218,6 +239,7 @@ export const blogCardsData = [
       "Neon reflections bounce off skyscrapers as the city comes alive after dark.",
     image:
       "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 23,
@@ -228,6 +250,7 @@ export const blogCardsData = [
       "Melted cheese and fresh toppings make this a comfort food classic.",
     image:
       "https://images.unsplash.com/photo-1614442299071-3724ede4a446?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 24,
@@ -238,6 +261,7 @@ export const blogCardsData = [
       "A tent pitched by the fire, the night sky overhead glowing with constellations.",
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
   {
     id: 25,
@@ -248,5 +272,6 @@ export const blogCardsData = [
       "Umbrellas dot the sidewalks as raindrops glisten under the city lights.",
     image:
       "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80",
+    link: "",
   },
 ];

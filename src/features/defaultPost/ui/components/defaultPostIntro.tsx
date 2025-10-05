@@ -1,6 +1,7 @@
 import React from "react";
 import { UserRound } from "lucide-react";
 import { formatDate } from "@/lib/utils";
+import { FaRegClock } from "react-icons/fa";
 
 type DefaultPostIntroType = {
   title: string;
@@ -33,7 +34,7 @@ export default function DefaultPostIntro({
           <p>{formattedDate}</p>
         </div>
         <div className=" gap-2 text-[15px] hidden sm:flex items-center">
-          <i className="fa-regular fa-clock font-[400] not-italic text-[15px]"></i>
+          <FaRegClock className="inline " />
           <div className="">1 min read</div>
         </div>
       </div>
