@@ -6,6 +6,7 @@ import SectionSidebar from "../../../../components/shared/sectionSidebar";
 import FollowUs from "@/features/followUs/ui/views/followUs-view";
 
 import SidebarArticles from "@/components/shared/sidebarArticles";
+import SidebarNews from "@/components/shared/sidebarNews";
 
 export default function DefaultPostView() {
   return (
@@ -15,6 +16,7 @@ export default function DefaultPostView() {
         <div className="md:pl-[15px]">
           <FollowUs gridCols="grid-cols-2" />
           <SidebarArticles title="Training" />
+          <SidebarNews title="Daily news" />
         </div>
       </SectionSidebar>
     </SectionWrapper>

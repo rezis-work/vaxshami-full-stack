@@ -1,5 +1,3 @@
-import Wrapper from "@/components/shared/wrapper";
-
 import SectionTitle from "./sectionTitle";
 import MainPostCard from "./mainPostCard";
 import SecondaryPostPard from "./secondaryPostCard";
