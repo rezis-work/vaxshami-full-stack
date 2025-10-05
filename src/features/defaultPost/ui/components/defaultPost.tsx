@@ -8,12 +8,13 @@ import DefaultPostBody from "./defaultPostBody";
 import DefaultPostFooter from "./defaultPostFooter";
 
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
+import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 
 export default function DefaultPost({ post }: { post: DefaultPostType }) {
   const { category, title, description, created_at, image, id } = post;
 
   return (
-    <div className="mb-15 px-[15px] lg:flex-shrink-0 lg:flex-grow-0 lg:basis-2/3 lg:max-w-2/3 lg:relative">
+    <MainSectionWrapper>
       <BreadCrumbs category={category} title={title} />
       <DefaultPostIntro
         title={title}
@@ -39,6 +40,6 @@ export default function DefaultPost({ post }: { post: DefaultPostType }) {
       <DefaultPostFooter category={category} />
 
       <NextPostLinks id={id} />
-    </div>
+    </MainSectionWrapper>
   );
 }

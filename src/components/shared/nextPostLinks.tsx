@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import HoverTitle from "./hoverTitle";
 import { blogCardsData } from "@/constants/blogCardsData";
+import { ChevronsLeft } from "lucide-react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function NextPostLinks({ id }: { id: number }) {
   const index = blogCardsData.findIndex((blog) => blog.id === id);
@@ -15,7 +17,7 @@ export default function NextPostLinks({ id }: { id: number }) {
           className="text-black flex flex-col hover:text-[#6d62ff]"
         >
           <b>
-            <i className="fa-solid fa-angle-left text-[16px] mr-1 ml-[-4px] "></i>
+            <FaChevronLeft className="inline text-[16px] mr-2 ml-[-4px]" />
             Newer
           </b>
           <HoverTitle
@@ -31,7 +33,8 @@ export default function NextPostLinks({ id }: { id: number }) {
         >
           <b>
             Older
-            <i className="fa-solid fa-angle-right text-[16px]  ml-1 "></i>
+            <FaChevronRight className="inline text-[16px]  ml-2" />
+            {/* <i className="fa-solid fa-angle-right text-[16px]  ml-1 "></i> */}
           </b>
           <HoverTitle
             text={older}
