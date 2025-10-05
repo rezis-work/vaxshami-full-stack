@@ -12,6 +12,7 @@ export default function BlogCard({
   variant,
   className,
   titleClassName,
+  imageAspect,
   tagBg,
 }: BlogCardProps) {
   const { created_at, title, image, category, description } = blog;
@@ -22,7 +23,9 @@ export default function BlogCard({
 
   return (
     <div className={cn("gap-5 lg:gap-[30px]  flex", s.wrapper, className)}>
-      <div className={`relative flex-shrink-0 ${s.imageWrapper}`}>
+      <div
+        className={`relative flex-shrink-0 ${s.imageWrapper} ${imageAspect}`}
+      >
         <Image src={image} alt={title} fill className={s.image} />
       </div>
 

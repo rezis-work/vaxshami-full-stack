@@ -1,4 +1,4 @@
-import { BlogCardProps, BlogCardVariantStyles } from "@/types/blogCardTypes";
+import { BlogCardProps, BlogCardVariantStyles } from "../types/blogCardTypes";
 
 export const blogCardStyles: Record<
   NonNullable<BlogCardProps["variant"]>,

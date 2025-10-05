@@ -11,7 +11,12 @@ export default function RecentPosts() {
       className="md:grid-cols-2 mb-[60px]"
     >
       {blogCardsData.slice(0, 6).map((blog) => (
-        <BlogCard key={blog.id} blog={blog} variant="vertical" />
+        <BlogCard
+          key={blog.id}
+          blog={blog}
+          variant="vertical"
+          imageAspect="aspect-[1.59]"
+        />
       ))}
     </BlogCardContainer>
   );
