@@ -1,13 +1,19 @@
 import { blogCardsData } from "@/constants/blogCardsData";
 import DefaultPost from "../components/defaultPost";
-import DefaultSidebar from "../../../../components/shared/sectionSidebar";
+
 import SectionWrapper from "@/components/shared/sectionWrapper";
+import SectionSidebar from "../../../../components/shared/sectionSidebar";
+import FollowUs from "@/features/followUs/ui/views/followUs-view";
 
 export default function DefaultPostView() {
   return (
     <SectionWrapper>
       <DefaultPost post={blogCardsData[5]} />
-      <DefaultSidebar />
+      <SectionSidebar>
+        <div className="md:pl-[15px]">
+          <FollowUs gridCols="grid-cols-2" />
+        </div>
+      </SectionSidebar>
     </SectionWrapper>
   );
 }
