@@ -5,9 +5,14 @@ import { blogCardsData } from "@/constants/blogCardsData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function NextPostLinks({ id }: { id: number }) {
-  const index = blogCardsData.findIndex((blog) => blog.id === id);
-  const newer = blogCardsData[index - 1].title;
-  const older = blogCardsData[index + 1].title;
+  const index = blogCardsData.findIndex(
+    (blog) => Number(blog.id) === Number(id)
+  );
+
+  const newer = blogCardsData[index - 1]?.title ?? blogCardsData[0].title;
+  const older =
+    blogCardsData[index + 1]?.title ??
+    blogCardsData[blogCardsData.length - 1].title;
 
   return (
     <div className="py-8 border-b md:pb-0 border-b-[#eeeeee] flex flex-wrap w-full">

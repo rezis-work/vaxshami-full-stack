@@ -9,8 +9,6 @@ import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import NextPostLinks from "@/components/shared/nextPostLinks";
-import MayLike from "@/features/shareBar/ui/components/mayLike";
-import BlogCardContainer from "@/components/shared/blogContainer";
 import DefaultMayLIke from "./defaultMayLIke";
 
 export default function DefaultPost({ post }: { post: DefaultPostType }) {

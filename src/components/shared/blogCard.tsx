@@ -20,7 +20,10 @@ export default function BlogCard({
 
   return (
     <div className={cn("gap-5 lg:gap-[30px]  flex", s.wrapper, className)}>
-      <Link href={link} className={`relative flex-shrink-0 ${s.imageWrapper}`}>
+      <Link
+        href={link || `/blog/${blogTitle}`}
+        className={`relative flex-shrink-0 ${s.imageWrapper}`}
+      >
         <Image src={image} alt={title} fill className={s.image} />
       </Link>
 
