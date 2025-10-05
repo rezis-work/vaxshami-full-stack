@@ -21,7 +21,7 @@ export default function HoverTitle({
         className={`inline bg-gradient-to-r from-current to-current bg-no-repeat
          [background-position:0%_100%] [background-size:0%_2px]
          hover:[background-size:100%_2px]
-         transition-[background-size] duration-500 ease-in-out ${titleClassname}`}
+         transition-[background-size] pb-[2px] duration-500 ease-in-out ${titleClassname}`}
       >
         {text}
       </h3>

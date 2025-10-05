@@ -4,12 +4,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { SubmenuItemProps } from "@/types/navbarTypes";
+import { SubmenuProps } from "@/types/navbarTypes";
 import Link from "next/link";
 
 import { FaAngleDown } from "react-icons/fa";
 
-const SubmenuItem = ({ title, children }: SubmenuItemProps) => {
+const SubmenuItem = ({ title, children }: SubmenuProps) => {
   return (
     <Accordion type="single" collapsible className="w-max mr-2">
       <AccordionItem value="item-1">
