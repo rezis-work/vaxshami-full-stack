@@ -6,7 +6,7 @@ export default function MainSectionWrapper({
   children: ReactNode;
 }) {
   return (
-    <div className="mb-15 px-[15px] lg:flex-shrink-0 lg:flex-grow-0 lg:basis-2/3 lg:max-w-2/3 lg:relative">
+    <div className="w-full  px-[15px] sm:px-[0] md:px-[15px] 2xl:px-0  lg:col-span-2">
       {children}
     </div>
   );

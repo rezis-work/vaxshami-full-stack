@@ -6,14 +6,17 @@ import SidebarNews from "@/components/shared/sidebarNews";
 
 import { DefaultPostType } from "@/types/postTypes";
 import DefaultPostArticle from "../components/defaultPostArticle";
+import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 
 export default function DefaultPost({ blog }: { blog: DefaultPostType }) {
   return (
     <SectionWrapper>
-      <DefaultPostArticle post={blog} />
+      <MainSectionWrapper>
+        <DefaultPostArticle post={blog} />
+      </MainSectionWrapper>
       <SectionSidebar>
-        <div className="md:pl-[15px]">
-          <FollowUs gridCols="grid-cols-2" />
+        <div className="xl:pl-[15px]">
+          <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
           <SidebarNews title="Daily news" />
           <SidebarArticles title="Training" />
         </div>

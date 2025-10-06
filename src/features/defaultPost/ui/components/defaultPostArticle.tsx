@@ -5,9 +5,7 @@ import { DefaultPostType } from "@/types/postTypes";
 import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
 import DefaultPostFooter from "./defaultPostFooter";
-
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
-import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
 
@@ -19,7 +17,7 @@ export default function DefaultPostArticle({
   const { category, title, description, created_at, image, id } = post;
 
   return (
-    <MainSectionWrapper>
+    <div className="sm:px-[15px] md:px-0">
       <BreadCrumbs category={category} title={title} />
       <DefaultPostIntro
         title={title}
@@ -46,6 +44,6 @@ export default function DefaultPostArticle({
 
       <NextPostLinks id={id} />
       <DefaultMayLIke />
-    </MainSectionWrapper>
+    </div>
   );
 }
