@@ -15,7 +15,7 @@ export default function BlogView() {
 
         <SectionSidebar>
           <div className="md:pl-[15px] 2xl:pl-[15px]">
-            <FollowUs gridCols="grid-cols-2" />
+            <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
             <SidebarNews title="Daily news" />
             <SidebarArticles title="Training" />
           </div>
