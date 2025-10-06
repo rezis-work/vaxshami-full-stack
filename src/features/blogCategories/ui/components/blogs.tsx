@@ -7,7 +7,12 @@ export default function Blogs() {
     <div className="mb-15  lg:flex-shrink-0 lg:flex-grow-0 lg:basis-2/3 lg:max-w-2/3 lg:relative">
       <BlogCardContainer className="mt-0 sm:grid-cols-2 lg:grid-cols-1">
         {blogCardsData.slice(0, 7).map((blog) => (
-          <BlogCard key={blog.id} variant="blog" blog={blog} />
+          <BlogCard
+            key={blog.id}
+            variant="blog"
+            blog={blog}
+            hoverTextColor="hover:text-[#6d62ff]"
+          />
         ))}
       </BlogCardContainer>
     </div>

@@ -1,6 +1,7 @@
 import { SecondaryCardProps } from "@/types/secondaryCardTypes";
 import Image from "next/image";
 import Link from "next/link";
+import HoverTitle from "./hoverTitle";
 
 const SecondaryPostPard = ({
   image,
@@ -25,9 +26,9 @@ const SecondaryPostPard = ({
       >
         <Link
           href="#"
-          className={`inline max-h-[65px] overflow-y-auto leading-3.5 font-bold underlineHover break-all xs:break-normal ${titleClassname}`}
+          className={` max-h-[65px] overflow-y-auto  font-bold  break-all xs:break-normal ${titleClassname}`}
         >
-          {title}
+          <HoverTitle text={title} classname="hover:text-[#6d62ff]" />
         </Link>
 
         <span className="block mt-[6px] text-[13px]">{date}</span>
