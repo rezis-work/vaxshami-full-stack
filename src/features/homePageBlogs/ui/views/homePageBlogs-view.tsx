@@ -14,7 +14,7 @@ export default function HomePageBlogs() {
       </MainSectionWrapper>
       <SectionSidebar>
         <div className="xl:pl-[15px]">
-          <FollowUs gridCols="grid-cols-2" />
+          <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
           <SidebarNews title="Daily news" />
           <SidebarArticles title="Training" />
         </div>
