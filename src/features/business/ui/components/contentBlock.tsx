@@ -5,16 +5,16 @@ import SectionTitle from "@/components/shared/sectionTitle";
 
 const ContentBlock = ({ title, items }: HighlightedProps) => {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <SectionTitle title={title} />
 
       <MainPostCard
         {...items[0]}
         ratio="aspect-[3/2]"
-        titleClassname="text-xl "
+        titleClassname="text-xl"
       />
 
-      <ul className="flex flex-col gap-5 rounded-sm py-4">
+      <ul className="grid grid-cols-1 gap-5 rounded-sm py-4">
         {items.slice(1).map((item) => (
           <SecondaryPostPard
             key={item.id}

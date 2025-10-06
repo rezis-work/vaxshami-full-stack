@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AdvertComponent from "./advertComponent";
 
 const AdvertisementBanner = ({
   image,
@@ -9,17 +10,26 @@ const AdvertisementBanner = ({
 }) => {
   return (
     <div className={`${position} top-0 w-max mx-auto`}>
-      <h4 className="w-min text-[10px] tracking-widest mb-1 mx-auto uppercase">
-        sponsored
-      </h4>
+      <p className="text-center text-sm mb-2 tracking-widest uppercase">
+        Sponsored
+      </p>
 
-      <Image
-        src={image || "/ad_placeholder.png"}
-        width={290}
-        height={500}
-        alt="ad image"
-        className="w-[300px] h-[500px]"
-      />
+      {image ? (
+        <Image
+          src={image}
+          width={290}
+          height={500}
+          alt="ad image"
+          className="w-[300px] h-[500px]"
+        />
+      ) : (
+        <AdvertComponent
+          classname=""
+          image="/linedev.png"
+          link="https://www.linkedin.com/company/linedevltd/posts/?feedView=all"
+          text="We are software development company. we build amazing human made websites"
+        />
+      )}
     </div>
   );
 };

@@ -5,7 +5,11 @@ import { galleryItems } from "@/constants/galleryData";
 const MayLike = () => {
   return (
     <div className="mt-10">
-      <SectionTitle title="You may like these posts" />
+      <SectionTitle
+        title="You may like these posts"
+        styles="text-xl xs:text-2xl"
+        lineStyle="hidden xs:block"
+      />
 
       <ul className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         {galleryItems.slice(0, 3).map((item) => (

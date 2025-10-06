@@ -11,8 +11,8 @@ export default function page() {
       <ShareBar />
       <DontMiss
         className="bg-[#FFE1DF] !text-black"
-        categoryBg="bg-[#FFFFFF]"
         hoverTextColor="hover:text-[#6d62ff]"
+        categoryBg="#FFFFFF"
       />
     </main>
   );

@@ -1,3 +1,5 @@
+import TopCategories from "@/components/shared/topCategories";
+import { topCategories } from "@/constants/topCategoriesData";
 import BreakingNews from "@/features/breakingNews/ui/views/breakingNews-view";
 import Business from "@/features/business/ui/views/business-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";

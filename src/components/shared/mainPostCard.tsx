@@ -7,7 +7,7 @@ const MainPostCard = ({
   image,
   date,
   category,
-  height = "h-auto",
+  height = "",
   ratio,
   titleClassname,
 }: MainCardProps) => {
@@ -19,11 +19,11 @@ const MainPostCard = ({
           width={400}
           height={200}
           alt="post image"
-          className={`w-full object-cover ${ratio} ${height}`}
+          className={`w-full object-cover ${ratio} ${""}`}
         />
       </Link>
 
-      <div className="absolute bottom-0 w-full max-h-[94.5%]  p-6 overflow-auto text-white bg-gradient-to-t from-black to-transparent">
+      {/* <div className="absolute bottom-0 w-full max-h-[94.5%]  p-6 overflow-auto text-white bg-gradient-to-t from-black to-transparent">
         <div className="mb-4 flex items-center gap-4">
           <Link
             href="#"
@@ -41,7 +41,7 @@ const MainPostCard = ({
         >
           {title}
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

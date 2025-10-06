@@ -9,7 +9,7 @@ import {
 
 const Article = () => {
   return (
-    <article>
+    <article className="w-full">
       <p>{paragraph2}</p>
       <p>{paragraph1}</p>
       <Quote>{paragraph2}</Quote>
