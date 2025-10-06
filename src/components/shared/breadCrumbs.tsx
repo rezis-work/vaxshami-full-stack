@@ -9,7 +9,7 @@ export default function BreadCrumbs({
   title: string;
 }) {
   return (
-    <div className="flex mb-4  text-[14px] font-[500] overflow-ellipsis">
+    <div className="flex mb-4  text-[14px] font-[500] overflow-hidden whitespace-nowrap">
       <Link href="/" className="mr-2">
         Home
       </Link>
@@ -17,7 +17,7 @@ export default function BreadCrumbs({
         <span className="mr-1">/</span> {category}
       </Link>
       <p className="mr-2 text-[#888888]">
-        <span className="mr-1">/</span> {title}
+        <span className="mr-1 ">/</span> {title}
       </p>
     </div>
   );
