@@ -6,21 +6,22 @@ import FollowUs from "@/features/followUs/ui/views/followUs-view";
 import BlogSectionWrapper from "@/features/homePageBlogs/ui/components/blogsSectionWrapper";
 import React from "react";
 import Blogs from "../components/blogs";
+import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
+import SectionWrapper from "@/components/shared/sectionWrapper";
 
 export default function BlogView() {
   return (
-    <Wrapper>
-      <BlogSectionWrapper>
+    <SectionWrapper>
+      <MainSectionWrapper>
         <Blogs />
-
-        <SectionSidebar>
-          <div className="md:pl-[15px] 2xl:pl-[15px]">
-            <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
-            <SidebarNews title="Daily news" />
-            <SidebarArticles title="Training" />
-          </div>
-        </SectionSidebar>
-      </BlogSectionWrapper>
-    </Wrapper>
+      </MainSectionWrapper>
+      <SectionSidebar>
+        <div className=" xl:pl-[15px]">
+          <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
+          <SidebarNews title="Daily news" />
+          <SidebarArticles title="Training" />
+        </div>
+      </SectionSidebar>
+    </SectionWrapper>
   );
 }
