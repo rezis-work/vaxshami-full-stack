@@ -23,7 +23,7 @@ export default function BlogCardContainer({
       )}
       <div
         className={cn(
-          "mb-[30px]  grid grid-cols-1  2xl:w-[824px] xl:w-[730px] lg:w-[610px] md:w-[690px] sm:w-[510px] max-sm:max-w-[530px] max-sm:w-full [&>*]:h-auto gap-x-[30px] gap-y-[30px]",
+          "mb-[30px] mx-auto  grid grid-cols-1  2xl:w-[824px] xl:w-[730px] lg:w-[610px] md:w-[690px] sm:w-[510px] max-sm:max-w-[530px] max-sm:w-full [&>*]:h-auto gap-x-[30px] gap-y-[30px]",
           className
         )}
       >
