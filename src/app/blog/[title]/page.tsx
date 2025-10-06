@@ -1,5 +1,5 @@
 import { blogCardsData } from "@/constants/blogCardsData";
-import DefaultPostView from "@/features/defaultPost/ui/views/defaultPost-view";
+import DefaultPost from "@/features/defaultPost/ui/views/defaultPost-view";
 
 type ParamsProps = {
   params: {
@@ -13,5 +13,5 @@ export default async function BlogPage({ params }: ParamsProps) {
     (blog) => blog.title === title.replaceAll("-", " ")
   )!;
 
-  return <DefaultPostView blog={blog} />;
+  return <DefaultPost blog={blog} />;
 }

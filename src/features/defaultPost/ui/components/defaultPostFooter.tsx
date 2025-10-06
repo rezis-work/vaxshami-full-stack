@@ -21,7 +21,7 @@ export default function DefaultPostFooter({ category }: { category: string }) {
           </span>
         </div>
       </div>
-      <div className="px-[15px] h-[64px]! w-full border border-[#eeeeee] bg-white ">
+      <div className="px-[15px] h-[64px] w-full border border-[#eeeeee] bg-white ">
         <ShareLinks flexDirection="flex-row" theme="dark" />
       </div>
     </>

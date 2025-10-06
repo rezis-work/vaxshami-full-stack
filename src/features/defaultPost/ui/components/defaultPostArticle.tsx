@@ -11,7 +11,11 @@ import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
 
-export default function DefaultPost({ post }: { post: DefaultPostType }) {
+export default function DefaultPostArticle({
+  post,
+}: {
+  post: DefaultPostType;
+}) {
   const { category, title, description, created_at, image, id } = post;
 
   return (
