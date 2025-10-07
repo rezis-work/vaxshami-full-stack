@@ -1,5 +1,3 @@
-import BlogCard from "@/components/shared/blogCard";
-import { blogCardsData } from "@/constants/blogCardsData";
 import BreakingNews from "@/features/breakingNews/ui/views/breakingNews-view";
 import Business from "@/features/business/ui/views/business-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
