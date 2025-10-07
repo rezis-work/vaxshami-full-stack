@@ -4,6 +4,6 @@ export type MainCardProps = {
   date: string;
   category: string;
   height?: string;
-  ratio: string;
+  ratio?: string;
   titleClassname: string;
 };

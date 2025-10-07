@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const LinkCards = ({ gridCols }: { gridCols: string }) => {
   return (
-    <ul className={`grid gap-4 ${gridCols}`}>
+    <ul className={`grid gap-[18px] mt-4 ${gridCols}`}>
       {socialMediaData.map((link) => (
         <li
           key={link.id}
@@ -12,7 +12,7 @@ const LinkCards = ({ gridCols }: { gridCols: string }) => {
           <Link href={link.link} className="w-full flex items-center gap-2 p-2">
             <div
               style={{ background: link.color }}
-              className={`w-max p-[6px] rounded-full ${
+              className={`w-max p-[10px] rounded-full ${
                 link.id === "instagram" && "instagramBg"
               }`}
             >

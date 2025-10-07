@@ -9,6 +9,7 @@ export default function BlogCard({
   blog,
   variant,
   className,
+  imageAspect,
   tagBg,
   hoverTextColor,
 }: BlogCardProps) {
@@ -20,7 +21,10 @@ export default function BlogCard({
 
   return (
     <div className={cn("gap-5 lg:gap-[30px]  flex", s.wrapper, className)}>
-      <Link href={link} className={`relative flex-shrink-0 ${s.imageWrapper}`}>
+      <Link
+        href={link || `/blog/${encodeURIComponent(blogTitle)}`}
+        className={`relative flex-shrink-0 ${s.imageWrapper} ${imageAspect}`}
+      >
         <Image src={image} alt={title} fill className={s.image} />
       </Link>
 
@@ -28,7 +32,7 @@ export default function BlogCard({
         <div className="flex items-center gap-4 mb-3 ">
           <Link
             href="#"
-            className={`${s.categoryBg}`}
+            className={`${s.categoryBg} ${tagBg}!`}
             style={{ background: tagBg }}
           >
             {category.toUpperCase()}

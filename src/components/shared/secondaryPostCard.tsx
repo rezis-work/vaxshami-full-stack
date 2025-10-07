@@ -39,7 +39,7 @@ const SecondaryPostPard = ({
           width={140}
           height={90}
           alt="post image"
-          className={`object-cover ${width} rounded-sm`}
+          className={`object-cover ${width} h-[80px] rounded-sm`}
         />
       </Link>
     </li>

@@ -7,11 +7,11 @@ export const blogCardStyles: Record<
   reverse: {
     wrapper: "flex-col md:flex-row-reverse rounded-[4px]",
     imageWrapper: "md:w-1/2 aspect-[1.43]",
-    image: "object-cover rounded-[4px]",
-    textWrapper: "px-[35px] flex flex-col justify-center w-full lg:flex-1",
+    image: "object-cover rounded-t-[4px] md:rounded-r-[4px] md:rounded-t-none",
+    textWrapper: "px-[35px] py-4 flex flex-col justify-center w-full lg:flex-1",
     categoryBg:
       "bg-[#ffe1df] text-[#e34e36] text-[11px] font-bold rounded-[20px] px-[10px] py-[5px] flex items-center justify-center",
-    title: "text-[22px] font-bold tracking-tighter leading-[1.2] sm:mb-3",
+    title: "text-[20px] font-bold tracking-tighter leading-[1.2] sm:mb-3",
     description: "block my-3 xl:block text-[#888888] line-clamp-3",
   },
   horizontal: {
@@ -36,9 +36,9 @@ export const blogCardStyles: Record<
     description: "hidden  text-[#888888] line-clamp-3",
   },
   blog: {
-    wrapper: "flex-col lg:flex-row",
+    wrapper: "flex-col md:flex-row",
     imageWrapper:
-      "w-full aspect-[1.43] lg:w-[240px] lg:aspect-[1.43] xl:w-1/2 xl:aspect-[1.58]",
+      "w-full aspect-[1.43] md:w-[240px] md:aspect-[1.43] xl:w-1/2 xl:aspect-[1.58]",
     image: "object-cover rounded-[4px]",
     textWrapper: "flex flex-col justify-center w-full lg:flex-1",
     categoryBg:

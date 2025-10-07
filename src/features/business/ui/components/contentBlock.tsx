@@ -22,7 +22,7 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
             theme="light"
             flexReverse={true}
             width="!w-[120px]"
-            titleClassname="text-[15px] "
+            titleClassname="text-[15px] hover:text-[#6610f2]"
           />
         ))}
       </ul>

@@ -6,10 +6,10 @@ import AdvertComponent from "@/components/shared/advertComponent";
 const Business = () => {
   return (
     <section>
-      <Wrapper className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-start gap-8 my-16 px-0">
+      <Wrapper className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-start gap-8 2xl:gap-14 my-16 px-0">
         <ContentBlock title="Business News" items={businessNews} />
 
-        <div className="w-full max-w-[300px] mx-auto flex-shrink-0 py-4">
+        <div className="w-full max-w-[300px] mx-auto ">
           <AdvertComponent
             classname=""
             image="/linedev.png"

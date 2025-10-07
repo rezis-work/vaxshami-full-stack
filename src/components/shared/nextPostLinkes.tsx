@@ -10,8 +10,8 @@ export default function NextPostLinks({ id }: { id: number }) {
   const older = blogCardsData[index + 1].title;
 
   return (
-    <div className="py-8 border-b border-b-[#eeeeee] flex flex-wrap w-full">
-      <div className="mb-8 pb-8 md:pb-0 border-b border-b-[#eeeeee] md:border-none text-left w-full md:w-1/2 shrink-0">
+    <div className="py-8 border-b border-b-[#eeeeee] grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+      <div className="wmb-8 pb-8 md:pb-0 border-b border-b-[#eeeeee] md:border-none text-left w-full shrink-0">
         <Link
           href="/"
           className="text-black flex flex-col hover:text-[#6d62ff]"
@@ -28,7 +28,7 @@ export default function NextPostLinks({ id }: { id: number }) {
         </Link>
       </div>
 
-      <div className="text-right w-full shrink-0 md:w-1/2">
+      <div className="text-right w-full shrink-0 ">
         <Link
           href="/"
           className="text-black flex flex-col items-end hover:text-[#6d62ff]"
