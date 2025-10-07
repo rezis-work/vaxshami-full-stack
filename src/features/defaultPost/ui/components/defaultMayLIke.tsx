@@ -10,7 +10,12 @@ export default function DefaultMayLIke() {
       className="md:grid-cols-3 mb-15"
     >
       {blogCardsData.slice(0, 3).map((blog) => (
-        <BlogCard key={blog.id} variant="vertical" blog={blog} />
+        <BlogCard
+          key={blog.id}
+          variant="vertical"
+          blog={blog}
+          hoverTextColor="hover:text-[#6d62ff]"
+        />
       ))}
     </BlogCardContainer>
   );

@@ -9,7 +9,6 @@ import HeroSection from "@/features/heroSection/ui/views/heroSection-view";
 export default function Home() {
   return (
     <main>
-      <BlogCard blog={blogCardsData[5]} variant="blog" />
       <BreakingNews />
       <HeroSection />
       <Gallery />

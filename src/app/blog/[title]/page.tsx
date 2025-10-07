@@ -10,6 +10,7 @@ type ParamsProps = {
 
 export default async function BlogPage({ params }: ParamsProps) {
   const { title } = await params;
+
   const blog = blogCardsData.find(
     (blog) => blog.title === title.replaceAll("-", " ")
   )!;
@@ -17,7 +18,7 @@ export default async function BlogPage({ params }: ParamsProps) {
   return (
     <main>
       <DefaultPost blog={blog} />
-      <DontMiss className="bg-[#ffe1df]" />
+      <DontMiss className="bg-[#ffe1df] text-black" hoverTextColor="hover:text-[#6d62ff]" />
     </main>
   );
 }
