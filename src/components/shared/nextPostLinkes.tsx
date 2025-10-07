@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import HoverTitle from "./hoverTitle";
-import { blogCardsData } from "@/constants/blogCardsDats";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { blogCardsData } from "@/constants/blogCardsData";
 
 export default function NextPostLinks({ id }: { id: number }) {
   const index = blogCardsData.findIndex((blog) => blog.id === id);

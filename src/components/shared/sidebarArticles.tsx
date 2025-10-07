@@ -24,7 +24,7 @@ const SidebarArticles = ({ title }: { title: string }) => {
                 theme="light"
                 flexReverse={true}
                 width="!w-[120px]"
-                titleClassname="text-[15px] "
+                titleClassname="text-[15px] hover:text-[#6d62ff] "
               />
             ))}
           </ul>
