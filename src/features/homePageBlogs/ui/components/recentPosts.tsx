@@ -16,6 +16,7 @@ export default function RecentPosts() {
           blog={blog}
           variant="vertical"
           imageAspect="aspect-[1.59]"
+          hoverTextColor="hover:text-[#6d62ff]"
         />
       ))}
     </BlogCardContainer>
