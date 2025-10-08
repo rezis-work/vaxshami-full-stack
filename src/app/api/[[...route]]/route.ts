@@ -1,12 +1,13 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import test from "./test";
+import posts from "./posts";
+import { AdditionalContext } from "@/lib/session-midlweare";
 
-const app = new Hono().basePath("/api");
+const app = new Hono<AdditionalContext>().basePath("/api");
 
-const routes = app.route("/test", test);
-
+const routes = app.route("/", posts);
+export type AppType = typeof routes;
 export const GET = handle(routes);
 export const POST = handle(routes);
 
-export type AppType = typeof routes;
+export default app;

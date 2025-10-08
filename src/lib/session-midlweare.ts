@@ -7,7 +7,7 @@ import {
 } from "node-appwrite";
 import { createMiddleware } from "hono/factory";
 
-type AdditionalContext = {
+export type AdditionalContext = {
   Variables: {
     databases: DatabasesType;
   };
