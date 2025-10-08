@@ -10,11 +10,20 @@ export default function SportNews() {
         categoryTitle="Sport News"
         className="bg-[#ffe1df] mb-[20px] "
       >
-        <BlogCard blog={blogCardsData[0]} variant="horizontal" />
+        <BlogCard
+          blog={blogCardsData[0]}
+          variant="horizontal"
+          hoverTextColor="hover:text-[#6d62ff]"
+        />
       </BlogCardContainer>
       <BlogCardContainer className="md:grid-cols-3 mb-[60px]">
         {blogCardsData.slice(1, 4).map((blog) => (
-          <BlogCard key={blog.id} blog={blog} variant="vertical" />
+          <BlogCard
+            key={blog.id}
+            blog={blog}
+            variant="vertical"
+            hoverTextColor="hover:text-[#6d62ff]"
+          />
         ))}
       </BlogCardContainer>
     </>

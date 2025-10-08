@@ -12,6 +12,7 @@ const SecondaryPosts = () => {
             theme="dark"
             flexReverse={false}
             styles="bg-transparent text-sm xs:text-[16px]"
+            titleClassname="hover:text-white"
           />
         ))}
       </ul>

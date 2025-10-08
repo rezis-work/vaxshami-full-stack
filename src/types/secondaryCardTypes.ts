@@ -5,6 +5,7 @@ export type SecondaryCardProps = {
   theme: "light" | "dark";
   flexReverse: boolean;
   width?: string;
+  height?: string;
   styles?: string;
   titleClassname?: string;
 };

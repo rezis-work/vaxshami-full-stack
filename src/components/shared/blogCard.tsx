@@ -30,7 +30,7 @@ export default function BlogCard({
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <Link href="#" className={`${s.categoryBg} !${tagBg}`}>
+          <Link href="#" className={`${s.categoryBg} ${tagBg}`}>
             {category.toUpperCase()}
           </Link>
           <span className="text-sm">{date}</span>
