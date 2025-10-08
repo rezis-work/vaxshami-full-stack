@@ -1,32 +1,22 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
+import { useGetRecentPosts } from "../../api/useGetRecentPosts";
 
-import { blogCardsData } from "@/constants/blogCardsData";
-import { useGetPosts } from "@/hooks/useGetPosts";
 import React from "react";
 
 export default function RecentPosts() {
-  const {
-    data: posts,
-    isLoading,
-    isError,
-  } = useGetPosts({
-    limit: 5,
-  });
+  const { data: posts, isLoading } = useGetRecentPosts();
 
-  if (isLoading) return <p>Loading posts...</p>;
-  if (isError) return <p>Failed to load posts 😕</p>;
-
-  console.log("DATAA", posts);
+  if (isLoading) return null;
   return (
     <BlogCardContainer
       categoryTitle="Recent Posts"
       className="md:grid-cols-2 mb-[60px]"
     >
-      {blogCardsData.slice(0, 6).map((blog) => (
+      {posts?.map((blog) => (
         <BlogCard
-          key={blog.id}
+          key={blog.$id}
           blog={blog}
           variant="vertical"
           imageAspect="aspect-[1.59]"

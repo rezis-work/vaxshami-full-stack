@@ -6,10 +6,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string) {
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
+  if (!date) return "";
+  const parsedDate = new Date(date);
+
+  if (isNaN(parsedDate.getTime())) {
+    throw new Error("Invalid date format");
+  }
+
+  const formattedDate = parsedDate.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
-  }).format(new Date(date));
+  });
   return formattedDate;
 }

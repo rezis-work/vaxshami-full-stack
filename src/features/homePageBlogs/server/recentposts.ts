@@ -3,15 +3,15 @@ import { Hono } from "hono";
 import { appwriteMiddleware } from "@/lib/session-midlweare";
 import { DATABASE_ID, POSTSTABLE_ID } from "@/lib/config";
 
-const app = new Hono().get("/travelnews", appwriteMiddleware, async (c) => {
+const app = new Hono().get("/recentposts", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
   const limitParam = c.req.query("limit");
-  const limit = limitParam ? Math.min(Number(limitParam), 100) : 3;
+  const limit = limitParam ? Math.min(Number(limitParam), 100) : 6;
 
   const queries: string[] = [
     Query.limit(limit),
-    Query.equal("section", "dontmiss"),
+    Query.equal("section", "sidebar"),
   ];
 
   console.log(DATABASE_ID, POSTSTABLE_ID);
