@@ -23,6 +23,8 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
   const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID;
 
+  console.log(DATABASE_ID, COLLECTION_ID);
+
   if (!DATABASE_ID || !COLLECTION_ID) {
     return c.json(
       {
@@ -32,7 +34,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
       500
     );
   }
-
+  console.log(queries);
   try {
     const posts = await databases.listDocuments(
       DATABASE_ID,
@@ -42,7 +44,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
     return c.json(posts.documents);
   } catch (error) {
     console.error("Failed to fetch posts:", error);
-    return c.json({ error: "Failed to fetch posts." }, 500);
+    return c.json({ error: "Failed to fetch posts from database." }, 500);
   }
 });
 

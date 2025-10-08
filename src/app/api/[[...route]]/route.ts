@@ -10,4 +10,4 @@ export type AppType = typeof routes;
 export const GET = handle(routes);
 export const POST = handle(routes);
 
-export default app;
+//export default app;

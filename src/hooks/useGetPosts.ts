@@ -30,7 +30,7 @@ export const useGetPosts = (filters?: PostFilters) => {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch posts");
+        throw new Error("Failed to fetch posts from api");
       }
 
       const data = await response.json();
