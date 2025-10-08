@@ -1,26 +1,20 @@
 import { Query } from "node-appwrite";
 import { Hono } from "hono";
 import { appwriteMiddleware } from "@/lib/session-midlweare";
+import { DATABASE_ID, POSTSTABLE_ID } from "@/lib/config";
 
-const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
+const app = new Hono().get("/travelnews", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
   const limitParam = c.req.query("limit");
-  const limit = limitParam ? Math.min(Number(limitParam), 100) : 10;
+  const limit = limitParam ? Math.min(Number(limitParam), 100) : 3;
 
-  // Build queries array
-  const queries: string[] = [Query.limit(limit)];
+  const queries: string[] = [
+    Query.limit(limit),
+    Query.equal("section", "dontmiss"),
+  ];
 
-  // Loop over all query params (except 'limit')
-  const params = c.req.query();
-  for (const [key, value] of Object.entries(params)) {
-    if (key === "limit" || value == null || value === "") continue;
-
-    queries.push(Query.equal(key, value));
-  }
-
-  const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-  const POSTSTABLE_ID = process.env.NEXT_PUBLIC_APPWRITE_POSTSTABLE_ID;
+  console.log(DATABASE_ID, POSTSTABLE_ID);
 
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(
