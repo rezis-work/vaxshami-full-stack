@@ -1,14 +1,17 @@
+"use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-import { blogCardsData } from "@/constants/blogCardsData";
+import { useGetPosts } from "@/hooks/useGetPosts";
 
 export default function Blogs() {
+  const { data: posts } = useGetPosts({ limit: 9 });
+  console.log(posts);
   return (
     <div className="mb-15 ">
       <BlogCardContainer className="mt-0 sm:grid-cols-2 lg:grid-cols-1">
-        {blogCardsData.slice(0, 7).map((blog) => (
+        {posts?.map((blog) => (
           <BlogCard
-            key={blog.id}
+            key={blog.$id}
             variant="blog"
             blog={blog}
             hoverTextColor="hover:text-[#6d62ff]"

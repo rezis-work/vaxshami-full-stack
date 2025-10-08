@@ -1,20 +1,3 @@
-// export type BlogCardProps = {
-//   blog: {
-//     id: number;
-//     title: string;
-//     description?: string;
-//     image: string;
-//     category: string;
-//     created_at: string;
-//     link: string;
-//   };
-//   hoverTextColor?: string;
-//   tagBg?: string;
-//   variant: "reverse" | "horizontal" | "vertical" | "blog";
-//   className?: string;
-//   titleClassName?: string;
-//   imageAspect?: string;
-// };
 export type BlogCardProps = {
   blog: DatabasePost;
   hoverTextColor?: string;
@@ -38,8 +21,8 @@ export type BlogCardVariantStyles = {
 export type DatabasePost = {
   $id: string;
   $sequence: number;
-  $createdAt: string; // ISO date string
-  $updatedAt: string; // ISO date string
+  $createdAt: string;
+  $updatedAt: string;
   $permissions: string[];
   $databaseId: string;
   $collectionId: string;
@@ -47,7 +30,7 @@ export type DatabasePost = {
   coverimage: string;
   summary: string;
   content: string;
-  createdDate: string; // ISO date string
+  createdDate: string;
   readtime: number;
   tags: string[];
   title: string;

@@ -2,6 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { PostFilters } from "@/types/postTypes";
 import { client } from "@/lib/rpc";
+import { DatabasePost } from "@/types/blogCardTypes";
 
 export const useGetPosts = (filters?: PostFilters) => {
   const { category, status, author, tag, limit } = filters || {};
@@ -33,7 +34,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         throw new Error("Failed to fetch posts from api");
       }
 
-      const data = await response.json();
+      const data = (await response.json()) as DatabasePost[];
       return data;
     },
   });
