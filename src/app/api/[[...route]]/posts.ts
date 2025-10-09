@@ -7,14 +7,12 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
   const limitParam = c.req.query("limit");
-  const limit = limitParam ? Math.min(Number(limitParam), 100) : 10;
+  const limit = limitParam ? Math.min(Number(limitParam), 100) : undefined;
 
   const queries: string[] = [];
-  queries.push(Query.limit(limit));
+  if (limit) queries.push(Query.limit(limit));
   const sortBy = c.req.query("sortBy");
-  const sortOrder = c.req.query("sortOrder"); // "asc" or "desc"
-
-  // Loop over all query params (except 'limit', 'sortBy', 'sortOrder')
+  const sortOrder = c.req.query("sortOrder");
   const params = c.req.query();
   for (const [key, value] of Object.entries(params)) {
     if (

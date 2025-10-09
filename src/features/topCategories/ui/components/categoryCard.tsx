@@ -14,15 +14,15 @@ export default function CategoryCard({
     <Link
       href={`/blog/${categoryName}`}
       className="flex items-center justify-between 
-             bg-gray-100 px-4 py-4 
-             rounded-lg font-medium text-black 
+             bg-[#f1f4f9] p-[15px]
+             rounded-sm font-[700] text-[16px] text-black 
              "
     >
       <span>{categoryName}</span>
       <span
-        className="bg-gray-200 text-pink-500 
-                       rounded-md px-2 py-0.5 
-                       text-sm font-semibold"
+        className="bg-[#00000014] size-[30px] text-[#ff607d] 
+                       rounded-sm text-center 
+                       text-[16px] font-[700] leading-[30px]"
       >
         {count}
       </span>

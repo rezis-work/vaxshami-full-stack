@@ -1,16 +1,23 @@
+"use client";
 import React from "react";
 import CategoryCard from "./categoryCard";
-export const categories = [
-  { name: "Business", count: 5, link: "#" },
-  { name: "Lifestyle", count: 5, link: "#" },
-  { name: "Travel", count: 5, link: "#" },
-];
+import { useGetPosts } from "@/hooks/useGetPosts";
+import { getMostCategories } from "@/lib/utils";
+
 export default function CategoryContainer() {
+  const { data: posts } = useGetPosts();
+
+  if (!posts) return <p>Loading...</p>;
+  const categories = getMostCategories(posts, "category");
+
   return (
-    <div className="w-full  space-y-3">
+    <ul className="w-full  space-y-[10px]">
       {categories.map((c) => (
-        <CategoryCard key={c.name} categoryName={c.name} count={c.count} />
+        <li key={c.name}>
+          {" "}
+          <CategoryCard categoryName={c.name} count={c.count} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

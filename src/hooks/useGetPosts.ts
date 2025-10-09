@@ -7,7 +7,7 @@ import { DatabasePost } from "@/types/blogCardTypes";
 export const useGetPosts = (filters?: PostFilters) => {
   const { category, status, author, tag, limit, sortBy, sortOrder } =
     filters || {};
-  const resolvedLimit = limit ?? 10;
+  const resolvedLimit = limit ?? 1000;
 
   const query = useQuery({
     queryKey: [
@@ -23,16 +23,18 @@ export const useGetPosts = (filters?: PostFilters) => {
       },
     ],
     queryFn: async () => {
+      const query = {
+        ...(category ? { category } : {}),
+        ...(status ? { status } : {}),
+        ...(author ? { author } : {}),
+        ...(tag ? { tag } : {}),
+        ...(sortBy ? { sortBy } : {}),
+        ...(sortOrder ? { sortOrder } : {}),
+        limit: limit ? String(resolvedLimit) : undefined,
+      };
+
       const response = await client.api.posts.$get({
-        query: {
-          ...(category ? { category } : {}),
-          ...(status ? { status } : {}),
-          ...(author ? { author } : {}),
-          ...(tag ? { tag } : {}),
-          ...(sortBy ? { sortBy } : {}),
-          ...(sortOrder ? { sortOrder } : {}),
-          limit: String(resolvedLimit),
-        },
+        query,
       });
 
       if (!response.ok) {

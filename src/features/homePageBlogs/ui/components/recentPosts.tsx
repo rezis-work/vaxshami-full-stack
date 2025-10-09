@@ -13,7 +13,7 @@ export default function RecentPosts() {
   });
 
   if (isLoading) return null;
-  console.log(posts);
+
   return (
     <BlogCardContainer
       categoryTitle="Recent Posts"
