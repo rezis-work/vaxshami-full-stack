@@ -4,10 +4,11 @@ import HoverTitle from "./hoverTitle";
 import { blogCardsData } from "@/constants/blogCardsData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-export default function NextPostLinks({ id }: { id: number }) {
-  const index = blogCardsData.findIndex(
-    (blog) => Number(blog.id) === Number(id)
-  );
+export default function NextPostLinks({ id }: { id: string | number }) {
+  // const index = blogCardsData.findIndex(
+  //   (blog) => Number(blog.id) === Number(id)
+  // );
+  const index = 4;
 
   const newer = blogCardsData[index - 1]?.title ?? blogCardsData[0].title;
   const older =

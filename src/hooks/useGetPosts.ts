@@ -5,7 +5,7 @@ import { client } from "@/lib/rpc";
 import { DatabasePost } from "@/types/blogCardTypes";
 
 export const useGetPosts = (filters?: PostFilters) => {
-  const { category, status, author, tag, limit, sortBy, sortOrder } =
+  const { category, status, author, tag, limit, sortBy, sortOrder, section } =
     filters || {};
   const resolvedLimit = limit ?? 10;
 
@@ -20,6 +20,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         limit: resolvedLimit,
         sortBy: sortBy ?? null,
         sortOrder: sortOrder ?? null,
+        section: section ?? null,
       },
     ],
     queryFn: async () => {
@@ -31,6 +32,7 @@ export const useGetPosts = (filters?: PostFilters) => {
           ...(tag ? { tag } : {}),
           ...(sortBy ? { sortBy } : {}),
           ...(sortOrder ? { sortOrder } : {}),
+          ...(section ? { section } : {}),
           limit: String(resolvedLimit),
         },
       });
@@ -39,8 +41,8 @@ export const useGetPosts = (filters?: PostFilters) => {
         throw new Error("Failed to fetch posts from api");
       }
 
-      const data = (await response.json()) as DatabasePost[];
-      return data;
+      const data = await response.json();
+      return data as DatabasePost[];
     },
   });
 

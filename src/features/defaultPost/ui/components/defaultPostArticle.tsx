@@ -1,20 +1,26 @@
+"use client";
 import React from "react";
 import BreadCrumbs from "@/components/shared/breadCrumbs";
 import Image from "next/image";
-import { DefaultPostType } from "@/types/postTypes";
+
 import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
 import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
+import { useGetPostByTitle } from "../../api/useGetDefaultArticle";
 
 export default function DefaultPostArticle({
-  post,
+  postTitle,
 }: {
-  post: DefaultPostType;
+  postTitle: string;
 }) {
-  const { category, title, summary, createdDate, coverimage, id } = post;
+  console.log("POSTTITLE: ", postTitle);
+  const { data: posts } = useGetPostByTitle(postTitle);
+  if (!posts) return <p>Loading...</p>;
+  console.log("DEFAULTPOST", posts);
+  const { summary, title, createdDate, coverimage, $id, category } = posts[0];
 
   return (
     <div className="sm:px-[15px] md:px-0">
@@ -42,7 +48,7 @@ export default function DefaultPostArticle({
 
       <DefaultPostFooter category={category} />
 
-      <NextPostLinks id={id} />
+      <NextPostLinks id={$id} />
       <DefaultMayLIke />
     </div>
   );
