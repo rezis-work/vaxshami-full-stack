@@ -5,6 +5,7 @@ import SidebarArticles from "@/components/shared/sidebarArticles";
 import HomeBlogsContainer from "../components/homeBlogsContainer";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import SectionWrapper from "@/components/shared/sectionWrapper";
+import TopCategories from "@/features/topCategories/ui/views/topCategories-view";
 
 export default function HomePageBlogs() {
   return (
@@ -16,6 +17,7 @@ export default function HomePageBlogs() {
         <div className="xl:pl-[15px]">
           <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
           <SidebarNews title="Daily news" />
+          <TopCategories />
           <SidebarArticles title="Training" />
         </div>
       </SectionSidebar>
