@@ -25,7 +25,7 @@ const app = new Hono().get("/sportnews", appwriteMiddleware, async (c) => {
       500
     );
   }
-  console.log(queries);
+
   try {
     const posts = await databases.listDocuments(
       DATABASE_ID,

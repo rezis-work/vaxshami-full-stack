@@ -1,6 +1,7 @@
 import { Query } from "node-appwrite";
 import { Hono } from "hono";
 import { appwriteMiddleware } from "@/lib/session-midlweare";
+import { DATABASE_ID, POSTSTABLE_ID } from "@/lib/config";
 
 const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
@@ -8,19 +9,32 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const limitParam = c.req.query("limit");
   const limit = limitParam ? Math.min(Number(limitParam), 100) : 10;
 
-  // Build queries array
-  const queries: string[] = [Query.limit(limit)];
+  const queries: string[] = [];
+  queries.push(Query.limit(limit));
+  const sortBy = c.req.query("sortBy");
+  const sortOrder = c.req.query("sortOrder"); // "asc" or "desc"
 
-  // Loop over all query params (except 'limit')
+  // Loop over all query params (except 'limit', 'sortBy', 'sortOrder')
   const params = c.req.query();
   for (const [key, value] of Object.entries(params)) {
-    if (key === "limit" || value == null || value === "") continue;
+    if (
+      ["limit", "sortBy", "sortOrder"].includes(key) ||
+      value == null ||
+      value === ""
+    )
+      continue;
 
     queries.push(Query.equal(key, value));
   }
 
-  const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-  const POSTSTABLE_ID = process.env.NEXT_PUBLIC_APPWRITE_POSTSTABLE_ID;
+  if (sortBy && sortOrder) {
+    if (sortOrder.toLowerCase() === "asc") {
+      queries.push(Query.orderAsc(sortBy));
+    } else {
+      queries.push(Query.orderDesc(sortBy));
+    }
+  }
+  console.log("Queries:", queries);
 
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(
@@ -31,7 +45,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
       500
     );
   }
-  console.log(queries);
+
   try {
     const posts = await databases.listDocuments(
       DATABASE_ID,

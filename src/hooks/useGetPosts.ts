@@ -5,7 +5,8 @@ import { client } from "@/lib/rpc";
 import { DatabasePost } from "@/types/blogCardTypes";
 
 export const useGetPosts = (filters?: PostFilters) => {
-  const { category, status, author, tag, limit } = filters || {};
+  const { category, status, author, tag, limit, sortBy, sortOrder } =
+    filters || {};
   const resolvedLimit = limit ?? 10;
 
   const query = useQuery({
@@ -17,6 +18,8 @@ export const useGetPosts = (filters?: PostFilters) => {
         author: author ?? null,
         tag: tag ?? null,
         limit: resolvedLimit,
+        sortBy: sortBy ?? null,
+        sortOrder: sortOrder ?? null,
       },
     ],
     queryFn: async () => {
@@ -26,6 +29,8 @@ export const useGetPosts = (filters?: PostFilters) => {
           ...(status ? { status } : {}),
           ...(author ? { author } : {}),
           ...(tag ? { tag } : {}),
+          ...(sortBy ? { sortBy } : {}),
+          ...(sortOrder ? { sortOrder } : {}),
           limit: String(resolvedLimit),
         },
       });

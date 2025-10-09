@@ -14,20 +14,20 @@ export default function DefaultPostArticle({
 }: {
   post: DefaultPostType;
 }) {
-  const { category, title, description, created_at, image, id } = post;
+  const { category, title, summary, createdDate, coverimage, id } = post;
 
   return (
     <div className="sm:px-[15px] md:px-0">
       <BreadCrumbs category={category} title={title} />
       <DefaultPostIntro
         title={title}
-        description={description}
-        created_at={created_at}
+        description={summary}
+        created_at={createdDate}
       />
 
       <div className="relative  aspect-[1.43] ] xl:aspect-[1.78]  xl:-ml-[180px] mb-[30px]  ">
         <Image
-          src={image}
+          src={coverimage}
           alt={title}
           fill
           className="object-cover rounded-sm  "
@@ -37,7 +37,7 @@ export default function DefaultPostArticle({
         <div className="hidden md:block sticky top-5 flex-shrink-0  w-[50px]  h-[327px] ">
           <ShareLinks flexDirection="flex-col" theme="light" />
         </div>
-        <DefaultPostBody image={image} />
+        <DefaultPostBody image={coverimage} />
       </div>
 
       <DefaultPostFooter category={category} />

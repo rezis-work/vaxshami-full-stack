@@ -14,8 +14,6 @@ const app = new Hono().get("/travelnews", appwriteMiddleware, async (c) => {
     Query.equal("section", "travelnews"),
   ];
 
-  console.log(DATABASE_ID, POSTSTABLE_ID);
-
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(
       {
@@ -25,7 +23,7 @@ const app = new Hono().get("/travelnews", appwriteMiddleware, async (c) => {
       500
     );
   }
-  console.log(queries);
+
   try {
     const posts = await databases.listDocuments(
       DATABASE_ID,

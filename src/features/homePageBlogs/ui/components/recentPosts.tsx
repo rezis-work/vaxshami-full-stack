@@ -1,14 +1,19 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-import { useGetRecentPosts } from "../../api/useGetRecentPosts";
 
 import React from "react";
+import { useGetPosts } from "@/hooks/useGetPosts";
 
 export default function RecentPosts() {
-  const { data: posts, isLoading } = useGetRecentPosts();
+  const { data: posts, isLoading } = useGetPosts({
+    sortBy: "$createdAt",
+    sortOrder: "desc",
+    limit: 6,
+  });
 
   if (isLoading) return null;
+  console.log(posts);
   return (
     <BlogCardContainer
       categoryTitle="Recent Posts"

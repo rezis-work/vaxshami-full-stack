@@ -1,4 +1,6 @@
-export type DefaultPostType = {
+import { DatabasePost } from "./blogCardTypes";
+
+export type DefaultPostType = DatabasePost & {
   id: number;
   title: string;
   category: string;
