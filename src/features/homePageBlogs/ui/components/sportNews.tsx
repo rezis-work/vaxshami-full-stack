@@ -11,7 +11,7 @@ export default function SportNews() {
   return (
     <>
       <BlogCardContainer
-        categoryTitle="Sport News"
+        categoryTitle="New Vacancies"
         className="bg-[#ffe1df] mb-[20px] "
       >
         {posts && (

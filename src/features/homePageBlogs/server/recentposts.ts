@@ -14,8 +14,6 @@ const app = new Hono().get("/recentposts", appwriteMiddleware, async (c) => {
     Query.equal("section", "sidebar"),
   ];
 
-  console.log(DATABASE_ID, POSTSTABLE_ID);
-
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(
       {
