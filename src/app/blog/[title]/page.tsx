@@ -1,4 +1,3 @@
-import { blogCardsData } from "@/constants/blogCardsData";
 import DefaultPost from "@/features/defaultPost/ui/views/defaultPost-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
 

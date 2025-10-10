@@ -7,12 +7,14 @@ type DefaultPostIntroType = {
   title: string;
   description: string;
   created_at: string;
+  readTime: number;
 };
 
 export default function DefaultPostIntro({
   title,
   description,
   created_at,
+  readTime,
 }: DefaultPostIntroType) {
   const formattedDate = formatDate(created_at);
   return (
@@ -35,7 +37,7 @@ export default function DefaultPostIntro({
         </div>
         <div className=" gap-2 text-[15px] hidden sm:flex items-center">
           <FaRegClock className="inline " />
-          <div className="">1 min read</div>
+          <div className="">{readTime} min</div>
         </div>
       </div>
     </>

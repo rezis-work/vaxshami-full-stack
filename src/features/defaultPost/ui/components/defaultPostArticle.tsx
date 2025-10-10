@@ -16,11 +16,11 @@ export default function DefaultPostArticle({
 }: {
   postTitle: string;
 }) {
-  console.log("POSTTITLE: ", postTitle);
   const { data: posts } = useGetPostByTitle(postTitle);
-  if (!posts) return <p>Loading...</p>;
-  console.log("DEFAULTPOST", posts);
-  const { summary, title, createdDate, coverimage, $id, category } = posts[0];
+  if (!posts) return null;
+
+  const { summary, title, createdDate, coverimage, $id, category, readtime } =
+    posts[0];
 
   return (
     <div className="sm:px-[15px] md:px-0">
@@ -29,6 +29,7 @@ export default function DefaultPostArticle({
         title={title}
         description={summary}
         created_at={createdDate}
+        readTime={readtime}
       />
 
       <div className="relative  aspect-[1.43] ] xl:aspect-[1.78]  xl:-ml-[180px] mb-[30px]  ">
