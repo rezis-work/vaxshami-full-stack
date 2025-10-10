@@ -4,20 +4,22 @@ import FollowUs from "@/features/followUs/ui/views/followUs-view";
 import SidebarArticles from "@/components/shared/sidebarArticles";
 import SidebarNews from "@/components/shared/sidebarNews";
 
-import { DefaultPostType } from "@/types/postTypes";
+//import { DefaultPostType } from "@/types/postTypes";
 import DefaultPostArticle from "../components/defaultPostArticle";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
+import TopCategories from "@/features/topCategories/ui/views/topCategories-view";
 
-export default function DefaultPost({ blog }: { blog: DefaultPostType }) {
+export default function DefaultPost({ postTitle }: { postTitle: string }) {
   return (
     <SectionWrapper>
       <MainSectionWrapper>
-        <DefaultPostArticle post={blog} />
+        <DefaultPostArticle postTitle={postTitle} />
       </MainSectionWrapper>
       <SectionSidebar>
         <div className="xl:pl-[15px]">
           <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
           <SidebarNews title="Daily news" />
+          <TopCategories />
           <SidebarArticles title="Training" />
         </div>
       </SectionSidebar>

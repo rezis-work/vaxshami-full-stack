@@ -3,36 +3,23 @@ import { Hono } from "hono";
 import { appwriteMiddleware } from "@/lib/session-midlweare";
 import { DATABASE_ID, POSTSTABLE_ID } from "@/lib/config";
 
-const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
+const app = new Hono().get("/defaultpost", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
+  const title = c.req.query("title");
   const limitParam = c.req.query("limit");
-  const limit = limitParam ? Math.min(Number(limitParam), 1000) : undefined;
+  const limit = limitParam ? Math.min(Number(limitParam), 100) : 1;
 
-  const queries: string[] = [];
-  if (limit) queries.push(Query.limit(limit));
-  const sortBy = c.req.query("sortBy");
-  const sortOrder = c.req.query("sortOrder");
-
-  const params = c.req.query();
-  for (const [key, value] of Object.entries(params)) {
-    if (
-      ["limit", "sortBy", "sortOrder"].includes(key) ||
-      value == null ||
-      value === ""
-    )
-      continue;
-
-    queries.push(Query.equal(key, value));
+  if (!title) {
+    return c.json(
+      {
+        error: "Missing article title.",
+      },
+      500
+    );
   }
 
-  if (sortBy && sortOrder) {
-    if (sortOrder.toLowerCase() === "asc") {
-      queries.push(Query.orderAsc(sortBy));
-    } else {
-      queries.push(Query.orderDesc(sortBy));
-    }
-  }
+  const queries: string[] = [Query.limit(limit), Query.equal("title", title)];
 
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(

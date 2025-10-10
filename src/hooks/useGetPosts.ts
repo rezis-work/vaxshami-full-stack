@@ -13,6 +13,7 @@ export const useGetPosts = (filters?: PostFilters) => {
     limit,
     sortBy,
     sortOrder,
+    section,
     queryKeyName,
   } = filters || {};
   const resolvedLimit = limit ?? 1000;
@@ -28,6 +29,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         limit: resolvedLimit,
         sortBy: sortBy ?? null,
         sortOrder: sortOrder ?? null,
+        section: section ?? null,
       },
     ],
     queryFn: async () => {
@@ -38,6 +40,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         ...(tag ? { tag } : {}),
         ...(sortBy ? { sortBy } : {}),
         ...(sortOrder ? { sortOrder } : {}),
+        ...(section ? { section } : {}),
         limit: limit ? String(resolvedLimit) : undefined,
       };
 
@@ -49,9 +52,12 @@ export const useGetPosts = (filters?: PostFilters) => {
         throw new Error("Failed to fetch posts from api");
       }
 
-      const data = (await response.json()) as DatabasePost[];
-      return data;
+      const data = await response.json();
+      return data as DatabasePost[];
     },
+    staleTime: queryKeyName === "posts" ? 0 : undefined,
+    gcTime: queryKeyName === "posts" ? 0 : undefined,
+    refetchOnMount: queryKeyName === "posts" ? "always" : false,
   });
 
   return query;
