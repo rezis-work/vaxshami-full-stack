@@ -1,20 +1,20 @@
-import { heroCards } from "@/constants/heroData";
+import { HeroCardsType } from "@/types/heroSectionTypes";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeroCards = () => {
+const HeroCards = ({ cards }: HeroCardsType) => {
   return (
     <ul className="hidden md:grid grid-cols-2 xl:grid-cols-4 overflow-hidden gap-7">
-      {heroCards.map((card, index) => (
+      {cards.map((card, index) => (
         <li
-          key={card.id}
+          key={card.$id}
           className={`h-max bg-white/20 backdrop-blur-md rounded-sm flex items-center gap-4 px-2 py-3 ${
             index > 1 ? "hidden xl:flex" : ""
           }`}
         >
           <Link href="#" className="flex-shrink-0">
             <Image
-              src={card.image}
+              src={card.coverimage}
               alt="card image"
               width={70}
               height={70}

@@ -1,11 +1,9 @@
 export type BlogType = {
-  id: number;
   title: string;
   description?: string;
-  image: string;
+  coverimage: string;
   category: string;
-  created_at: string;
-  link: string;
+  $createdAt: string;
 };
 
 export type BlogCardProps = {

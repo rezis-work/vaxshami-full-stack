@@ -7,11 +7,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { carouselData } from "@/constants/newsCarouselData";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
+import { useGetNewsList } from "../../api";
 
 const NewsCarousel = () => {
+  const { data, status } = useGetNewsList();
+
+  if (status === "pending") return <div>Loading...</div>;
+  if (!data) return <div>No data</div>;
+
   return (
     <Carousel
       opts={{ loop: true }}
@@ -23,8 +28,8 @@ const NewsCarousel = () => {
       className="w-full overflow-hidden flex justify-between items-center"
     >
       <CarouselContent>
-        {carouselData.map((carousel) => (
-          <CarouselItem key={carousel.id}>
+        {data.map((carousel) => (
+          <CarouselItem key={carousel.$id}>
             <Link
               href="#"
               className="inline-block truncate max-w-full hover:text-[#007bff] underlineHover"

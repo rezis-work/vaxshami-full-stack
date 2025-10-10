@@ -13,9 +13,9 @@ export default function Home() {
       <HeroSection />
       <EditorsPick />
       <HomePageBlogs />
-      <Gallery />
+      {/*       <Gallery />
       <Business />
-      <DontMiss className="purpleLinearBackground" />
+      <DontMiss className="purpleLinearBackground" /> */}
     </main>
   );
 }
