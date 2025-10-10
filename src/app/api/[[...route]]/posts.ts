@@ -32,6 +32,8 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
     } else {
       queries.push(Query.orderDesc(sortBy));
     }
+  } else {
+    queries.push(Query.orderDesc("$createdAt"));
   }
 
   if (!DATABASE_ID || !POSTSTABLE_ID) {

@@ -7,7 +7,7 @@ import { DontMissCardsType } from "@/types/dontMissTypes";
 const DontMissCards = ({ categoryBg, hoverTextColor }: DontMissCardsType) => {
   const { data: posts } = useGetPosts({
     section: "dontmiss",
-    limit: 8,
+    limit: 4,
 
     queryKeyName: "dontmiss",
   });

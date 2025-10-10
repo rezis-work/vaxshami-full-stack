@@ -22,7 +22,7 @@ export const useGetPostByTitle = (title?: string) => {
       const data = (await response.json()) as DatabasePost[];
       return data;
     },
-    enabled: !!title, // only run when title is provided
+    enabled: !!title,
   });
 
   return query;

@@ -3,8 +3,6 @@ import SectionSidebar from "../../../../components/shared/sectionSidebar";
 import FollowUs from "@/features/followUs/ui/views/followUs-view";
 import SidebarArticles from "@/components/shared/sidebarArticles";
 import SidebarNews from "@/components/shared/sidebarNews";
-
-//import { DefaultPostType } from "@/types/postTypes";
 import DefaultPostArticle from "../components/defaultPostArticle";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import TopCategories from "@/features/topCategories/ui/views/topCategories-view";
