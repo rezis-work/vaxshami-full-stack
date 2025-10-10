@@ -5,13 +5,21 @@ import { client } from "@/lib/rpc";
 import { DatabasePost } from "@/types/blogCardTypes";
 
 export const useGetPosts = (filters?: PostFilters) => {
-  const { category, status, author, tag, limit, sortBy, sortOrder } =
-    filters || {};
+  const {
+    category,
+    status,
+    author,
+    tag,
+    limit,
+    sortBy,
+    sortOrder,
+    queryKeyName,
+  } = filters || {};
   const resolvedLimit = limit ?? 1000;
 
   const query = useQuery({
     queryKey: [
-      "posts",
+      queryKeyName ?? "posts",
       {
         category: category ?? null,
         status: status ?? null,

@@ -5,9 +5,12 @@ import { useGetPosts } from "@/hooks/useGetPosts";
 import { getMostCategories } from "@/lib/utils";
 
 export default function CategoryContainer() {
-  const { data: posts } = useGetPosts();
+  const { data: posts } = useGetPosts({
+    queryKeyName: "allPosts",
+    limit: 1000,
+  });
 
-  if (!posts) return <p>Loading...</p>;
+  if (!posts) return null;
   const categories = getMostCategories(posts, "category");
 
   return (

@@ -3,9 +3,13 @@ import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import { useGetPosts } from "@/hooks/useGetPosts";
 
-export default function Blogs() {
-  const { data: posts } = useGetPosts({ limit: 9 });
-  console.log(posts);
+export default function Blogs({ blogCategory }: { blogCategory: string }) {
+  const { data: posts } = useGetPosts({
+    category: blogCategory,
+    limit: 9,
+    queryKeyName: blogCategory,
+  });
+
   return (
     <div className="mb-15 ">
       <BlogCardContainer className="mt-0 sm:grid-cols-2 lg:grid-cols-1">

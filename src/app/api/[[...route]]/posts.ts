@@ -7,7 +7,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
   const limitParam = c.req.query("limit");
-  const limit = limitParam ? Math.min(Number(limitParam), 100) : undefined;
+  const limit = limitParam ? Math.min(Number(limitParam), 1000) : undefined;
 
   const queries: string[] = [];
   if (limit) queries.push(Query.limit(limit));

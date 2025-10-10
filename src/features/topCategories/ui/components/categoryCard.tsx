@@ -12,7 +12,7 @@ export default function CategoryCard({
 }: TopCategoriesType) {
   return (
     <Link
-      href={`/blog/${categoryName}`}
+      href={`/blog/category/${categoryName}`}
       className="flex items-center justify-between 
              bg-[#f1f4f9] p-[15px]
              rounded-sm font-[700] text-[16px] text-black 
