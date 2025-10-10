@@ -20,7 +20,7 @@ export default function RecentPosts() {
     <>
       <BlogCardContainer
         categoryTitle="Recent Posts"
-        className="md:grid-cols-2 mb-[60px]"
+        className="md:grid-cols-2 mb-[30px]"
       >
         {posts?.map((blog) => (
           <BlogCard

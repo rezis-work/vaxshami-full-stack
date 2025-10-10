@@ -9,7 +9,10 @@ export default function CategoriesDropDown({
 }: {
   variant: "mobile" | "desktop";
 }) {
-  const { data: posts } = useGetPosts();
+  const { data: posts } = useGetPosts({
+    queryKeyName: "allPosts",
+    limit: 1000,
+  });
 
   if (!posts) return null;
   const categories = getMostCategories(posts, "category");
