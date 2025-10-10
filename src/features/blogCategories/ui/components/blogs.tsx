@@ -1,12 +1,15 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
+import LoadMoreButton from "@/components/shared/loadMoreButton";
 import { useGetPosts } from "@/hooks/useGetPosts";
+import { useState } from "react";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
+  const [currentLimit, setCurrentLimit] = useState(6);
   const { data: posts } = useGetPosts({
     category: blogCategory,
-    limit: 9,
+    limit: currentLimit,
     queryKeyName: blogCategory,
   });
 
@@ -22,6 +25,11 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
           />
         ))}
       </BlogCardContainer>
+      <LoadMoreButton
+        setCurrentLimit={setCurrentLimit}
+        currentLimit={currentLimit}
+        increment={3}
+      />
     </div>
   );
 }
