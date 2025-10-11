@@ -2,12 +2,12 @@
 
 import BlogCard from "@/components/shared/blogCard";
 import { BlogType } from "@/types/blogCardTypes";
-import { useGetPostsList } from "../../api";
+import { useGetTopCardsList } from "../../api";
 
 const bgColors = ["bg-[#FFE1DF]", "bg-[#F1F4F9]"];
 
 const TopCards = () => {
-  const { data, status } = useGetPostsList();
+  const { data, status } = useGetTopCardsList();
 
   if (status === "pending") return <div>Loading...</div>;
   if (!data) return <div>No data</div>;

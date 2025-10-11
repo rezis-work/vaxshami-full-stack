@@ -11,7 +11,7 @@ const MayLike = () => {
         {galleryItems.slice(0, 3).map((item) => (
           <li key={item.id}>
             <BlogCard
-              blog={{ ...item, created_at: "2025-09-11" }}
+              blog={{ ...item, $createdAt: "Oct 10, 2025, 16:41" }}
               variant={"vertical"}
               hoverTextColor="hover:text-[#6d62ff]"
             />

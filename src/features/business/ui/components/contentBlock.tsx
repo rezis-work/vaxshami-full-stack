@@ -4,12 +4,17 @@ import SecondaryPostPard from "../../../../components/shared/secondaryPostCard";
 import SectionTitle from "@/components/shared/sectionTitle";
 
 const ContentBlock = ({ title, items }: HighlightedProps) => {
+  const mainCard = items[0];
+
   return (
     <div className="w-full ">
       <SectionTitle title={title} />
 
       <MainPostCard
-        {...items[0]}
+        category={mainCard.category}
+        date={mainCard.$createdDate}
+        image={mainCard.coverimage}
+        title={mainCard.title}
         ratio="aspect-[3/2]"
         titleClassname="text-xl "
       />
@@ -17,8 +22,10 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
       <ul className="flex flex-col gap-5 rounded-sm py-4">
         {items.slice(1).map((item) => (
           <SecondaryPostPard
-            key={item.id}
-            {...item}
+            key={item.$id}
+            date={item.$createdDate}
+            image={item.coverimage}
+            title={item.title}
             theme="light"
             flexReverse={true}
             width="!w-[120px]"

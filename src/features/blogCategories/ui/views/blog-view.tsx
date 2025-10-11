@@ -6,6 +6,8 @@ import React from "react";
 import Blogs from "../components/blogs";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
 import SectionWrapper from "@/components/shared/sectionWrapper";
+import { petFriends } from "@/constants/bussinessData";
+import { PostType } from "@/types/postType";
 
 export default function BlogView() {
   return (
@@ -16,7 +18,10 @@ export default function BlogView() {
       <SectionSidebar>
         <div className=" xl:pl-[15px]">
           <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
-          <SidebarNews title="Daily news" />
+          <SidebarNews
+            title="Daily news"
+            posts={petFriends as unknown as PostType[]}
+          />
           <SidebarArticles title="Training" />
         </div>
       </SectionSidebar>

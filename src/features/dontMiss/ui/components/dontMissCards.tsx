@@ -8,7 +8,7 @@ const DontMissCards = ({ categoryBg, hoverTextColor }: DontMissCardsType) => {
       {galleryItems.slice(0, 4).map((item) => (
         <li key={item.id}>
           <BlogCard
-            blog={{ ...item, created_at: "2025-09-11" }}
+            blog={{ ...item, $createdAt: "Oct 10, 2025, 16:41" }}
             variant={"vertical"}
             tagBg={categoryBg}
             hoverTextColor={hoverTextColor}

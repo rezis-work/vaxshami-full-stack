@@ -1,10 +1,10 @@
 export type HighlightedProps = {
   title: string;
   items: {
-    id: number;
+    $id: number;
     category: string;
-    date: string;
+    $createdDate: string;
     title: string;
-    image: string;
+    coverimage: string;
   }[];
 };

@@ -15,7 +15,7 @@ const LifeStyle = () => {
 
   return (
     <div className="2xl:w-[840px] xl:w-[730px] lg:w-[610px] md:w-[690px] sm:w-[510px] mx-auto md:px-0 2xl:pl-[15px] mb-12">
-      <SectionTitle title="Life Style" />
+      <SectionTitle title="Top Ingredients" />
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 mb-4">
         <MainPostCard
