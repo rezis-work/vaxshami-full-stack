@@ -9,7 +9,7 @@ const app = new Hono()
 
     const queries = [
       Query.equal("category", "product"),
-      Query.orderDesc("$createdAt"),
+      Query.orderDesc("likescount"),
       Query.limit(5),
     ];
 
