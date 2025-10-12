@@ -17,7 +17,8 @@ export default function DefaultPostArticle({
 }: {
   postTitle: string;
 }) {
-  const { data: posts } = useGetPostByTitle(postTitle);
+  const { data: posts, isLoading } = useGetPostByTitle(postTitle);
+  if (isLoading) return null;
   if (!posts) return <ErrorCard />;
 
   const { summary, title, createdDate, coverimage, $id, category, readtime } =

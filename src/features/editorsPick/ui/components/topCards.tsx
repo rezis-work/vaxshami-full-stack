@@ -8,9 +8,9 @@ import ErrorCard from "@/components/shared/errorCard";
 const bgColors = ["bg-[#FFE1DF]", "bg-[#F1F4F9]"];
 
 const TopCards = () => {
-  const { data, status } = useGetTopCardsList();
+  const { data, isLoading } = useGetTopCardsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
   if (!data) return <ErrorCard />;
 
   return (

@@ -6,7 +6,8 @@ import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPosts } from "@/hooks/useGetPosts";
 
 const MayLike = () => {
-  const { data: posts } = useGetPosts({ limit: 3 });
+  const { data: posts, isLoading } = useGetPosts({ limit: 3 });
+  if (isLoading) return null;
   if (!posts) return <ErrorCard />;
   return (
     <div className="mt-10">

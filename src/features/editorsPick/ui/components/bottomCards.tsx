@@ -8,9 +8,9 @@ import { useGetBottomCardsList } from "../../api";
 import ErrorCard from "@/components/shared/errorCard";
 
 const BottomCards = () => {
-  const { data, status } = useGetBottomCardsList();
+  const { data, isLoading } = useGetBottomCardsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
   if (!data) return <ErrorCard />;
 
   const mainCard = data[0];

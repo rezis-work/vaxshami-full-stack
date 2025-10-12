@@ -6,11 +6,11 @@ import { getMostCategories } from "@/lib/utils";
 import ErrorCard from "@/components/shared/errorCard";
 
 export default function CategoryContainer() {
-  const { data: posts } = useGetPosts({
+  const { data: posts, isLoading } = useGetPosts({
     queryKeyName: "allPosts",
     limit: 1000,
   });
-
+  if (isLoading) return null;
   if (!posts) return <ErrorCard />;
   const categories = getMostCategories(posts, "category");
 

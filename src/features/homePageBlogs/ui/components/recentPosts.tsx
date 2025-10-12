@@ -2,14 +2,19 @@
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 
-import React, { useState } from "react";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
 import ErrorCard from "@/components/shared/errorCard";
+import { useSearchParams } from "next/navigation";
 
 export default function RecentPosts() {
-  const [currentLimit, setCurrentLimit] = useState(6);
-  const { data: posts, isLoading } = useGetPosts({
+  const searchParams = useSearchParams();
+  const currentLimit = Number(searchParams.get("limit")) || 6;
+  const {
+    data: posts,
+    isLoading,
+    isFetching,
+  } = useGetPosts({
     sortBy: "$createdAt",
     sortOrder: "desc",
     limit: currentLimit,
@@ -33,11 +38,7 @@ export default function RecentPosts() {
           />
         ))}
       </BlogCardContainer>
-      <LoadMoreButton
-        setCurrentLimit={setCurrentLimit}
-        currentLimit={currentLimit}
-        increment={6}
-      />
+      <LoadMoreButton increment={3} defaultLimit={6} isFetching={isFetching} />
     </>
   );
 }

@@ -4,19 +4,27 @@ import BlogCardContainer from "@/components/shared/blogContainer";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
 import ErrorCard from "@/components/shared/errorCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
-  const [currentLimit, setCurrentLimit] = useState(6);
-  const { data: posts, isLoading } = useGetPosts({
+  const searchParams = useSearchParams();
+  const currentLimit = Number(searchParams.get("limit")) || 6;
+
+  const {
+    data: posts,
+    isLoading,
+    isFetching,
+  } = useGetPosts({
     category: blogCategory,
-    limit: 9,
+    limit: currentLimit,
     queryKeyName: blogCategory,
   });
+
   if (isLoading) return null;
   if (!posts) return <ErrorCard />;
+
   return (
-    <div className="mb-15 ">
+    <div className="mb-15">
       <BlogCardContainer className="mt-0 sm:grid-cols-2 lg:grid-cols-1">
         {posts.map((blog) => (
           <BlogCard
@@ -27,11 +35,7 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
           />
         ))}
       </BlogCardContainer>
-      <LoadMoreButton
-        setCurrentLimit={setCurrentLimit}
-        currentLimit={currentLimit}
-        increment={3}
-      />
+      <LoadMoreButton increment={3} defaultLimit={6} isFetching={isFetching} />
     </div>
   );
 }

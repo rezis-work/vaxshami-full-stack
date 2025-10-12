@@ -1,5 +1,5 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { PostFilters } from "@/types/postTypes";
 import { client } from "@/lib/rpc";
 import { DatabasePost } from "@/types/blogCardTypes";
@@ -55,6 +55,7 @@ export const useGetPosts = (filters?: PostFilters) => {
       const data = await response.json();
       return data as DatabasePost[];
     },
+    placeholderData: keepPreviousData,
     staleTime: queryKeyName === "posts" ? 0 : undefined,
     gcTime: queryKeyName === "posts" ? 0 : undefined,
     refetchOnMount: queryKeyName === "posts" ? "always" : false,
