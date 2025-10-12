@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import TravelNews from "./travelNews";
 import RecentPosts from "./recentPosts";
 import SportNews from "./sportNews";
@@ -9,7 +9,9 @@ export default function HomeBlogsContainer() {
     <>
       <LifeStyle />
       <TravelNews />
-      <RecentPosts />
+      <Suspense fallback={null}>
+        <RecentPosts />
+      </Suspense>
       <SportNews />
     </>
   );
