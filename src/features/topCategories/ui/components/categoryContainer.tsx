@@ -3,6 +3,7 @@ import React from "react";
 import CategoryCard from "./categoryCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import { getMostCategories } from "@/lib/utils";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function CategoryContainer() {
   const { data: posts } = useGetPosts({
@@ -10,7 +11,7 @@ export default function CategoryContainer() {
     limit: 1000,
   });
 
-  if (!posts) return null;
+  if (!posts) return <ErrorCard />;
   const categories = getMostCategories(posts, "category");
 
   return (

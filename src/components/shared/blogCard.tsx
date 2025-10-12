@@ -13,9 +13,9 @@ export default function BlogCard({
   tagBg,
   hoverTextColor,
 }: BlogCardProps) {
-  const { createdDate, title, coverimage, category, summary } = blog;
+  const { $createdAt, title, coverimage, category, summary } = blog;
 
-  const date = formatDate(createdDate);
+  const date = formatDate($createdAt);
   const s = blogCardStyles[variant];
   const blogTitle = title.replaceAll(" ", "-");
 

@@ -8,10 +8,13 @@ const SecondaryPosts = () => {
         {galleryItems.slice(1).map((item) => (
           <SecondaryPostPard
             key={item.id}
-            {...item}
+            date={item.date}
+            image={item.coverimage}
+            title={item.title}
             theme="dark"
             flexReverse={false}
             styles="bg-transparent text-sm xs:text-[16px]"
+            titleClassname="hover:text-white"
           />
         ))}
       </ul>

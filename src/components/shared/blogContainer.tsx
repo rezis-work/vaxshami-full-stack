@@ -16,7 +16,7 @@ export default function BlogCardContainer({
     <div className="mx-auto  lg:px-0  xl:mx-0 2xl:px-[15px]">
       {categoryTitle && (
         <div className="mb-[15px]">
-          <h4 className="mx-auto font-[700] text-[22px] bg-transparent relative  after:w-[14px] after:h-[3px] after:bg-[#6d62ff]  after:ml-[10px] content-[''] after:inline-flex after:skew-x-[-45deg]">
+          <h4 className="mx-auto font-[700] text-[22px] bg-transparent relative sm:ml-4 md:ml-0 after:w-[14px] after:h-[3px] after:bg-[#6d62ff]  after:ml-[10px] content-[''] after:inline-flex after:skew-x-[-45deg]">
             {categoryTitle}
           </h4>
         </div>

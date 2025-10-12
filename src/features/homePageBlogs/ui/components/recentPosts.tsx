@@ -5,6 +5,7 @@ import BlogCardContainer from "@/components/shared/blogContainer";
 import React, { useState } from "react";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function RecentPosts() {
   const [currentLimit, setCurrentLimit] = useState(6);
@@ -15,7 +16,7 @@ export default function RecentPosts() {
   });
 
   if (isLoading) return null;
-  console.log();
+  if (!posts) return <ErrorCard />;
   return (
     <>
       <BlogCardContainer

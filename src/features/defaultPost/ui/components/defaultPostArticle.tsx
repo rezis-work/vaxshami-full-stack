@@ -9,7 +9,8 @@ import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
-import { useGetPostByTitle } from "../../api/useGetDefaultArticle";
+import { useGetPostByTitle } from "../../api";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function DefaultPostArticle({
   postTitle,
@@ -17,7 +18,7 @@ export default function DefaultPostArticle({
   postTitle: string;
 }) {
   const { data: posts } = useGetPostByTitle(postTitle);
-  if (!posts) return null;
+  if (!posts) return <ErrorCard />;
 
   const { summary, title, createdDate, coverimage, $id, category, readtime } =
     posts[0];
