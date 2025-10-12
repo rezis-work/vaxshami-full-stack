@@ -9,7 +9,7 @@ import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
-import { useGetPostByTitle } from "../../api/useGetDefaultArticle";
+import { useGetPostByTitle } from "../../api";
 
 export default function DefaultPostArticle({
   postTitle,

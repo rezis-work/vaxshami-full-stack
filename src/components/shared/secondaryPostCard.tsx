@@ -10,6 +10,7 @@ const SecondaryPostPard = ({
   theme,
   flexReverse,
   width = "sm:w-[130px]",
+  height,
   styles,
   titleClassname,
 }: SecondaryCardProps) => {
@@ -28,7 +29,7 @@ const SecondaryPostPard = ({
           href="#"
           className={` max-h-[65px] overflow-y-auto  font-bold  break-all xs:break-normal ${titleClassname}`}
         >
-          <HoverTitle text={title} classname="hover:text-[#6d62ff]" />
+          <HoverTitle text={title} />
         </Link>
 
         <span className="block mt-[6px] text-[13px]">{date}</span>
@@ -40,7 +41,7 @@ const SecondaryPostPard = ({
           width={140}
           height={90}
           alt="post image"
-          className={`object-cover ${width} rounded-sm`}
+          className={`object-cover ${width} ${height} rounded-sm`}
         />
       </Link>
     </li>

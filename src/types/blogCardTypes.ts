@@ -1,5 +1,17 @@
+export type BlogType = {
+  title: string;
+  description?: string;
+  coverimage: string;
+  category: string;
+  $createdAt: string;
+};
+
 export type BlogCardProps = {
+<<<<<<< HEAD
   blog: DatabasePost;
+=======
+  blog: BlogType;
+>>>>>>> main
   hoverTextColor?: string;
   tagBg?: string;
   variant: "reverse" | "horizontal" | "vertical" | "blog";
