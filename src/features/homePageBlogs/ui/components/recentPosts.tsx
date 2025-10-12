@@ -4,6 +4,7 @@ import BlogCardContainer from "@/components/shared/blogContainer";
 
 import React from "react";
 import { useGetPosts } from "@/hooks/useGetPosts";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function RecentPosts() {
   const { data: posts, isLoading } = useGetPosts({
@@ -12,8 +13,8 @@ export default function RecentPosts() {
     limit: 6,
   });
 
-  if (isLoading) return null;
-
+  if (isLoading) return <ErrorCard />;
+  if (!posts) return <ErrorCard />;
   return (
     <BlogCardContainer
       categoryTitle="Recent Posts"

@@ -1,6 +1,7 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
+import ErrorCard from "@/components/shared/errorCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
@@ -10,10 +11,11 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
     queryKeyName: blogCategory,
   });
 
+  if (!posts) return <ErrorCard />;
   return (
     <div className="mb-15 ">
       <BlogCardContainer className="mt-0 sm:grid-cols-2 lg:grid-cols-1">
-        {posts?.map((blog) => (
+        {posts.map((blog) => (
           <BlogCard
             key={blog.$id}
             variant="blog"

@@ -2,11 +2,13 @@
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import { useGetTravelNews } from "../../api";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function TravelNews() {
   const { data: posts, isLoading } = useGetTravelNews();
 
   if (isLoading) return null;
+  if (!posts) return <ErrorCard />;
   return (
     <BlogCardContainer
       categoryTitle="Best for Vaxshami"

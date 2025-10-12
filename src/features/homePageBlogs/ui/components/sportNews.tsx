@@ -3,11 +3,13 @@ import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import React from "react";
 import { useGetSportNews } from "../../api";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function SportNews() {
   const { data: posts, isLoading } = useGetSportNews();
 
   if (isLoading) return null;
+  if (!posts) return <ErrorCard />;
   return (
     <>
       <BlogCardContainer
