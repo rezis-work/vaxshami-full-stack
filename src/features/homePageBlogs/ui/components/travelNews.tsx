@@ -1,9 +1,7 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-
-import React from "react";
-import { useGetTravelNews } from "../../api/useGetTravelnews";
+import { useGetTravelNews } from "../../api";
 
 export default function TravelNews() {
   const { data: posts, isLoading } = useGetTravelNews();

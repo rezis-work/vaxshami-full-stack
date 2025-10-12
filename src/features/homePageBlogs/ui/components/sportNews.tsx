@@ -2,7 +2,7 @@
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import React from "react";
-import { useGetSportNews } from "../../api/useGetSportNews";
+import { useGetSportNews } from "../../api";
 
 export default function SportNews() {
   const { data: posts, isLoading } = useGetSportNews();
