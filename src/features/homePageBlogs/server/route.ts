@@ -75,7 +75,8 @@ const app = new Hono()
 
     const queries: string[] = [
       Query.limit(limit),
-      Query.equal("section", "travelnews"),
+      Query.equal("category", "restaurant"),
+      Query.equal("favorite", true),
     ];
 
     if (!DATABASE_ID || !POSTSTABLE_ID) {
