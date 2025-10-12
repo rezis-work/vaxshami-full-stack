@@ -14,11 +14,7 @@ const MayLike = () => {
         {posts?.map((item) => (
           <li key={item.$id}>
             <BlogCard
-<<<<<<< HEAD
               blog={item}
-=======
-              blog={{ ...item, $createdAt: "Oct 10, 2025, 16:41" }}
->>>>>>> main
               variant={"vertical"}
               hoverTextColor="hover:text-[#6d62ff]"
             />

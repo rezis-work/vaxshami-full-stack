@@ -7,11 +7,8 @@ export type BlogType = {
 };
 
 export type BlogCardProps = {
-<<<<<<< HEAD
   blog: DatabasePost;
-=======
-  blog: BlogType;
->>>>>>> main
+  //blog: BlogType;
   hoverTextColor?: string;
   tagBg?: string;
   variant: "reverse" | "horizontal" | "vertical" | "blog";
