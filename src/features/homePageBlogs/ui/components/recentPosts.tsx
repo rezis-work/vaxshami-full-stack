@@ -6,6 +6,7 @@ import { useGetPosts } from "@/hooks/useGetPosts";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
 import ErrorCard from "@/components/shared/errorCard";
 import { useSearchParams } from "next/navigation";
+import RecentPostsSkeleton from "./recentPostsSkeleton";
 
 export default function RecentPosts() {
   const searchParams = useSearchParams();
@@ -20,7 +21,7 @@ export default function RecentPosts() {
     limit: currentLimit,
   });
 
-  if (isLoading) return null;
+  if (isLoading) return <RecentPostsSkeleton />;
   if (!posts) return <ErrorCard />;
   return (
     <>

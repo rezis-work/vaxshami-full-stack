@@ -11,6 +11,7 @@ import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
 import { useGetPostByTitle } from "../../api";
 import ErrorCard from "@/components/shared/errorCard";
+import DefaultSkeleton from "./defaultSkeleton";
 
 export default function DefaultPostArticle({
   postTitle,
@@ -18,7 +19,7 @@ export default function DefaultPostArticle({
   postTitle: string;
 }) {
   const { data: posts, isLoading } = useGetPostByTitle(postTitle);
-  if (isLoading) return null;
+  if (isLoading) return <DefaultSkeleton />;
   if (!posts) return <ErrorCard />;
 
   const { summary, title, createdDate, coverimage, $id, category, readtime } =

@@ -5,6 +5,7 @@ import LoadMoreButton from "@/components/shared/loadMoreButton";
 import ErrorCard from "@/components/shared/errorCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import { useSearchParams } from "next/navigation";
+import BlogsSkeleton from "./blogsSkeleton";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
   const searchParams = useSearchParams();
@@ -20,7 +21,7 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
     queryKeyName: blogCategory,
   });
 
-  if (isLoading) return null;
+  if (isLoading) return <BlogsSkeleton />;
   if (!posts) return <ErrorCard />;
 
   return (
