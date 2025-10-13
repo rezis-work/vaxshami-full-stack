@@ -6,12 +6,14 @@ import SecondaryPosts from "../components/secondaryPosts";
 import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPostsList } from "../../api";
 import Image from "next/image";
+import ErrorComponent from "@/components/shared/errorComponent";
+import GallerySkeleton from "./gallerySkeleton-view";
 
 const Gallery = () => {
-  const { data, isLoading } = useGetPostsList();
+  const { data, isLoading, isError } = useGetPostsList();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return <div>No Data</div>;
+  if (isLoading) return <GallerySkeleton />;
+  if (isError || !data) return <ErrorComponent />;
 
   return (
     <section className="my-8 bg-[#03071E] text-white">
@@ -22,10 +24,12 @@ const Gallery = () => {
         />
 
         <div className="lg:col-span-4 xl:col-span-2 ">
-          <img
+          <Image
+            width={700}
+            height={400}
             src={data[0].image}
             alt="drink image"
-            className="object-cover h-full"
+            className="object-cover w-full h-full"
           />
         </div>
 

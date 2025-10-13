@@ -7,12 +7,13 @@ import FollowUs from "@/features/followUs/ui/views/followUs-view";
 import { PostType } from "@/types/postType";
 import { useGetDailyNewsList } from "../../api";
 import SectionSideSkeleton from "./sectionSideSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const SectionSidebarWrapper = () => {
-  const { data, isLoading } = useGetDailyNewsList();
+  const { data, isLoading, isError } = useGetDailyNewsList();
 
   if (isLoading) return <SectionSideSkeleton />;
-  if (!data) return <div>No data</div>;
+  if (isError || !data) return <ErrorComponent />;
 
   return (
     <SectionSidebar>

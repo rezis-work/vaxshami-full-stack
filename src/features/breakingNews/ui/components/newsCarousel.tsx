@@ -12,12 +12,13 @@ import Link from "next/link";
 import { useGetNewsList } from "../../api";
 import { Skeleton } from "@/components/ui/skeleton";
 import NewsSkeleton from "./newsSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const NewsCarousel = () => {
-  const { data, isLoading } = useGetNewsList();
+  const { data, isLoading, isError } = useGetNewsList();
 
   if (isLoading) return <NewsSkeleton />;
-  if (!data) return <div>No data</div>;
+  if (isError || !data) return <ErrorComponent />;
 
   return (
     <Carousel

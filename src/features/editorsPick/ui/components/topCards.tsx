@@ -4,6 +4,7 @@ import BlogCard from "@/components/shared/blogCard";
 import { BlogType } from "@/types/blogCardTypes";
 import { useGetTopCardsList } from "../../api";
 import TopCardsSkeleton from "./topCardsSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const bgColors = ["bg-[#FFE1DF]", "bg-[#F1F4F9]"];
 
@@ -11,7 +12,7 @@ const TopCards = () => {
   const { data, isLoading } = useGetTopCardsList();
 
   if (isLoading) return <TopCardsSkeleton />;
-  if (!data) return <div>No data</div>;
+  if (!data) return <ErrorComponent />;
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 my-8">

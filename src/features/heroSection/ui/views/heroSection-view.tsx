@@ -6,12 +6,13 @@ import HeroCards from "../components/heroCards";
 import HeroSkeleton from "./heroSkeleton-view";
 import { useGetPostsList } from "../../api";
 import { PostType } from "@/types/postType";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const HeroSection = () => {
-  const { data, isLoading } = useGetPostsList();
+  const { data, isLoading, isError } = useGetPostsList();
 
   if (isLoading) return <HeroSkeleton />;
-  if (!data) return <div>No Data</div>;
+  if (!data || isError) return <ErrorComponent />;
 
   const mainCard = data[0];
 

@@ -6,12 +6,13 @@ import { DontMissCardsType } from "@/types/dontMissTypes";
 import { useGetPostsList } from "../../api";
 import { BlogType } from "@/types/blogCardTypes";
 import DontMissSkeleton from "./dontMissSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const DontMissCards = ({ categoryBg, hoverTextColor }: DontMissCardsType) => {
-  const { data, isLoading } = useGetPostsList();
+  const { data, isLoading, isError } = useGetPostsList();
 
   if (isLoading) return <DontMissSkeleton />;
-  if (!data) return <div>No data</div>;
+  if (isError || !data) return <ErrorComponent />;
 
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
