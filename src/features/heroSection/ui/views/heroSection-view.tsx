@@ -3,13 +3,14 @@
 import HeroContent from "../components/heroContent";
 import Wrapper from "@/components/shared/wrapper";
 import HeroCards from "../components/heroCards";
+import HeroSkeleton from "./heroSkeleton-view";
 import { useGetPostsList } from "../../api";
 import { PostType } from "@/types/postType";
 
 const HeroSection = () => {
-  const { data, status } = useGetPostsList();
+  const { data, isLoading } = useGetPostsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <HeroSkeleton />;
   if (!data) return <div>No Data</div>;
 
   const mainCard = data[0];

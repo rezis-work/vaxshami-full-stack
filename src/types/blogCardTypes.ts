@@ -1,6 +1,6 @@
 export type BlogType = {
   title: string;
-  description?: string;
+  summary?: string;
   coverimage: string;
   category: string;
   $createdAt: string;

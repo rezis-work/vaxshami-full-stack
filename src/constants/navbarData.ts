@@ -9,16 +9,10 @@ export const navItems = [
     title: "Posts",
     children: [
       { id: "default", title: "Default", href: "/default" },
-      { id: "noSideBar", title: "No Sidebar", href: "/no-sidebar" },
-      { id: "sideBarLeft", title: "Sidebar Left", href: "/sidebar-left" },
       { id: "heroImage", title: "Hero Image", href: "/heroPage" },
     ],
   },
-  {
-    id: "policy",
-    title: "Policy",
-    href: "#",
-  },
+
   {
     id: "features",
     title: "Features",
@@ -28,11 +22,6 @@ export const navItems = [
       { id: "submenu-3", title: "Submenu 3", href: "#" },
       { id: "submenu-4", title: "Submenu 4", href: "#" },
     ],
-  },
-  {
-    id: "megamenu",
-    title: "Megamenu",
-    href: "#",
   },
   {
     id: "contact",

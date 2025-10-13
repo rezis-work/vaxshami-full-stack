@@ -10,11 +10,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { useGetNewsList } from "../../api";
+import { Skeleton } from "@/components/ui/skeleton";
+import NewsSkeleton from "./newsSkeleton";
 
 const NewsCarousel = () => {
-  const { data, status } = useGetNewsList();
+  const { data, isLoading } = useGetNewsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <NewsSkeleton />;
   if (!data) return <div>No data</div>;
 
   return (

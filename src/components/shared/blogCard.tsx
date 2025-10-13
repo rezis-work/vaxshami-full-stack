@@ -13,7 +13,13 @@ export default function BlogCard({
   tagBg,
   hoverTextColor,
 }: BlogCardProps) {
-  const { $createdAt, title, coverimage, category, description } = blog;
+  const {
+    $createdAt,
+    title,
+    coverimage,
+    category,
+    summary: description,
+  } = blog;
 
   const date = formatDate($createdAt);
   const s = blogCardStyles[variant];

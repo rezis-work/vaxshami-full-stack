@@ -2,7 +2,6 @@ import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 
 import { blogCardsData } from "@/constants/blogCardsData";
-import React from "react";
 
 export default function TravelNews() {
   return (

@@ -5,11 +5,12 @@ import Wrapper from "@/components/shared/wrapper";
 import { BlogType } from "@/types/blogCardTypes";
 import React from "react";
 import { useGetBottomCardsList } from "../../api";
+import BottomCardsSkeleton from "./bottomCardsSkeleton";
 
 const BottomCards = () => {
-  const { data, status } = useGetBottomCardsList();
+  const { data, isLoading } = useGetBottomCardsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <BottomCardsSkeleton />;
   if (!data) return <div>No data</div>;
 
   const mainCard = data[0];

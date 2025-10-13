@@ -3,13 +3,14 @@
 import BlogCard from "@/components/shared/blogCard";
 import { BlogType } from "@/types/blogCardTypes";
 import { useGetTopCardsList } from "../../api";
+import TopCardsSkeleton from "./topCardsSkeleton";
 
 const bgColors = ["bg-[#FFE1DF]", "bg-[#F1F4F9]"];
 
 const TopCards = () => {
-  const { data, status } = useGetTopCardsList();
+  const { data, isLoading } = useGetTopCardsList();
 
-  if (status === "pending") return <div>Loading...</div>;
+  if (isLoading) return <TopCardsSkeleton />;
   if (!data) return <div>No data</div>;
 
   return (
@@ -19,7 +20,7 @@ const TopCards = () => {
         return (
           <BlogCard
             key={card.$id}
-            blog={{ ...(card as unknown as BlogType), description: undefined }}
+            blog={{ ...(card as unknown as BlogType), summary: undefined }}
             variant={"blog"}
             className={`${bgColors[index]} p-5 rounded-md`}
             hoverTextColor="hover:text-[#6610f2] lg:text-[20px]"
