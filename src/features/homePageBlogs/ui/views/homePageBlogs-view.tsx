@@ -1,8 +1,7 @@
-import HomeBlogsContainer from "../components/homeBlogsContainer";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
+import SectionSidebar from "@/components/shared/sectionSidebar";
 import SectionWrapper from "@/components/shared/sectionWrapper";
-import { useGetDailyNewsList } from "../../api";
-import SectionSidebarWrapper from "../components/sectionSidebarWrapper";
+import HomeBlogsContainer from "../components/homeBlogsContainer";
 
 export default function HomePageBlogs() {
   return (
@@ -10,7 +9,7 @@ export default function HomePageBlogs() {
       <MainSectionWrapper>
         <HomeBlogsContainer />
       </MainSectionWrapper>
-      <SectionSidebarWrapper />
+      <SectionSidebar />
     </SectionWrapper>
   );
 }

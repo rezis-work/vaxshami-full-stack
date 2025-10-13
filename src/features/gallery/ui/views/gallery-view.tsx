@@ -1,7 +1,6 @@
 "use client";
 
 import Wrapper from "@/components/shared/wrapper";
-import MainPost from "../components/mainPost";
 import SecondaryPosts from "../components/secondaryPosts";
 import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPostsList } from "../../api";

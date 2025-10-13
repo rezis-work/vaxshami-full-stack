@@ -10,7 +10,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { useGetNewsList } from "../../api";
-import { Skeleton } from "@/components/ui/skeleton";
 import NewsSkeleton from "./newsSkeleton";
 import ErrorComponent from "@/components/shared/errorComponent";
 

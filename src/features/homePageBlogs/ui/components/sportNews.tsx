@@ -1,25 +1,33 @@
+"use client";
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-import { blogCardsData } from "@/constants/blogCardsData";
 import React from "react";
+import { useGetSportNews } from "../../api";
+import ErrorCard from "@/components/shared/errorCard";
 
 export default function SportNews() {
+  const { data: posts, isLoading, isError } = useGetSportNews();
+
+  if (isLoading) return null;
+  if (isError || !posts) return <ErrorCard />;
   return (
     <>
       <BlogCardContainer
-        categoryTitle="Sport News"
+        categoryTitle="New Vacancies"
         className="bg-[#ffe1df] mb-[20px] "
       >
-        <BlogCard
-          blog={blogCardsData[0]}
-          variant="horizontal"
-          hoverTextColor="hover:text-[#6d62ff]"
-        />
+        {posts && (
+          <BlogCard
+            blog={posts[0]}
+            variant="horizontal"
+            hoverTextColor="hover:text-[#6d62ff]"
+          />
+        )}
       </BlogCardContainer>
       <BlogCardContainer className="md:grid-cols-3 mb-[60px]">
-        {blogCardsData.slice(1, 4).map((blog) => (
+        {posts?.slice(1, 4).map((blog) => (
           <BlogCard
-            key={blog.id}
+            key={blog.$id}
             blog={blog}
             variant="vertical"
             hoverTextColor="hover:text-[#6d62ff]"
