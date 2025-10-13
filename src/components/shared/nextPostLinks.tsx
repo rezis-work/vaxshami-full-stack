@@ -6,8 +6,8 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useGetPosts } from "@/hooks/useGetPosts";
 
 export default function NextPostLinks({ id }: { id: string | number }) {
-  const { data: posts } = useGetPosts();
-  if (!posts) return null;
+  const { data: posts, isError } = useGetPosts();
+  if (isError || !posts) return null;
   const index = posts.findIndex((post) => post.$id === id);
   const newer = posts[index - 1]?.title ?? posts[0].title;
   const older = posts[index + 1]?.title ?? posts[posts.length - 1].title;

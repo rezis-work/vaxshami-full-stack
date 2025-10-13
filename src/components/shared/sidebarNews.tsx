@@ -16,7 +16,7 @@ export default function SidebarNews({
           <SectionTitle title={title} />
 
           <ul className="flex flex-col gap-5 rounded-sm py-4">
-            {posts?.map((item) => (
+            {posts.map((item) => (
               <SecondaryPostPard
                 key={item.$id}
                 date={item.$createdDate}

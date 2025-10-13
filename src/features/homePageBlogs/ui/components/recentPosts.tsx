@@ -15,6 +15,7 @@ export default function RecentPosts() {
     data: posts,
     isLoading,
     isFetching,
+    isError,
   } = useGetPosts({
     sortBy: "$createdAt",
     sortOrder: "desc",
@@ -22,14 +23,15 @@ export default function RecentPosts() {
   });
 
   if (isLoading) return <RecentPostsSkeleton />;
-  if (!posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorCard />;
+
   return (
     <>
       <BlogCardContainer
         categoryTitle="Recent Posts"
         className="md:grid-cols-2 mb-[30px]"
       >
-        {posts?.map((blog) => (
+        {posts.map((blog) => (
           <BlogCard
             key={blog.$id}
             blog={blog}

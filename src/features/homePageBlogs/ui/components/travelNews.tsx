@@ -6,10 +6,10 @@ import ErrorCard from "@/components/shared/errorCard";
 import TravelNewsSkeleton from "./travelNewsSkeleton";
 
 export default function TravelNews() {
-  const { data: posts, isLoading } = useGetTravelNews();
+  const { data: posts, isLoading, isError } = useGetTravelNews();
 
   if (isLoading) return <TravelNewsSkeleton />;
-  if (!posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorCard />;
   return (
     <BlogCardContainer
       categoryTitle="Best for Vaxshami"

@@ -6,10 +6,10 @@ import { useGetSportNews } from "../../api";
 import ErrorCard from "@/components/shared/errorCard";
 
 export default function SportNews() {
-  const { data: posts, isLoading } = useGetSportNews();
+  const { data: posts, isLoading, isError } = useGetSportNews();
 
   if (isLoading) return null;
-  if (!posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorCard />;
   return (
     <>
       <BlogCardContainer
@@ -18,7 +18,7 @@ export default function SportNews() {
       >
         {posts && (
           <BlogCard
-            blog={posts?.[0]}
+            blog={posts[0]}
             variant="horizontal"
             hoverTextColor="hover:text-[#6d62ff]"
           />

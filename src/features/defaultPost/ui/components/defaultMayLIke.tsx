@@ -5,20 +5,20 @@ import { useGetPosts } from "@/hooks/useGetPosts";
 import React from "react";
 
 export default function DefaultMayLIke() {
-  const { data: posts, isLoading } = useGetPosts({
+  const { data: posts, isLoading, isError } = useGetPosts({
     section: "sidebar",
     limit: 3,
     queryKeyName: "mayLike",
   });
 
   if (isLoading) return null;
-  if (!posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorCard />;
   return (
     <BlogCardContainer
       categoryTitle="You may like these posts"
       className="md:grid-cols-3 mb-15"
     >
-      {posts?.map((blog) => (
+      {posts.map((blog) => (
         <BlogCard
           key={blog.$id}
           variant="vertical"

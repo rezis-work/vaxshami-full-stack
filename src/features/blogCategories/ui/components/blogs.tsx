@@ -15,6 +15,7 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
     data: posts,
     isLoading,
     isFetching,
+    isError,
   } = useGetPosts({
     category: blogCategory,
     limit: currentLimit,
@@ -22,7 +23,7 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
   });
 
   if (isLoading) return <BlogsSkeleton />;
-  if (!posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorCard />;
 
   return (
     <div className="mb-15">
