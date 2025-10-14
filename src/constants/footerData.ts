@@ -16,6 +16,6 @@ export const footerSocialLinks = [
 
 export const footerNavLinks = [
   { label: "SERVICES", id: "services", link: "#" },
-  { label: "CONTACT", id: "contact", link: "#" },
-  { label: "ABOUT", id: "about", link: "#" },
+  { label: "CONTACT", id: "contact", link: "/contact" },
+  { label: "ABOUT", id: "about", link: "/about" },
 ];

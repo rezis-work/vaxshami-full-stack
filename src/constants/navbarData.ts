@@ -24,6 +24,15 @@ export const navItems = [
     ],
   },
   {
+    id: "pages",
+    title: "Pages",
+    children: [
+      { id: "about", title: "About us", href: "/about" },
+      { id: "team", title: "Meet our team", href: "/team" },
+      { id: "faq", title: "FAQ", href: "/faqs" },
+    ],
+  },
+  {
     id: "contact",
     title: "Contact",
     href: "/contact",
