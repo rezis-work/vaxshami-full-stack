@@ -1,30 +1,18 @@
-import SectionSidebar from "@/components/shared/sectionSidebar";
-import SidebarArticles from "@/components/shared/sidebarArticles";
-import SidebarNews from "@/components/shared/sidebarNews";
-import FollowUs from "@/features/followUs/ui/views/followUs-view";
-import React from "react";
-import Blogs from "../components/blogs";
 import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
+import SectionSidebar from "@/components/shared/sectionSidebar";
 import SectionWrapper from "@/components/shared/sectionWrapper";
-import { petFriends } from "@/constants/bussinessData";
-import { PostType } from "@/types/postType";
+import Blogs from "../components/blogs";
+import { Suspense } from "react";
 
-export default function BlogView() {
+export default function BlogView({ blogCategory }: { blogCategory: string }) {
   return (
     <SectionWrapper>
       <MainSectionWrapper>
-        <Blogs />
+        <Suspense fallback={null}>
+          <Blogs blogCategory={blogCategory} />
+        </Suspense>
       </MainSectionWrapper>
-      <SectionSidebar>
-        <div className=" xl:pl-[15px]">
-          <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
-          <SidebarNews
-            title="Daily news"
-            posts={petFriends as unknown as PostType[]}
-          />
-          <SidebarArticles title="Training" />
-        </div>
-      </SectionSidebar>
+      <SectionSidebar />
     </SectionWrapper>
   );
 }

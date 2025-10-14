@@ -1,4 +1,3 @@
-import { petFriends } from "@/constants/bussinessData";
 import SecondaryPostPard from "./secondaryPostCard";
 import SectionTitle from "./sectionTitle";
 import { PostType } from "@/types/postType";

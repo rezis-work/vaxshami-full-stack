@@ -38,20 +38,38 @@ const app = new Hono()
   })
   .get("/bottomcards", appwriteMiddleware, async (c) => {
     const databases = c.get("databases");
+    const uniqueDishes = [];
+    const usedCountries = new Set<string>();
 
-    const queries = [
-      Query.equal("category", "dish"),
-      Query.orderDesc("$createdAt"),
-      Query.limit(4),
-    ];
+    while (uniqueDishes.length < 3) {
+      const queries = [
+        Query.equal("category", "dish"),
+        Query.orderDesc("likescount"),
+        Query.limit(1),
+      ];
 
-    const newestDishes = await databases.listDocuments(
-      DATABASE_ID,
-      POSTSTABLE_ID,
-      queries
-    );
+      for (const country of usedCountries) {
+        queries.push(Query.notEqual("country", country));
+      }
 
-    return c.json(newestDishes.documents);
+      const result = await databases.listDocuments(
+        DATABASE_ID,
+        POSTSTABLE_ID,
+        queries
+      );
+
+      if (result.documents.length === 0) break;
+
+      const dish = result.documents[0];
+      if (!usedCountries.has(dish.country)) {
+        usedCountries.add(dish.country);
+        uniqueDishes.push(dish);
+      } else {
+        break;
+      }
+    }
+
+    return c.json(uniqueDishes);
   });
 
 export default app;

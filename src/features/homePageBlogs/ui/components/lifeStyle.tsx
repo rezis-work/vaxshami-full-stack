@@ -4,12 +4,14 @@ import MainPostCard from "@/components/shared/mainPostCard";
 import SecondaryPostPard from "@/components/shared/secondaryPostCard";
 import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPostsList } from "../../api";
+import LifeStyleSkeleton from "./lifeStyleSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const LifeStyle = () => {
-  const { data, status } = useGetPostsList();
+  const { data, isLoading, isError } = useGetPostsList();
 
-  if (status === "pending") return <div>Loading...</div>;
-  if (!data) return <div>No Data</div>;
+  if (isLoading) return <LifeStyleSkeleton />;
+  if (isError || !data) return <ErrorComponent />;
 
   const mainPost = data[0];
 

@@ -1,4 +1,6 @@
+"use client";
 import { client } from "@/lib/rpc";
+import { DatabasePost } from "@/types/blogCardTypes";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetPostsList = () => {
@@ -29,4 +31,32 @@ export const useGetDailyNewsList = () => {
   });
 
   return query;
+};
+
+export const useGetSportNews = (postLimit?: number) => {
+  return useQuery({
+    queryKey: ["sportNews", postLimit],
+    queryFn: async () => {
+      const response = await client.api.homeblogs.sportnews.$get({
+        limit: postLimit,
+      });
+
+      const data = await response.json();
+      return data as DatabasePost[];
+    },
+  });
+};
+
+export const useGetTravelNews = (postLimit?: number) => {
+  return useQuery({
+    queryKey: ["travelnews", postLimit],
+    queryFn: async () => {
+      const response = await client.api.homeblogs.travelnews.$get({
+        limit: postLimit,
+      });
+
+      const data = await response.json();
+      return data as DatabasePost[];
+    },
+  });
 };

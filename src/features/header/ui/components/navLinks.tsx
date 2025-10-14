@@ -2,6 +2,7 @@ import { navItems } from "@/constants/navbarData";
 import Link from "next/link";
 import DropDownItem from "./dropDownItem";
 import SubmenuItem from "./submenuItem";
+import CategoriesDropDown from "./categoriesDropDown";
 
 const NavLinks = ({ variant }: { variant: "mobile" | "desktop" }) => {
   const listStyles =
@@ -31,6 +32,7 @@ const NavLinks = ({ variant }: { variant: "mobile" | "desktop" }) => {
           </li>
         )
       )}
+      <CategoriesDropDown variant={variant} />
     </ul>
   );
 };

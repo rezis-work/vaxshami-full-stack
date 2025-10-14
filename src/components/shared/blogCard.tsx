@@ -13,7 +13,7 @@ export default function BlogCard({
   tagBg,
   hoverTextColor,
 }: BlogCardProps) {
-  const { $createdAt, title, coverimage, category, description } = blog;
+  const { $createdAt, title, coverimage, category, summary } = blog;
 
   const date = formatDate($createdAt);
   const s = blogCardStyles[variant];
@@ -30,9 +30,11 @@ export default function BlogCard({
 
       <div className={s.textWrapper}>
         <div className="flex items-center gap-4 mb-3 ">
-          <Link href="#" className={`${s.categoryBg} ${tagBg}`}>
-            {category.toUpperCase()}
-          </Link>
+          {category !== "vacancy" && (
+            <Link href="#" className={`${s.categoryBg} !${tagBg}`}>
+              {category.toUpperCase()}
+            </Link>
+          )}
           <span className="text-sm">{date}</span>
         </div>
         <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
@@ -42,7 +44,7 @@ export default function BlogCard({
           />
         </Link>
 
-        {description && <p className={s.description}>{description}</p>}
+        {summary && <p className={s.description}>{summary}</p>}
       </div>
     </div>
   );
