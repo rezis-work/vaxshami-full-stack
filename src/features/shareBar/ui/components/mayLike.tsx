@@ -1,14 +1,14 @@
 "use client";
 import BlogCard from "@/components/shared/blogCard";
-import ErrorCard from "@/components/shared/errorCard";
+import ErrorComponent from "@/components/shared/errorComponent";
 import SectionTitle from "@/components/shared/sectionTitle";
 
 import { useGetPosts } from "@/hooks/useGetPosts";
 
 const MayLike = () => {
-  const { data: posts, isLoading } = useGetPosts({ limit: 3 });
+  const { data: posts, isLoading, isError } = useGetPosts({ limit: 3 });
   if (isLoading) return null;
-  if (!posts) return <ErrorCard />;
+  if (!posts || isError) return <ErrorComponent />;
   return (
     <div className="mt-10">
       <SectionTitle title="You may like these posts" />

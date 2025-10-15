@@ -32,10 +32,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <QueryProvider>
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
         </QueryProvider>
       </body>
     </html>

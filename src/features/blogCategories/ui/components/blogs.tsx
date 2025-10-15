@@ -2,10 +2,10 @@
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
-import ErrorCard from "@/components/shared/errorCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import { useSearchParams } from "next/navigation";
 import BlogsSkeleton from "./blogsSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
   const searchParams = useSearchParams();
@@ -23,7 +23,7 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
   });
 
   if (isLoading) return <BlogsSkeleton />;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
 
   return (
     <div className="mb-15">

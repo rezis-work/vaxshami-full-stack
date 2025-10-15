@@ -24,9 +24,9 @@ const HeroCards = ({ cards }: HeroCardsType) => {
 
           <Link
             href="#"
-            className=" text-white text-[15px] font-bold leading-5 "
+            className=" text-white text-[15px] font-bold leading-5 line-clamp-3"
           >
-            <p className="inline underlineHover">{card.title}</p>
+            <p className="inline underlineHover ">{card.title}</p>
           </Link>
         </li>
       ))}

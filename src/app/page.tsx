@@ -15,7 +15,7 @@ export default function Home() {
       <HomePageBlogs />
       <Gallery />
       <Business />
-      <DontMiss className="purpleLinearBackground" />
+      <DontMiss className="purpleLinearBackground text-white" />
     </main>
   );
 }

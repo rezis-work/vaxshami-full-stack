@@ -1,16 +1,20 @@
 "use client";
+
 import FollowUs from "@/features/followUs/ui/views/followUs-view";
 import SidebarNews from "./sidebarNews";
 import TopCategories from "@/features/topCategories/ui/views/topCategories-view";
 import SidebarArticles from "./sidebarArticles";
 import { useGetDailyNewsList } from "@/features/homePageBlogs/api";
 import { PostType } from "@/types/postType";
+import SectionSideSkeleton from "./sectionSidebarSkeleton";
+import ErrorComponent from "./errorComponent";
 
 export default function SectionSidebar() {
-  const { data, status } = useGetDailyNewsList();
+  const { data, isLoading, isError } = useGetDailyNewsList();
 
-  if (status === "pending") return <div>Loading...</div>;
-  if (!data) return <div>No data</div>;
+  if (isLoading) return <SectionSideSkeleton />;
+  if (!data || isError) return <ErrorComponent className="max-h-[400px]" />;
+
   return (
     <div className="mb-15 w-full px-[15px] lg:pr-[15px]  lg:col-span-1 ">
       <div className="xl:pl-[15px]">

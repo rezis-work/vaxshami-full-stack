@@ -7,13 +7,13 @@ interface ErrorComponentProps {
 }
 
 const ErrorComponent = ({
-  message = "Something went wrong. Please try again.",
+  message = "Please try again later",
   onRetry,
   className = "",
 }: ErrorComponentProps) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center p-8 text-center bg-red-50 ${className}`}
+      className={`w-full flex flex-col items-center justify-center p-8 my-8 mx-auto text-center bg-red-50 ${className}`}
     >
       <BiSolidError className="text-red-500 text-4xl mb-4" />
 

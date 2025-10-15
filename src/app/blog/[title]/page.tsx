@@ -18,6 +18,7 @@ export default async function BlogPage({ params }: ParamsProps) {
       <DontMiss
         className="bg-[#ffe1df] text-black"
         hoverTextColor="hover:text-[#6d62ff]"
+        categoryBg="bg-[#ffffff]"
       />
     </main>
   );

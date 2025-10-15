@@ -11,13 +11,13 @@ import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { useGetNewsList } from "../../api";
 import NewsSkeleton from "./newsSkeleton";
-import ErrorComponent from "@/components/shared/errorComponent";
+import NewsError from "./newsError";
 
 const NewsCarousel = () => {
   const { data, isLoading, isError } = useGetNewsList();
 
   if (isLoading) return <NewsSkeleton />;
-  if (isError || !data) return <ErrorComponent />;
+  if (isError || !data) return <NewsError />;
 
   return (
     <Carousel

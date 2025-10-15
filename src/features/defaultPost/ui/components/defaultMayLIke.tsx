@@ -1,18 +1,22 @@
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-import ErrorCard from "@/components/shared/errorCard";
+import ErrorComponent from "@/components/shared/errorComponent";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import React from "react";
 
 export default function DefaultMayLIke() {
-  const { data: posts, isLoading, isError } = useGetPosts({
+  const {
+    data: posts,
+    isLoading,
+    isError,
+  } = useGetPosts({
     section: "sidebar",
     limit: 3,
     queryKeyName: "mayLike",
   });
 
   if (isLoading) return null;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
   return (
     <BlogCardContainer
       categoryTitle="You may like these posts"

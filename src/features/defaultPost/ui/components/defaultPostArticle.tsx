@@ -10,8 +10,8 @@ import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
 import { useGetPostByTitle } from "../../api";
-import ErrorCard from "@/components/shared/errorCard";
 import DefaultSkeleton from "./defaultSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function DefaultPostArticle({
   postTitle,
@@ -20,7 +20,7 @@ export default function DefaultPostArticle({
 }) {
   const { data: posts, isLoading, isError } = useGetPostByTitle(postTitle);
   if (isLoading) return <DefaultSkeleton />;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
 
   const { summary, title, createdDate, coverimage, $id, category, readtime } =
     posts[0];
@@ -35,7 +35,7 @@ export default function DefaultPostArticle({
         readTime={readtime}
       />
 
-      <div className="relative  aspect-[1.43] ] xl:aspect-[1.78]  xl:-ml-[180px] mb-[30px]  ">
+      <div className="relative aspect-[1.43] xl:aspect-[1.78] xl:-ml-[180px] mb-[30px]  ">
         <Image
           src={coverimage}
           alt={title}
