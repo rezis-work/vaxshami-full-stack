@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "@/features/footer/ui/views/footer-view";
-import Header from "@/features/header/ui/views/header-view";
 import { QueryProvider } from "@/lib/query-provaider";
 import ScrollToTop from "@/components/shared/scrollToTop";
+import AppShell from "@/components/shared/app-shell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +31,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <QueryProvider>
-        <Header />
-        {children}
-        <Footer />
+    {/* ეს კომპონენტი ემსახურება იმას რომ დაორდში არ გამოჩნდეს ფოტერი და ჰედერი */}
+        <AppShell>
+          {children}
+        </AppShell>
+    {/* ეს კომპონენტი ემსახურება იმას რომ დაორდში არ გამოჩნდეს ფოტერი და ჰედერი */}
         <ScrollToTop />
         </QueryProvider>
       </body>
