@@ -29,7 +29,7 @@ export const navItems = [
     children: [
       { id: "about", title: "About us", href: "/about" },
       { id: "team", title: "Meet our team", href: "/team" },
-      { id: "faq", title: "FAQ", href: "/faqs" },
+      { id: "faq", title: "FAQs", href: "/faqs" },
     ],
   },
   {
