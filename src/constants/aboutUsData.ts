@@ -34,6 +34,6 @@ export const aboutCards = [
     description:
       "We’re tech enthusiasts turned food explorers, blending our love for coding and cuisine to deliver authentic insights into the culinary world.",
     linkText: "Meet our team",
-    linkHref: "/contact",
+    linkHref: "/team",
   },
 ];
