@@ -8,7 +8,7 @@ const AdminSidebar = () => {
     return (
         <>
 
-            <div className='h-screen sm:flex hidden select-none bg-white top-0 left-0 w-[15rem] flex-col gap-4 fixed overflow-x-hidden z-[100px] overflow-y-auto border-r border-gray-200 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent hover:scrollbar-thumb-blue-500 transition-colors duration-300'>
+            <div className='h-screen sm:flex hidden select-none bg-white top-0 left-0 w-[15rem] flex-col gap-4 fixed z-[100px] border-r border-gray-200'>
 
                 {/* main sidebar header */}
                 <Link href='/' className='w-[15rem] h-[4rem] py-[1rem] px-[1.25rem] z-[9px] flex items-center justify-center border-b border-gray-200'>
