@@ -29,7 +29,7 @@ export default function QuestionsAndAnswers({ list }: { list: FaqTypes[] }) {
             <HoverTitle text={q.question}></HoverTitle>
           </AccordionTrigger>
           <AccordionContent className="text-balance text-[16px] pt-1 ">
-            <p>{q.answer}</p>
+            <p className="pl-4">{q.answer}</p>
           </AccordionContent>
         </AccordionItem>
       ))}
