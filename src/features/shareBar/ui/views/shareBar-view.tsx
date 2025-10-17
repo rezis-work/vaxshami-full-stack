@@ -2,7 +2,7 @@ import PostsPageWrapper from "@/components/shared/postsPageWrapper";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import Tags from "../components/tags";
 import MayLike from "../components/mayLike";
-import NextPostLinks from "@/components/shared/nextPostLinkes";
+import NextPostLinks from "@/components/shared/nextPostLinks";
 
 const ShareBar = () => {
   return (

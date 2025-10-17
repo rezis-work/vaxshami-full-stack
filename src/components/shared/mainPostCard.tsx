@@ -10,10 +10,11 @@ const MainPostCard = ({
   height = "h-auto",
   ratio,
   titleClassname,
+  link,
 }: MainCardProps) => {
   return (
     <div className="relative h-full rounded-md overflow-hidden">
-      <Link href="#">
+      <Link href={link}>
         <Image
           src={image}
           width={400}
@@ -26,7 +27,7 @@ const MainPostCard = ({
       <div className="absolute bottom-0 w-full max-h-[94.5%]  p-6 overflow-auto text-white bg-gradient-to-t from-black to-transparent">
         <div className="mb-4 flex items-center gap-4">
           <Link
-            href="#"
+            href={link}
             className="rounded-full bg-[#FFE1DF] px-3 py-[2px] text-[13px] font-medium text-[#e34e36] uppercase"
           >
             {category}
@@ -36,7 +37,7 @@ const MainPostCard = ({
         </div>
 
         <Link
-          href="#"
+          href={link}
           className={`font-semibold underlineHover ${titleClassname}`}
         >
           {title}

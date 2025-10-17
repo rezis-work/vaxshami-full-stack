@@ -15,6 +15,7 @@ export const useGetPosts = (filters?: PostFilters) => {
     sortOrder,
     section,
     queryKeyName,
+    id,
   } = filters || {};
   const resolvedLimit = limit ?? 1000;
 

@@ -29,6 +29,7 @@ const HeroSection = () => {
           date={mainCard.$createdAt}
           summary={mainCard.summary}
           title={mainCard.title}
+          id={mainCard.$id}
         />
 
         <HeroCards cards={data.slice(1, 5) as unknown as PostType[]} />

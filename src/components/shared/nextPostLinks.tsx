@@ -1,5 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
 import HoverTitle from "./hoverTitle";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";

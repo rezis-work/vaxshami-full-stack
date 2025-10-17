@@ -4,10 +4,11 @@ import ErrorComponent from "@/components/shared/errorComponent";
 import SectionTitle from "@/components/shared/sectionTitle";
 
 import { useGetPosts } from "@/hooks/useGetPosts";
+import MayLikeSkeleton from "./mayLikeSkeleton";
 
 const MayLike = () => {
   const { data: posts, isLoading, isError } = useGetPosts({ limit: 3 });
-  if (isLoading) return null;
+  if (isLoading) return <MayLikeSkeleton />;
   if (!posts || isError) return <ErrorComponent />;
   return (
     <div className="mt-10">

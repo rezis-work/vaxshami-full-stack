@@ -26,7 +26,8 @@ export default function SidebarNews({
                 flexReverse={true}
                 width="!w-[120px]"
                 height="h-[90px]"
-                titleClassname="text-[15px] hover:text-[#6d62ff] "
+                titleClassname="text-[15px] hover:text-[#6d62ff]"
+                link={`/heroPage/${item.$id}`}
               />
             ))}
           </ul>

@@ -8,6 +8,9 @@ import breakingNews from "@/features/breakingNews/server/route";
 import topDrinks from "@/features/dontMiss/server/route";
 import restaurants from "@/features/gallery/server/route";
 import defaultPost from "@/features/defaultPost/server/route";
+import heroBanner from "@/features/heroBanner/server/route";
+import heroArticle from "@/features/heroArticle/server/route";
+
 import posts from "@/app/api/[[...route]]/posts";
 
 const app = new Hono().basePath("/api");
@@ -19,6 +22,8 @@ const routes = app
   .route("/homeblogs", homeBlogs)
   .route("/topdrinks", topDrinks)
   .route("/restaurants", restaurants)
+  .route("/herobanner", heroBanner)
+  .route("/heroarticle", heroArticle)
   .route("/", defaultPost)
   .route("/", posts);
 
