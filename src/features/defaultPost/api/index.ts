@@ -3,15 +3,15 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "@/lib/rpc";
 import { DatabasePost } from "@/types/blogCardTypes";
 
-export const useGetPostByTitle = (title?: string) => {
+export const useGetPostById = (id?: string) => {
   const query = useQuery({
-    queryKey: ["post", title],
+    queryKey: ["post", id],
     queryFn: async () => {
-      if (!title) throw new Error("Post title is required");
+      if (!id) throw new Error("Post id is required");
 
       const response = await client.api.defaultpost.$get({
         query: {
-          title,
+          id,
         },
       });
 
@@ -22,7 +22,7 @@ export const useGetPostByTitle = (title?: string) => {
       const data = (await response.json()) as DatabasePost[];
       return data;
     },
-    enabled: !!title,
+    enabled: !!id,
   });
 
   return query;

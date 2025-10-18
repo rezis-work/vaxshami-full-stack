@@ -9,16 +9,12 @@ import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import NextPostLinks from "@/components/shared/nextPostLinks";
 import DefaultMayLIke from "./defaultMayLIke";
-import { useGetPostByTitle } from "../../api";
+import { useGetPostById } from "../../api";
 import DefaultSkeleton from "./defaultSkeleton";
 import ErrorComponent from "@/components/shared/errorComponent";
 
-export default function DefaultPostArticle({
-  postTitle,
-}: {
-  postTitle: string;
-}) {
-  const { data: posts, isLoading, isError } = useGetPostByTitle(postTitle);
+export default function DefaultPostArticle({ id }: { id: string }) {
+  const { data: posts, isLoading, isError } = useGetPostById(id);
   if (isLoading) return <DefaultSkeleton />;
   if (isError || !posts) return <ErrorComponent />;
 

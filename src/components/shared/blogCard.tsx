@@ -13,16 +13,15 @@ export default function BlogCard({
   tagBg,
   hoverTextColor,
 }: BlogCardProps) {
-  const { $createdAt, title, coverimage, category, summary } = blog;
+  const { $createdAt, title, coverimage, category, summary, $id } = blog;
 
   const date = formatDate($createdAt);
   const s = blogCardStyles[variant];
-  const blogTitle = title.replaceAll(" ", "-");
 
   return (
     <div className={cn("gap-5 lg:gap-[30px]  flex", s.wrapper, className)}>
       <Link
-        href={`/blog/${encodeURIComponent(blogTitle)}`}
+        href={`/blog/${$id}`}
         className={`relative flex-shrink-0 ${s.imageWrapper} ${imageAspect}`}
       >
         <Image src={coverimage} alt={title} fill className={s.image} />
@@ -37,7 +36,7 @@ export default function BlogCard({
           )}
           <span className="text-sm">{date}</span>
         </div>
-        <Link href={`/blog/${encodeURIComponent(blogTitle)}`} className="block">
+        <Link href={`/blog/${$id}`} className="block">
           <HoverTitle
             text={title}
             titleClassname={cn(s.title, hoverTextColor, "cursor-pointer")}
