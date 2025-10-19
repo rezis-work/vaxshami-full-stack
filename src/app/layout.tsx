@@ -4,6 +4,7 @@ import "./globals.css";
 import { QueryProvider } from "@/lib/query-provaider";
 import ScrollToTop from "@/components/shared/scrollToTop";
 import AppShell from "@/components/shared/app-shell";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,18 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <QueryProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <QueryProvider>
     {/* ეს კომპონენტი ემსახურება იმას რომ დაორდში არ გამოჩნდეს ფოტერი და ჰედერი */}
-        <AppShell>
-          {children}
-        </AppShell>
+            <AppShell>
+              {children}
+            </AppShell>
     {/* ეს კომპონენტი ემსახურება იმას რომ დაორდში არ გამოჩნდეს ფოტერი და ჰედერი */}
-        <ScrollToTop />
-        </QueryProvider>
+            <ScrollToTop />
+          </QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
