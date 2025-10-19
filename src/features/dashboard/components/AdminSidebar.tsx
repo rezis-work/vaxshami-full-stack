@@ -13,7 +13,11 @@ const AdminSidebar = () => {
     return (
         <>
 
-            <div className={`h-screen sm:flex ${isMenuOpen ? 'flex' : 'hidden'} select-none bg-white top-0 left-0 w-[15rem] flex-col gap-4 fixed z-[100px] border-r border-gray-200`}>
+            <div className={`h-screen sm:visible select-none bg-white top-0 left-0 w-[15rem] flex flex-col gap-4
+                 fixed z-[100px] border-r border-gray-200 transition-all duration-500 ease-in-out
+                 ${isMenuOpen ? 'visible translate-x-0 opacity-100' : '-translate-x-full opacity-0 invisible'}
+                 sm:translate-x-0 sm:opacity-100
+                 `}>
 
                 {/* main sidebar header */}
                 <Link href='/' className='w-[15rem] h-[4rem] py-[1rem] px-[1.25rem] z-[9px] flex items-center justify-center border-b border-gray-200'>
