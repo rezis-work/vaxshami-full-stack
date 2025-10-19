@@ -1,14 +1,19 @@
+'use client'
+
 import { LayoutDashboard } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
-
+import React, { useState } from 'react'
+import SidebarButton from './SidebarButton'
 
 
 const AdminSidebar = () => {
+
+     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     return (
         <>
 
-            <div className='h-screen sm:flex hidden select-none bg-white top-0 left-0 w-[15rem] flex-col gap-4 fixed z-[100px] border-r border-gray-200'>
+            <div className={`h-screen sm:flex ${isMenuOpen ? 'flex' : 'hidden'} select-none bg-white top-0 left-0 w-[15rem] flex-col gap-4 fixed z-[100px] border-r border-gray-200`}>
 
                 {/* main sidebar header */}
                 <Link href='/' className='w-[15rem] h-[4rem] py-[1rem] px-[1.25rem] z-[9px] flex items-center justify-center border-b border-gray-200'>
@@ -29,6 +34,11 @@ const AdminSidebar = () => {
                 </div>
 
             </div>
+
+            <div className='sm:hidden flex py-3 px-3'>
+                <SidebarButton onClick={() => setIsMenuOpen(true)}/>
+            </div>
+
 
         </>
     )
