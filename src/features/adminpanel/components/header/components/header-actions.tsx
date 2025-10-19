@@ -28,9 +28,10 @@ export default function HeaderActions({
         <Bell className="h-5 w-5 text-gray-600 dark:text-gray-400" />
       </button>
 
-      <ProfileMenu userName={userName} userAvatar={userAvatar} />
+      <ProfileMenu
+        userName={userName}
+        userAvatar={userAvatar}
+      />
     </div>
   );
 }
-
-

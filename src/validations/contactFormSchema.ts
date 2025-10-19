@@ -5,3 +5,7 @@ export const contactFormSchema = z.object({
   email: z.email(),
   message: z.string().min(1).max(200),
 });
+
+export const searchSchema = z.object({
+  query: z.string().min(1, "გთხოვ შეიყვანე საძიებო სიტყვა."),
+});
