@@ -6,10 +6,15 @@ import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import MayLikeSkeleton from "./mayLikeSkeleton";
 
-const MayLike = () => {
-  const { data: posts, isLoading, isError } = useGetPosts({ limit: 3 });
+const MayLike = ({ category }: { category: string }) => {
+  const {
+    data: posts,
+    isLoading,
+    isError,
+  } = useGetPosts({ limit: 3, category });
   if (isLoading) return <MayLikeSkeleton />;
   if (!posts || isError) return <ErrorComponent />;
+
   return (
     <div className="mt-10">
       <SectionTitle title="You may like these posts" />

@@ -1,17 +1,15 @@
 "use client";
-import React from "react";
+
 import BreadCrumbs from "@/components/shared/breadCrumbs";
 import Image from "next/image";
 
 import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
-import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
-import NextPostLinks from "@/components/shared/nextPostLinks";
-import DefaultMayLIke from "./defaultMayLIke";
 import { useGetPostById } from "../../api";
 import DefaultSkeleton from "./defaultSkeleton";
 import ErrorComponent from "@/components/shared/errorComponent";
+import ShareBar from "@/features/shareBar/ui/views/shareBar-view";
 
 export default function DefaultPostArticle({ id }: { id: string }) {
   const { data: posts, isLoading, isError } = useGetPostById(id);
@@ -36,7 +34,7 @@ export default function DefaultPostArticle({ id }: { id: string }) {
           src={coverimage}
           alt={title}
           fill
-          className="object-cover rounded-sm  "
+          className="object-cover rounded-sm"
         />
       </div>
       <div className="flex font-[400] text-[17px] md:gap-[30px]">
@@ -45,11 +43,6 @@ export default function DefaultPostArticle({ id }: { id: string }) {
         </div>
         <DefaultPostBody image={coverimage} />
       </div>
-
-      <DefaultPostFooter category={category} />
-
-      <NextPostLinks id={$id} />
-      <DefaultMayLIke />
     </div>
   );
 }

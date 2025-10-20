@@ -14,7 +14,7 @@ export default async function page({
     <main>
       <HeroBanner id={id} />
       <HeroArticle id={id} />
-      <ShareBar />
+      <ShareBar id={id} />
       <DontMiss
         className="bg-[#FFE1DF] !text-black"
         categoryBg="bg-white"

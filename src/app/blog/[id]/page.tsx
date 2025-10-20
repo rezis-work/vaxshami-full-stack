@@ -1,7 +1,5 @@
+import DefaultPost from "@/features/defaultPost/ui/views/defaultPost-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
-import HeroArticle from "@/features/heroArticle/ui/views/heroArticle-view";
-import HeroBanner from "@/features/heroBanner/ui/views/heroBanner-view";
-import ShareBar from "@/features/shareBar/ui/views/shareBar-view";
 
 export default async function page({
   params,
@@ -12,9 +10,7 @@ export default async function page({
 
   return (
     <main>
-      <HeroBanner id={id} />
-      <HeroArticle id={id} />
-      <ShareBar />
+      <DefaultPost id={id} />
       <DontMiss
         className="bg-[#FFE1DF] !text-black"
         categoryBg="bg-white"
