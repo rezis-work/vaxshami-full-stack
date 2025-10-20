@@ -8,4 +8,5 @@ export type SecondaryCardProps = {
   height?: string;
   styles?: string;
   titleClassname?: string;
+  link: string;
 };

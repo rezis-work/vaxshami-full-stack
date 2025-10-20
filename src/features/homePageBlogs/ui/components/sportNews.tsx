@@ -1,15 +1,15 @@
 "use client";
+
 import BlogCard from "@/components/shared/blogCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
-import React from "react";
 import { useGetSportNews } from "../../api";
-import ErrorCard from "@/components/shared/errorCard";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function SportNews() {
   const { data: posts, isLoading, isError } = useGetSportNews();
 
   if (isLoading) return null;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
   return (
     <>
       <BlogCardContainer

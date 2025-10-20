@@ -8,8 +8,16 @@ export const navItems = [
     id: "posts",
     title: "Posts",
     children: [
-      { id: "default", title: "Default", href: "/default" },
-      { id: "heroImage", title: "Hero Image", href: "/heroPage" },
+      {
+        id: "default",
+        title: "Default",
+        href: "/blog/68e6ed1600343df0cfdf",
+      },
+      {
+        id: "heroImage",
+        title: "Hero Image",
+        href: "/heroPage/68e7934a0009be12b61c",
+      },
     ],
   },
 

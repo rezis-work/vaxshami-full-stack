@@ -1,21 +1,18 @@
-import Quote from "@/components/shared/quote";
-import {
-  paragraph1,
-  paragraph2,
-  paragraph3,
-  paragraph4,
-  paragraph5,
-} from "@/constants/postsDats";
+"use client";
 
-const Article = () => {
+import { useGetPostsList } from "../../api";
+import ErrorComponent from "@/components/shared/errorComponent";
+import ArticleSkeleton from "./articleSkeleton";
+
+const Article = ({ id }: { id: string }) => {
+  const { data, isLoading, isError } = useGetPostsList(id);
+
+  if (isLoading) return <ArticleSkeleton />;
+  if (isError || !data) return <ErrorComponent />;
+
   return (
     <article>
-      <p>{paragraph2}</p>
-      <p>{paragraph1}</p>
-      <Quote>{paragraph2}</Quote>
-      <p>{paragraph4}</p>
-      <p>{paragraph3}</p>
-      <p>{paragraph5}</p>
+      <p>{data.content}</p>
     </article>
   );
 };
