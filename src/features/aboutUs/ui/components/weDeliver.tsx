@@ -4,7 +4,7 @@ import React from "react";
 
 export default function WeDeliver() {
   return (
-    <section className="mt-14 xl:mt-30">
+    <section className="mt-16 xl:mt-30">
       <SectionTitle title="We Deliver" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-[30px] gap-[30px]">
         {weDeliver.map((item) => (

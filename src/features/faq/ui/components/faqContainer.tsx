@@ -6,9 +6,9 @@ import SectionTitle from "@/components/shared/sectionTitle";
 export function FaqContainer() {
   return (
     <MainSectionWrapper>
-      <SectionTitle title={"General Questions"} />
+      <SectionTitle title={"General Questions"} styles="mb-10" />
       <QuestionsAndAnswers list={firstFaqSection} />
-      <SectionTitle title={"Get to Know Us"} styles="mt-15" />
+      <SectionTitle title={"Get to Know Us"} styles="mt-15 mb-10" />
       <QuestionsAndAnswers list={secondFaqSection} />
     </MainSectionWrapper>
   );

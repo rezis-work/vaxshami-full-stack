@@ -3,8 +3,8 @@ import React from "react";
 
 export default function AboutMain() {
   return (
-    <section className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
-      <div className="relative aspect-[1.5]">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+      <div className="relative aspect-[1.5] lg:aspect-[1.1] xl:aspect-[1.5]">
         <Image
           src="/aboutMain.webp"
           alt="about"
