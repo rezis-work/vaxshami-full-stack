@@ -3,9 +3,9 @@ import React from "react";
 
 export default function TeamIntro() {
   return (
-    <div className="my-15 pl-4 space-y-3">
+    <div className="my-15  space-y-3">
       <SectionTitle title="Meet our team" />
-      <p className="font-semibold">Programmers Turned Food Critics</p>
+      <p className="font-semibold mt-6">Programmers Turned Food Critics</p>
       <p className="text-[#333 lg:w-2/3">
         We’re a group of tech minds who swapped debugging code for decoding
         flavors. With the precision of developers and the curiosity of true
