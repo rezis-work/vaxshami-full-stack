@@ -1,12 +1,8 @@
 import DefaultPost from "@/features/defaultPost/ui/views/defaultPost-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
 
-export default async function page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+export default function page({ params }: { params: { id: string } }) {
+  const { id } = params;
 
   return (
     <main>

@@ -3,12 +3,8 @@ import HeroArticle from "@/features/heroArticle/ui/views/heroArticle-view";
 import HeroBanner from "@/features/heroBanner/ui/views/heroBanner-view";
 import ShareBar from "@/features/shareBar/ui/views/shareBar-view";
 
-export default async function page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+export default function page({ params }: { params: { id: string } }) {
+  const { id } = params;
 
   return (
     <main>
