@@ -7,6 +7,7 @@ import HoverTitle from "@/components/shared/hoverTitle";
 type TeamCard = {
   name: string;
   description: string;
+  memberRole: string;
   image: string;
   className?: string;
 };
@@ -16,7 +17,9 @@ export default function TeamCard({
   className,
   image,
   description,
+  memberRole,
 }: TeamCard) {
+  const memberTitle = `${name} - The ${memberRole} `;
   return (
     <div
       className={cn("gap-5 lg:gap-[30px] flex flex-col lg:flex-row", className)}
@@ -36,7 +39,7 @@ export default function TeamCard({
 
       <div className="flex flex-col justify-center w-full lg:flex-1">
         <HoverTitle
-          text={name}
+          text={memberTitle}
           titleClassname={cn(
             "text-[22px] font-bold tracking-tighter leading-[1.2] sm:mb-3 cursor-pointer"
           )}

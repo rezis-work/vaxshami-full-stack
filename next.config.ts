@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         pathname: "**",
       },
       { protocol: "https", hostname: "blogger.googleusercontent.com" },
+      { protocol: "https", hostname: "fra.cloud.appwrite.io" },
     ],
   },
 };
