@@ -38,6 +38,7 @@ export const navItems = [
       { id: "about", title: "About us", href: "/about" },
       { id: "team", title: "Meet our team", href: "/team" },
       { id: "faq", title: "FAQs", href: "/faqs" },
+      { id: "404", title: "404", href: "/404" },
     ],
   },
   {
