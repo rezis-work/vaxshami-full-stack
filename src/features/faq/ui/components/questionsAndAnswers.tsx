@@ -25,7 +25,7 @@ export default function QuestionsAndAnswers({ list }: { list: FaqTypes[] }) {
           value={i.toString()}
           className=" py-3 border-[#EEEEEE] "
         >
-          <AccordionTrigger className="h-12 cursor-pointer text-[20px] mb-1">
+          <AccordionTrigger className="min-h-12 cursor-pointer text-[20px] mb-1">
             <HoverTitle text={q.question}></HoverTitle>
           </AccordionTrigger>
           <AccordionContent className="text-balance text-[16px] pt-1 ">

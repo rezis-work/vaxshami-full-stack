@@ -12,8 +12,8 @@ export default function FaqSidebar() {
   if (isLoading) return <FaqSkeleton />;
   if (isError || !data) return <ErrorComponent />;
   return (
-    <div className="mb-15 w-full px-[15px] lg:pr-[15px]  lg:col-span-1 ">
-      <div className="xl:pl-[15px] space-y-8">
+    <div className="mb-15 mt-12 lg:mt-1 w-full px-[15px] lg:pr-[15px]  lg:col-span-1 ">
+      <div className="xl:pl-[15px] space-y-15">
         <SecondaryPosts images={data as unknown as []} />
         <FollowUs gridCols="grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" />
       </div>
