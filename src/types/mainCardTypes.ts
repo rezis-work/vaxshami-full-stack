@@ -6,4 +6,5 @@ export type MainCardProps = {
   height?: string;
   ratio?: string;
   titleClassname: string;
+  link: string;
 };

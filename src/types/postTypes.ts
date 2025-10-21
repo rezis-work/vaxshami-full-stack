@@ -15,6 +15,7 @@ export type PostFilters = {
   rating?: string | number;
   createdDate?: string;
   limit?: number;
+  id?: string;
   [key: string]: string | number | undefined;
 };
 

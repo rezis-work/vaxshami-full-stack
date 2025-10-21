@@ -16,7 +16,8 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
         image={mainCard.coverimage}
         title={mainCard.title}
         ratio="aspect-[3/2]"
-        titleClassname="text-xl "
+        titleClassname="text-xl"
+        link="#"
       />
 
       <ul className="flex flex-col gap-5 rounded-sm py-4">
@@ -30,6 +31,7 @@ const ContentBlock = ({ title, items }: HighlightedProps) => {
             flexReverse={true}
             width="!w-[120px]"
             titleClassname="text-[15px] hover:text-[#6d62ff]"
+            link="#"
           />
         ))}
       </ul>

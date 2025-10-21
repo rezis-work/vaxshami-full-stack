@@ -12,7 +12,7 @@ const HeroCards = ({ cards }: HeroCardsType) => {
             index > 1 ? "hidden xl:flex" : ""
           }`}
         >
-          <Link href="#" className="flex-shrink-0">
+          <Link href={`/heroPage/${card.$id}`} className="flex-shrink-0">
             <Image
               src={card.coverimage}
               alt="card image"
@@ -23,10 +23,10 @@ const HeroCards = ({ cards }: HeroCardsType) => {
           </Link>
 
           <Link
-            href="#"
-            className=" text-white text-[15px] font-bold leading-5 "
+            href={`/heroPage/${card.$id}`}
+            className=" text-white text-[15px] font-bold leading-5 line-clamp-3"
           >
-            <p className="inline underlineHover">{card.title}</p>
+            <p className="inline underlineHover ">{card.title}</p>
           </Link>
         </li>
       ))}

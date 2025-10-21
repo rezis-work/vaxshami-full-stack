@@ -6,20 +6,20 @@ import { DATABASE_ID, POSTSTABLE_ID } from "@/lib/config";
 const app = new Hono().get("/defaultpost", appwriteMiddleware, async (c) => {
   const databases = c.get("databases");
 
-  const title = c.req.query("title");
+  const id = c.req.query("id");
   const limitParam = c.req.query("limit");
   const limit = limitParam ? Math.min(Number(limitParam), 100) : 1;
 
-  if (!title) {
+  if (!id) {
     return c.json(
       {
-        error: "Missing article title.",
+        error: "Missing article id.",
       },
       500
     );
   }
 
-  const queries: string[] = [Query.limit(limit), Query.equal("title", title)];
+  const queries: string[] = [Query.limit(limit), Query.equal("$id", id)];
 
   if (!DATABASE_ID || !POSTSTABLE_ID) {
     return c.json(

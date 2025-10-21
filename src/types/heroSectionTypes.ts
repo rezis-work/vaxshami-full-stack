@@ -5,6 +5,7 @@ export type MainCardProps = {
   date: string;
   title: string;
   summary: string;
+  id: string;
 };
 
 export type HeroCardsType = {

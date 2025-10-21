@@ -13,6 +13,7 @@ const SecondaryPostPard = ({
   height,
   styles,
   titleClassname,
+  link,
 }: SecondaryCardProps) => {
   return (
     <li
@@ -26,7 +27,7 @@ const SecondaryPostPard = ({
         } ${styles}`}
       >
         <Link
-          href="#"
+          href={link}
           className={` max-h-[65px] overflow-y-auto  font-bold  break-all xs:break-normal ${titleClassname}`}
         >
           <HoverTitle text={title} />
@@ -35,7 +36,7 @@ const SecondaryPostPard = ({
         <span className="block mt-[6px] text-[13px]">{date}</span>
       </div>
 
-      <Link href="#" className={`flex-shrink-0 w-[120px] ${width}`}>
+      <Link href={link} className={`flex-shrink-0 w-[120px] ${width}`}>
         <Image
           src={image}
           width={140}

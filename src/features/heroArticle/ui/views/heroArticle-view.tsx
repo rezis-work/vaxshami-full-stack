@@ -3,7 +3,7 @@ import PostsPageWrapper from "@/components/shared/postsPageWrapper";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
 import Article from "../components/article";
 
-const HeroArticle = () => {
+const HeroArticle = ({ id }: { id: string }) => {
   return (
     <PostsPageWrapper>
       <section className="flex items-stretch my-6 gap-8">
@@ -13,7 +13,7 @@ const HeroArticle = () => {
           </div>
         </div>
 
-        <Article />
+        <Article id={id} />
       </section>
     </PostsPageWrapper>
   );

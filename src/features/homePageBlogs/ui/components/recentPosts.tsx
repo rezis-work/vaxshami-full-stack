@@ -4,9 +4,9 @@ import BlogCardContainer from "@/components/shared/blogContainer";
 
 import { useGetPosts } from "@/hooks/useGetPosts";
 import LoadMoreButton from "@/components/shared/loadMoreButton";
-import ErrorCard from "@/components/shared/errorCard";
 import { useSearchParams } from "next/navigation";
 import RecentPostsSkeleton from "./recentPostsSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function RecentPosts() {
   const searchParams = useSearchParams();
@@ -23,7 +23,7 @@ export default function RecentPosts() {
   });
 
   if (isLoading) return <RecentPostsSkeleton />;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
 
   return (
     <>

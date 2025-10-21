@@ -1,10 +1,10 @@
 "use client";
-import BlogCard from "@/components/shared/blogCard";
-import ErrorCard from "@/components/shared/errorCard";
 
+import BlogCard from "@/components/shared/blogCard";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import { DontMissCardsType } from "@/types/dontMissTypes";
 import DontMissSkeleton from "./dontMissSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
 const DontMissCards = ({ categoryBg, hoverTextColor }: DontMissCardsType) => {
   const {
@@ -12,12 +12,14 @@ const DontMissCards = ({ categoryBg, hoverTextColor }: DontMissCardsType) => {
     isLoading,
     isError,
   } = useGetPosts({
-    section: "dontmiss",
+    section: "top drinks",
     limit: 4,
-    queryKeyName: "dontmiss",
+    queryKeyName: "topdrinks",
   });
+
   if (isLoading) return <DontMissSkeleton />;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
+
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
       {posts.map((item) => (

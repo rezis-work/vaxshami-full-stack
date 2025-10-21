@@ -45,4 +45,5 @@ export type DatabasePost = {
   category: string;
   quote: string | null;
   section: string;
+  country?: string;
 };

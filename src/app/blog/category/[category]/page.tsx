@@ -13,7 +13,7 @@ export default async function page({ params }: ParamsType) {
   return (
     <>
       <BlogView blogCategory={category} />
-      <DontMiss className="purpleLinearBackground" />
+      <DontMiss className="purpleLinearBackground text-white" />
     </>
   );
 }

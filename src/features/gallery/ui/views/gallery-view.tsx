@@ -6,13 +6,13 @@ import SectionTitle from "@/components/shared/sectionTitle";
 import { useGetPostsList } from "../../api";
 import Image from "next/image";
 import ErrorComponent from "@/components/shared/errorComponent";
-import GallerySkeleton from "./gallerySkeleton-view";
+import GallerySkeleton from "../components/gallerySkeleton";
 
 const Gallery = () => {
   const { data, isLoading, isError } = useGetPostsList();
 
   if (isLoading) return <GallerySkeleton />;
-  if (isError || !data) return <ErrorComponent />;
+  if (isError || !data) return <ErrorComponent className="max-w-[1400px]" />;
 
   return (
     <section className="my-8 bg-[#03071E] text-white">

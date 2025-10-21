@@ -19,6 +19,7 @@ const SidebarArticles = ({ title }: { title: string }) => {
             date={mainCard.$createdDate}
             ratio="aspect-[3/2]"
             titleClassname="text-xl "
+            link={`/heroPage/${mainCard.$id}`}
           />
 
           <ul className="flex flex-col gap-5 rounded-sm py-4">
@@ -31,7 +32,8 @@ const SidebarArticles = ({ title }: { title: string }) => {
                 theme="light"
                 flexReverse={true}
                 width="!w-[120px]"
-                titleClassname="text-[15px] hover:text-[#6d62ff] "
+                titleClassname="text-[15px] hover:text-[#6d62ff]"
+                link={`/heroPage/${item.$id}`}
               />
             ))}
           </ul>

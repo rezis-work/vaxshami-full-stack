@@ -1,28 +1,21 @@
 "use client";
-import React from "react";
+
 import BreadCrumbs from "@/components/shared/breadCrumbs";
 import Image from "next/image";
 
 import DefaultPostIntro from "./defaultPostIntro";
 import DefaultPostBody from "./defaultPostBody";
-import DefaultPostFooter from "./defaultPostFooter";
 import ShareLinks from "@/features/shareLinks/ui/views/shareLinks-view";
-import NextPostLinks from "@/components/shared/nextPostLinks";
-import DefaultMayLIke from "./defaultMayLIke";
-import { useGetPostByTitle } from "../../api";
-import ErrorCard from "@/components/shared/errorCard";
+import { useGetPostById } from "../../api";
 import DefaultSkeleton from "./defaultSkeleton";
+import ErrorComponent from "@/components/shared/errorComponent";
 
-export default function DefaultPostArticle({
-  postTitle,
-}: {
-  postTitle: string;
-}) {
-  const { data: posts, isLoading, isError } = useGetPostByTitle(postTitle);
+export default function DefaultPostArticle({ id }: { id: string }) {
+  const { data: posts, isLoading, isError } = useGetPostById(id);
   if (isLoading) return <DefaultSkeleton />;
-  if (isError || !posts) return <ErrorCard />;
+  if (isError || !posts) return <ErrorComponent />;
 
-  const { summary, title, createdDate, coverimage, $id, category, readtime } =
+  const { summary, title, createdDate, coverimage, category, readtime } =
     posts[0];
 
   return (
@@ -35,12 +28,12 @@ export default function DefaultPostArticle({
         readTime={readtime}
       />
 
-      <div className="relative  aspect-[1.43] ] xl:aspect-[1.78]  xl:-ml-[180px] mb-[30px]  ">
+      <div className="relative aspect-[1.43] xl:aspect-[1.78] xl:-ml-[180px] mb-[30px]  ">
         <Image
           src={coverimage}
           alt={title}
           fill
-          className="object-cover rounded-sm  "
+          className="object-cover rounded-sm"
         />
       </div>
       <div className="flex font-[400] text-[17px] md:gap-[30px]">
@@ -49,11 +42,6 @@ export default function DefaultPostArticle({
         </div>
         <DefaultPostBody image={coverimage} />
       </div>
-
-      <DefaultPostFooter category={category} />
-
-      <NextPostLinks id={$id} />
-      <DefaultMayLIke />
     </div>
   );
 }
