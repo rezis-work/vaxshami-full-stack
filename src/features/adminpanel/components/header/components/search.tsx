@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,10 +12,10 @@ import {
   FormControl,
   FormMessage,
 } from "@/components/ui/form";
-import { searchSchema } from "@/validations/contactFormSchema";
-import { z } from "zod";
 
-type SearchFormValues = z.infer<typeof searchSchema>;
+type SearchFormValues = {
+  query: string;
+};
 
 interface SearchComponentProps {
   onSearch?: (query: string) => void;
@@ -30,18 +29,30 @@ export default function SearchComponent({
   className = "",
 }: SearchComponentProps) {
   const form = useForm<SearchFormValues>({
-    resolver: zodResolver(searchSchema),
     defaultValues: {
       query: "",
     },
+    mode: "onChange", // ვალიდაცია ყოველ ცვლილებაზე
   });
 
   const handleSubmit = (data: SearchFormValues) => {
+    // ვალიდაცია მხოლოდ submit-ზე
+    if (!data.query.trim()) {
+      form.setError("query", {
+        type: "manual",
+        message: "გთხოვ შეიყვანე საძიებო სიტყვა.",
+      });
+      return;
+    }
+
     if (onSearch) {
       onSearch(data.query);
     } else {
       console.log("ძებნა:", data.query);
     }
+    // ველის გაწმენდა submit-ის შემდეგ
+    form.setValue("query", "");
+    form.clearErrors("query");
   };
 
   return (

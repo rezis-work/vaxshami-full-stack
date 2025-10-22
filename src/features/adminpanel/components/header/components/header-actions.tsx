@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Mail, Bell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ThemeToggle from "./theme-toggle";
 import ProfileMenu from "./profile-menu";
 
@@ -20,13 +21,13 @@ export default function HeaderActions({
     <div className={`flex items-center ${className}`}>
       <ThemeToggle />
 
-      <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-        <Mail className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-      </button>
+      <Button variant="ghost" size="icon" className="cursor-pointer">
+        <Mail className="h-5 w-5" />
+      </Button>
 
-      <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-        <Bell className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-      </button>
+      <Button variant="ghost" size="icon" className="cursor-pointer">
+        <Bell className="h-5 w-5" />
+      </Button>
 
       <ProfileMenu
         userName={userName}

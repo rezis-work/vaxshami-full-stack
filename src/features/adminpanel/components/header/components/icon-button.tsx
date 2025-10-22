@@ -2,6 +2,7 @@
 
 import React from "react";
 import { LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface IconButtonProps {
   icon: LucideIcon;
@@ -17,12 +18,14 @@ export default function IconButton({
   className = "",
 }: IconButtonProps) {
   return (
-    <button
+    <Button
       onClick={onClick}
-      className={`p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${className}`}
+      variant="ghost"
+      size="icon"
+      className={`cursor-pointer ${className}`}
       aria-label={ariaLabel}
     >
-      <Icon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-    </button>
+      <Icon className="h-5 w-5" />
+    </Button>
   );
 }

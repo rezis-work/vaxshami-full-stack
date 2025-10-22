@@ -3,6 +3,7 @@
 import React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 
 interface ThemeToggleProps {
   className?: string;
@@ -17,17 +18,19 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   };
 
   return (
-    <button
+    <Button
       onClick={handleToggle}
-      className={`p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${className}`}
+      variant="ghost"
+      size="icon"
+      className={`cursor-pointer ${className}`}
       aria-label="თემის შეცვლა"
     >
       {theme === "dark" ? (
-        <Sun className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+        <Sun className="h-5 w-5" />
       ) : (
-        <Moon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+        <Moon className="h-5 w-5" />
       )}
-    </button>
+    </Button>
   );
 }
 
