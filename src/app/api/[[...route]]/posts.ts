@@ -10,9 +10,18 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   const limit = limitParam ? Math.min(Number(limitParam), 1000) : undefined;
 
   const queries: string[] = [];
+
   if (limit) queries.push(Query.limit(limit));
+
   const sortBy = c.req.query("sortBy");
   const sortOrder = c.req.query("sortOrder");
+
+  function parseValue(value: string) {
+    if (value === "true") return true;
+    if (value === "false") return false;
+    if (!isNaN(Number(value))) return Number(value);
+    return value;
+  }
 
   const params = c.req.query();
   for (const [key, value] of Object.entries(params)) {
@@ -23,7 +32,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
     )
       continue;
 
-    queries.push(Query.equal(key, value));
+    queries.push(Query.equal(key, parseValue(value)));
   }
 
   if (sortBy && sortOrder) {

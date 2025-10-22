@@ -10,11 +10,19 @@ export type DefaultPostType = DatabasePost & {
 };
 
 export type PostFilters = {
+  vegan?: string;
+  streetfood?: string;
+  glutenfree?: string;
+  dairyfree?: string;
   category?: string;
   title?: string;
   rating?: string | number;
   createdDate?: string;
   limit?: number;
+  temperature?: string;
+  mainingredient?: string;
+  coursetype?: string;
+  region?: string;
   id?: string;
   [key: string]: string | number | undefined;
 };

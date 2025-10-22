@@ -15,6 +15,14 @@ export const useGetPosts = (filters?: PostFilters) => {
     sortOrder,
     section,
     queryKeyName,
+    vegan,
+    streetfood,
+    glutenfree,
+    dairyfree,
+    temperature,
+    mainingredient,
+    coursetype,
+    region,
   } = filters || {};
   const resolvedLimit = limit ?? 1000;
 
@@ -30,6 +38,14 @@ export const useGetPosts = (filters?: PostFilters) => {
         sortBy: sortBy ?? null,
         sortOrder: sortOrder ?? null,
         section: section ?? null,
+        vegan: vegan ?? null,
+        streetfood: streetfood ?? null,
+        glutenfree: glutenfree ?? null,
+        dairyfree: dairyfree ?? null,
+        temperature: temperature ?? null,
+        mainingredient: mainingredient ?? null,
+        coursetype: coursetype ?? null,
+        region: region ?? null,
       },
     ],
     queryFn: async () => {
@@ -41,6 +57,14 @@ export const useGetPosts = (filters?: PostFilters) => {
         ...(sortBy ? { sortBy } : {}),
         ...(sortOrder ? { sortOrder } : {}),
         ...(section ? { section } : {}),
+        ...(vegan ? { vegan } : {}),
+        ...(streetfood ? { streetfood } : {}),
+        ...(glutenfree ? { glutenfree } : {}),
+        ...(dairyfree ? { dairyfree } : {}),
+        ...(region ? { region } : {}),
+        ...(coursetype ? { coursetype } : {}),
+        ...(mainingredient ? { mainingredient } : {}),
+        ...(temperature ? { temperature } : {}),
         limit: limit ? String(resolvedLimit) : undefined,
       };
 

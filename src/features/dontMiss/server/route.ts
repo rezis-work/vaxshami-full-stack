@@ -14,8 +14,6 @@ const app = new Hono().get("/", appwriteMiddleware, async (c) => {
     queries
   );
 
-  console.log(res.documents);
-
   return c.json(res.documents);
 });
 

@@ -11,6 +11,7 @@ import defaultPost from "@/features/defaultPost/server/route";
 import heroBanner from "@/features/heroBanner/server/route";
 import heroArticle from "@/features/heroArticle/server/route";
 import shareBar from "@/features/shareBar/server/route";
+import filterOptions from "@/features/filterSidebar/server/route";
 
 import posts from "@/app/api/[[...route]]/posts";
 
@@ -25,6 +26,7 @@ const routes = app
   .route("/restaurants", restaurants)
   .route("/herobanner", heroBanner)
   .route("/heroarticle", heroArticle)
+  .route("/filteroptions", filterOptions)
   .route("/sharebar", shareBar)
   .route("/", defaultPost)
   .route("/", posts);
