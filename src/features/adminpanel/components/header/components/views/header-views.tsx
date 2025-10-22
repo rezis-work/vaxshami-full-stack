@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Menu, MoreHorizontal } from "lucide-react";
 import SearchComponent from "../search";
 import HeaderActions from "../header-actions";
 import IconButton from "../icon-button";
-import ToolsPanel from "../tools-panel";
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface DashboardHeaderProps {
   userName?: string;
@@ -16,7 +21,6 @@ export default function HeaderViews({
   userName = "John Doe",
   userAvatar,
 }: DashboardHeaderProps) {
-  const [showTools, setShowTools] = useState(false);
   const handleMenuToggle = () => {
     console.log("მენიუს გახსნა");
   };
@@ -40,11 +44,32 @@ export default function HeaderViews({
 
         {/* Right side: Tools toggle (only < 700px) */}
         <div className="flex items-center gap-2 flex-shrink-0 min-[700px]:hidden">
-          <IconButton
-            icon={MoreHorizontal}
-            onClick={() => setShowTools(!showTools)}
-            ariaLabel="ინსტრუმენტები"
-          />
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="cursor-pointer"
+                aria-label="ინსტრუმენტები"
+              >
+                <MoreHorizontal className="h-5 w-5" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80 p-3" align="end" side="bottom" sideOffset={8}>
+              <div className="space-y-3">
+                {/* Search inside popover */}
+                <div className="mb-3">
+                  <SearchComponent className="w-full" />
+                </div>
+                {/* Header Actions inside popover */}
+                <HeaderActions 
+                  userName={userName} 
+                  userAvatar={userAvatar} 
+                  className="flex items-center justify-center flex-wrap gap-2" 
+                />
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
 
         {/* Right side: full actions on >= 700px */}
@@ -53,14 +78,6 @@ export default function HeaderViews({
           userAvatar={userAvatar}
           className="hidden min-[700px]:flex items-center space-x-3 flex-shrink-0"
         />
-
-        {/* Tools Panel - toggled by Tools button */}
-        {showTools && (
-          <ToolsPanel
-            userName={userName}
-            userAvatar={userAvatar}
-          />
-        )}
       </div>
     </header>
   );
