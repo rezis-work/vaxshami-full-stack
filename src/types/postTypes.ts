@@ -10,6 +10,7 @@ export type DefaultPostType = DatabasePost & {
 };
 
 export type PostFilters = {
+  search?: string;
   vegan?: string;
   streetfood?: string;
   glutenfree?: string;

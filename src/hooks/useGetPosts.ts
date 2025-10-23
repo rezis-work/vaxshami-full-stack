@@ -23,6 +23,7 @@ export const useGetPosts = (filters?: PostFilters) => {
     mainingredient,
     coursetype,
     region,
+    search,
   } = filters || {};
   const resolvedLimit = limit ?? 1000;
 
@@ -46,6 +47,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         mainingredient: mainingredient ?? null,
         coursetype: coursetype ?? null,
         region: region ?? null,
+        search: search ?? null,
       },
     ],
     queryFn: async () => {
@@ -65,6 +67,7 @@ export const useGetPosts = (filters?: PostFilters) => {
         ...(coursetype ? { coursetype } : {}),
         ...(mainingredient ? { mainingredient } : {}),
         ...(temperature ? { temperature } : {}),
+        ...(search ? { search } : {}),
         limit: limit ? String(resolvedLimit) : undefined,
       };
 

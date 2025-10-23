@@ -32,7 +32,16 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
     )
       continue;
 
-    queries.push(Query.equal(key, parseValue(value)));
+    if (key === "search") {
+      queries.push(
+        Query.or([
+          Query.contains("title", value),
+          Query.contains("summary", value),
+        ])
+      );
+    } else {
+      queries.push(Query.equal(key, parseValue(value)));
+    }
   }
 
   if (sortBy && sortOrder) {

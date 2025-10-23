@@ -10,14 +10,9 @@ import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function Blogs({ blogCategory }: { blogCategory: string }) {
   const searchParams = useSearchParams();
-  const vegan = searchParams.get("vegan") || undefined;
-  const streetfood = searchParams.get("streetfood") || undefined;
-  const glutenfree = searchParams.get("glutenfree") || undefined;
-  const dairyfree = searchParams.get("dairyfree") || undefined;
-  const region = searchParams.get("region") || undefined;
-  const coursetype = searchParams.get("coursetype") || undefined;
-  const mainingredient = searchParams.get("mainingredient") || undefined;
-  const temperature = searchParams.get("temperature") || undefined;
+
+  const queryParams = Object.fromEntries(searchParams.entries());
+
   const popularity = searchParams.get("popularity") || undefined;
   const currentLimit = Number(searchParams.get("limit")) || 6;
 
@@ -27,17 +22,10 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
     isFetching,
     isError,
   } = useGetPosts({
+    ...queryParams,
     category: blogCategory,
     limit: currentLimit,
     queryKeyName: blogCategory,
-    vegan,
-    streetfood,
-    glutenfree,
-    dairyfree,
-    temperature,
-    mainingredient,
-    coursetype,
-    region,
     sortBy: "likescount",
     sortOrder: popularity,
   });
