@@ -41,7 +41,12 @@ export default function RecentPosts() {
           />
         ))}
       </BlogCardContainer>
-      <LoadMoreButton increment={3} defaultLimit={6} isFetching={isFetching} />
+      <LoadMoreButton
+        postsLength={posts.length}
+        increment={3}
+        defaultLimit={6}
+        isFetching={isFetching}
+      />
     </>
   );
 }

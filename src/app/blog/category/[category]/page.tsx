@@ -1,5 +1,3 @@
-import MainSectionWrapper from "@/components/shared/mainSectionWrapper";
-import SectionWrapper from "@/components/shared/sectionWrapper";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import BlogView from "@/features/blogCategories/ui/views/blog-view";
 import DontMiss from "@/features/dontMiss/ui/views/dontMiss-view";
