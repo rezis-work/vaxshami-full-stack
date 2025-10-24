@@ -29,7 +29,16 @@ export const navItems = [
       { id: "submenu-2", title: "Submenu 2", href: "#" },
       { id: "submenu-3", title: "Submenu 3", href: "#" },
       { id: "submenu-4", title: "Submenu 4", href: "#" },
-      {id: "404 page", title: "404 ", href: "/404"},
+    ],
+  },
+  {
+    id: "pages",
+    title: "Pages",
+    children: [
+      { id: "about", title: "About us", href: "/about" },
+      { id: "team", title: "Meet our team", href: "/team" },
+      { id: "faq", title: "FAQs", href: "/faqs" },
+      { id: "404", title: "404", href: "/404" },
     ],
   },
   {

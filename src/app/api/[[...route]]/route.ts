@@ -11,8 +11,8 @@ import defaultPost from "@/features/defaultPost/server/route";
 import heroBanner from "@/features/heroBanner/server/route";
 import heroArticle from "@/features/heroArticle/server/route";
 import shareBar from "@/features/shareBar/server/route";
-
 import posts from "@/app/api/[[...route]]/posts";
+import teamMembers from "@/features/team/server/route";
 
 const app = new Hono().basePath("/api");
 
@@ -27,7 +27,8 @@ const routes = app
   .route("/heroarticle", heroArticle)
   .route("/sharebar", shareBar)
   .route("/", defaultPost)
-  .route("/", posts);
+  .route("/", posts)
+  .route("/", teamMembers);
 
 // const routes = app
 //   .route("/", posts)
