@@ -1,15 +1,18 @@
 "use client";
-//import { teamMembers } from "@/constants/teamData";
 import React from "react";
 import TeamCard from "./teamCard";
 import BlogCardContainer from "@/components/shared/blogContainer";
 import { useGetTeamMembers } from "../../api";
-//import { is } from "zod/v4/locales";
+
 import BlogsSkeleton from "@/features/blogCategories/ui/components/blogsSkeleton";
 import ErrorComponent from "@/components/shared/errorComponent";
 
 export default function TeamContainer() {
-  const { data: teamMembers, isLoading } = useGetTeamMembers({
+  const {
+    data: teamMembers,
+    isLoading,
+    isError,
+  } = useGetTeamMembers({
     sortBy: "$createdAt",
     sortOrder: "asc",
   });
@@ -20,8 +23,7 @@ export default function TeamContainer() {
         <BlogsSkeleton />
       </div>
     );
-  if (!teamMembers) return <ErrorComponent />;
-  console.log(teamMembers);
+  if (isError || !teamMembers) return <ErrorComponent />;
   return (
     <BlogCardContainer className="m-0 md:grid-cols-2 lg:grid-cols-1">
       {teamMembers.map((card) => (
