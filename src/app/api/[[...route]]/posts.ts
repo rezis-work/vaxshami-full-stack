@@ -24,6 +24,7 @@ const app = new Hono().get("/posts", appwriteMiddleware, async (c) => {
   }
 
   const params = c.req.query();
+
   for (const [key, value] of Object.entries(params)) {
     if (
       ["limit", "sortBy", "sortOrder"].includes(key) ||

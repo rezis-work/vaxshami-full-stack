@@ -22,7 +22,7 @@ export default async function page({ params }: ParamsType) {
             <IoFilterSharp className="text-xl" /> <span>Filter</span>
           </SheetTrigger>
         </div>
-        <FilterSidebar />
+        <FilterSidebar category={category} />
       </Sheet>
       <BlogView blogCategory={category} />
       <DontMiss className="purpleLinearBackground text-white" />

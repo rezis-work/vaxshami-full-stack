@@ -3,20 +3,24 @@
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const Popularity = () => {
+const Popularity = ({ title, order }: { title: string; order: string }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [popularitySort, setPopularitySort] = useState(searchParams.get("popularity") || "");
+  const [popularitySort, setPopularitySort] = useState(
+    searchParams.get("sortOrder") || ""
+  );
 
-  const handleClick = (option: string) => {
+  const handleClick = (key: string, option: string) => {
     const params = new URLSearchParams(window.location.search);
 
-    if (params.get("popularity") === option) {
+    if (params.get("sortOrder") === option) {
       setPopularitySort("");
-      params.delete("popularity");
+      params.delete("sortOrder");
+      params.delete("sortBy");
     } else {
       setPopularitySort(option);
-      params.set("popularity", option);
+      params.set("sortOrder", option);
+      params.set("sortBy", key);
     }
 
     const newPathname = `${window.location.pathname}?${params.toString()}`;
@@ -26,12 +30,13 @@ const Popularity = () => {
   return (
     <div className="mb-6">
       <h3 className="px-4 py-3 text-sm font-semibold text-gray-800 border-b border-gray-200">
-        Popularity
+        {title}
       </h3>
+
       <div className="px-4 pb-3 mt-4">
         <div className="grid grid-cols-2 gap-2">
           <button
-            onClick={() => handleClick("asc")}
+            onClick={() => handleClick(order, "asc")}
             className={`text-left px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-blue-50 hover:text-blue-700 ${
               popularitySort === "asc"
                 ? "bg-blue-50 text-blue-700 outline-none"
@@ -40,8 +45,9 @@ const Popularity = () => {
           >
             ↑ Ascending
           </button>
+
           <button
-            onClick={() => handleClick("desc")}
+            onClick={() => handleClick(order, "desc")}
             className={`text-left px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-blue-50 hover:text-blue-700 ${
               popularitySort === "desc"
                 ? "bg-blue-50 text-blue-700 outline-none"

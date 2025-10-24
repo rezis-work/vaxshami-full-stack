@@ -9,10 +9,12 @@ export default function LoadMoreButton({
   increment = 3,
   defaultLimit = 6,
   isFetching,
+  postsLength = 0,
 }: {
   increment?: number;
   defaultLimit?: number;
   isFetching: boolean;
+  postsLength: number;
 }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -21,16 +23,25 @@ export default function LoadMoreButton({
   const newLimit = currentLimit + increment;
 
   const params = new URLSearchParams(searchParams);
-  params.set("limit", newLimit.toString());
+
+  if (postsLength >= currentLimit) {
+    params.set("limit", newLimit.toString());
+  }
+
+  const disabled = isFetching || postsLength < currentLimit;
 
   return (
     <div className="text-center mt-8 mb-[30px]">
-      <Link href={`${pathname}?${params.toString()}`} scroll={false}>
+      <Link
+        href={`${pathname}?${params.toString()}`}
+        scroll={false}
+        className={`cursor-pointer`}
+      >
         <Button
-          disabled={isFetching}
-          className={`flex justify-center items-center ${
+          disabled={disabled}
+          className={`flex justify-center items-center  ${
             !isFetching ? "bg-[#ffe1df]" : "bg-[#6d62ff]"
-          } text-[#e34e36] text-[13px] mx-auto px-[30px] py-3 transition-colors duration-200 ease-in-out hover:bg-[#6d62ff] hover:text-white rounded-sm cursor-pointer w-[171px] h-11`}
+          } text-[#e34e36] text-[13px] mx-auto px-[30px] py-3 transition-colors duration-200 ease-in-out hover:bg-[#6d62ff] hover:text-white rounded-sm disabled:cursor-pointer w-[171px] h-11`}
         >
           {!isFetching ? (
             <>

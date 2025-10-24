@@ -13,7 +13,6 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
 
   const queryParams = Object.fromEntries(searchParams.entries());
 
-  const popularity = searchParams.get("popularity") || undefined;
   const currentLimit = Number(searchParams.get("limit")) || 6;
 
   const {
@@ -26,8 +25,6 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
     category: blogCategory,
     limit: currentLimit,
     queryKeyName: blogCategory,
-    sortBy: "likescount",
-    sortOrder: popularity,
   });
 
   if (isLoading) return <BlogsSkeleton />;
@@ -45,7 +42,12 @@ export default function Blogs({ blogCategory }: { blogCategory: string }) {
           />
         ))}
       </BlogCardContainer>
-      <LoadMoreButton increment={3} defaultLimit={6} isFetching={isFetching} />
+      <LoadMoreButton
+        postsLength={posts.length}
+        increment={3}
+        defaultLimit={6}
+        isFetching={isFetching}
+      />
     </div>
   );
 }

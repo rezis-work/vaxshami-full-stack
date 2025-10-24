@@ -7,8 +7,8 @@ import Dropdown from "../components/dropdown";
 import Checkbox from "../components/checkbox";
 import Popularity from "../components/popularity";
 
-const FilterSidebar = () => {
-  const { data, isLoading, isError } = useGetFilterOptions();
+const FilterSidebar = ({ category }: { category: string }) => {
+  const { data, isLoading, isError } = useGetFilterOptions(category);
 
   if (isLoading) return null;
   if (!data || isError) return <ErrorComponent />;
@@ -36,7 +36,7 @@ const FilterSidebar = () => {
 
           return <Checkbox key={field.key} title={field.key} />;
         })}
-        <Popularity />
+        <Popularity order="likescount" title="Popularity" />
       </div>
     </SheetContent>
   );
