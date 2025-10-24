@@ -21,11 +21,19 @@ export default function HeaderActions({
     <div className={`flex items-center ${className}`}>
       <ThemeToggle />
 
-      <Button variant="ghost" size="icon" className="cursor-pointer">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="cursor-pointer"
+      >
         <Mail className="h-5 w-5" />
       </Button>
 
-      <Button variant="ghost" size="icon" className="cursor-pointer">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="cursor-pointer"
+      >
         <Bell className="h-5 w-5" />
       </Button>
 
