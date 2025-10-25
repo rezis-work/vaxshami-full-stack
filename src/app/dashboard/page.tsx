@@ -1,9 +1,5 @@
-import React from 'react'
+import DashboardHome from "@/features/adminpanel/components/dashboard-home";
 
-export default function page() {
-  return (
-    <div>
-      hello world
-    </div>
-  )
+export default function DashboardPage() {
+  return <DashboardHome />;
 }

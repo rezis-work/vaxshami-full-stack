@@ -32,11 +32,11 @@ export default function SearchComponent({
     defaultValues: {
       query: "",
     },
-    mode: "onChange", // ვალიდაცია ყოველ ცვლილებაზე
+    mode: "onSubmit",
   });
 
   const handleSubmit = (data: SearchFormValues) => {
-    // ვალიდაცია მხოლოდ submit-ზე
+    // Manual validation - მხოლოდ submit-ზე
     if (!data.query.trim()) {
       form.setError("query", {
         type: "manual",
@@ -51,8 +51,7 @@ export default function SearchComponent({
       console.log("ძებნა:", data.query);
     }
     // ველის გაწმენდა submit-ის შემდეგ
-    form.setValue("query", "");
-    form.clearErrors("query");
+    form.reset();
   };
 
   return (

@@ -6,11 +6,9 @@ import HeaderViews from "@/features/adminpanel/components/header/components/view
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <HeaderViews
-      />
-      <main className="p-6">
+      <HeaderViews>
         {children}
-      </main>
+      </HeaderViews>
     </div>
   );
 }
