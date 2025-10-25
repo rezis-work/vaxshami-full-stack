@@ -27,7 +27,6 @@ export function FormFieldWrapper({
   label, 
   placeholder, 
   type = "text", 
-  error, 
   children, 
   className = "",
   id,

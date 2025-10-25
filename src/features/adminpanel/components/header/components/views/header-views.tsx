@@ -45,7 +45,7 @@ export default function HeaderViews({
       />
       
       {/* Main Content */}
-      <div className={`transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'} min-[700px]:ml-64`}>
+      <div className="transition-all duration-300 min-[700px]:ml-64">
         {/* Header */}
         <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 min-[700px]:px-6 py-1">
           <div className="flex items-center justify-between gap-2">

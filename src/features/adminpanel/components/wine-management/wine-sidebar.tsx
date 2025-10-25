@@ -16,8 +16,6 @@ interface WineSidebarProps {
 export default function WineSidebar({
   isOpen,
   onClose,
-  onDrinksToggle,
-  onHomeClick,
   isDrinksOpen,
 }: WineSidebarProps) {
   const router = useRouter();
@@ -33,19 +31,13 @@ export default function WineSidebar({
   };
   return (
     <>
-      {/* Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 min-[700px]:hidden"
-          onClick={onClose}
-        />
-      )}
 
       {/* Sidebar */}
       <div
         className={`fixed left-0 top-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } min-[700px]:translate-x-0`}
+        style={{ zIndex: 9999 }}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">

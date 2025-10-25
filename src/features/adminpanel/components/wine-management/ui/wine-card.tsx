@@ -4,7 +4,6 @@ import React from "react";
 import { Edit, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Wine } from "@/types/wineTypes";
-import { getWineTypeColor } from "../domain/wine-helpers";
 
 interface WineCardProps {
   wine: Wine;
@@ -50,11 +49,11 @@ export default function WineCard({ wine, onEdit, onDelete }: WineCardProps) {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-gray-600 dark:text-gray-400">ფასი:</span>
-          <span className="font-bold text-green-600 dark:text-green-400 text-lg">{wine.price}₾</span>
+          <span className="font-semibold text-gray-900 dark:text-white text-base">{wine.price}₾</span>
         </div>
          <div className="flex justify-between items-center">
            <span className="text-gray-600 dark:text-gray-400">ტიპი:</span>
-           <span className={`font-semibold ${getWineTypeColor(wine.type)} text-base`}>
+           <span className="text-gray-900 dark:text-white text-base">
              {wine.type}
            </span>
          </div>

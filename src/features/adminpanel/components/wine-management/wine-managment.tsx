@@ -7,30 +7,13 @@ import { Wine, WineFormData } from "@/types/wineTypes";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import { MockWineRepository } from "./data/wine-repository";
-import { WineServiceImpl } from "./domain/wine-service";
+import { initialWines } from "./data/wine-data";
 
-export default function WineDialogPage() {
+export default function WineManagementPage() {
   // Wine management state
-  const [wines, setWines] = useState<Wine[]>([]);
+  const [wines, setWines] = useState<Wine[]>(initialWines);
   const [activeWine, setActiveWine] = useState<Wine | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  // Load wines on component mount
-  useEffect(() => {
-    const loadWines = async () => {
-      try {
-        // Initialize wine service inside useEffect to avoid dependency issues
-        const repository = new MockWineRepository();
-        const wineService = new WineServiceImpl(repository);
-        const loadedWines = await wineService.getWines();
-        setWines(loadedWines);
-      } catch (error) {
-        console.error("Failed to load wines:", error);
-      }
-    };
-    loadWines();
-  }, []); // Empty dependency array - only run once on mount
 
   // Clear activeWine when dialog closes
   useEffect(() => {
@@ -46,21 +29,19 @@ export default function WineDialogPage() {
 
   const handleFormSubmit = async (wineData: WineFormData) => {
     try {
-      // Initialize wine service for this operation
-      const repository = new MockWineRepository();
-      const wineService = new WineServiceImpl(repository);
-      
       if (activeWine) {
         // Update existing wine
-        const updatedWine = await wineService.updateWine(activeWine.id, wineData);
         setWines((prev) =>
           prev.map((wine) =>
-            wine.id === activeWine.id ? updatedWine : wine
+            wine.id === activeWine.id ? { ...wine, ...wineData } : wine
           )
         );
       } else {
         // Add new wine
-        const newWine = await wineService.addWine(wineData);
+        const newWine: Wine = {
+          id: Date.now().toString(),
+          ...wineData,
+        };
         setWines((prev) => [...prev, newWine]);
       }
       setActiveWine(null);
@@ -71,15 +52,7 @@ export default function WineDialogPage() {
 
   const handleDeleteWine = async (id: string) => {
     if (confirm("ნამდვილად გსურთ ღვინის წაშლა?")) {
-      try {
-        // Initialize wine service for this operation
-        const repository = new MockWineRepository();
-        const wineService = new WineServiceImpl(repository);
-        await wineService.deleteWine(id);
-        setWines((prev) => prev.filter((wine) => wine.id !== id));
-      } catch (error) {
-        console.error("Failed to delete wine:", error);
-      }
+      setWines((prev) => prev.filter((wine) => wine.id !== id));
     }
   };
 

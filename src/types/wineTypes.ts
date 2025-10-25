@@ -3,7 +3,7 @@ export type Wine = {
   name: string;
   year: number;
   price: number;
-  type: "Red" | "White" | "Rosé";
+  type: "Red" | "White" | "Black";
 };
 
 export type WineFormData = Omit<Wine, "id">;

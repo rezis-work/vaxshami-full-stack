@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import WineDialogPage from "@/features/adminpanel/components/wine-management/wine-dialog-page";
+import WineManagementPage from "@/features/adminpanel/components/wine-management/wine-managment";
 
 export default function DrinksPage() {
-  return <WineDialogPage />;
+  return <WineManagementPage />;
 }
