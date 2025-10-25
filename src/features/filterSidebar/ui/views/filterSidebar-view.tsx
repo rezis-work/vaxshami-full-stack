@@ -11,7 +11,6 @@ const FilterSidebar = ({ category }: { category: string }) => {
   const { data, isLoading, isError } = useGetFilterOptions(category);
 
   if (isLoading) return null;
-  if (!data || isError) return <ErrorComponent />;
 
   return (
     <SheetContent className="bg-white" side="left">
@@ -19,24 +18,30 @@ const FilterSidebar = ({ category }: { category: string }) => {
         <SheetTitle>Filter Options</SheetTitle>
       </SheetHeader>
       <div className="flex flex-col mt-6 px-1 overflow-y-auto">
-        {data.map((field) => {
-          if (
-            "elements" in field &&
-            Array.isArray(field.elements) &&
-            field.elements.length > 0
-          ) {
-            return (
-              <Dropdown
-                key={field.key}
-                title={field.key}
-                options={field.elements}
-              />
-            );
-          }
+        {!data || isError ? (
+          <ErrorComponent />
+        ) : (
+          <>
+            {data.map((field) => {
+              if (
+                "elements" in field &&
+                Array.isArray(field.elements) &&
+                field.elements.length > 0
+              ) {
+                return (
+                  <Dropdown
+                    key={field.key}
+                    title={field.key}
+                    options={field.elements}
+                  />
+                );
+              }
 
-          return <Checkbox key={field.key} title={field.key} />;
-        })}
-        <Popularity order="likescount" title="Popularity" />
+              return <Checkbox key={field.key} title={field.key} />;
+            })}
+            <Popularity order="likescount" title="Popularity" />
+          </>
+        )}
       </div>
     </SheetContent>
   );

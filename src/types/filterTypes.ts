@@ -1,8 +1,8 @@
-export type FilterCategory = "dish" | "drink" | "product" | "restaurant";
+export type FilterCategory = "dish" | "drinks" | "product" | "restaurant";
 
 export type FilterAttributes = {
   dish: string[];
-  drink: string[];
+  drinks: string[];
   product: string[];
   restaurant: string[];
 };

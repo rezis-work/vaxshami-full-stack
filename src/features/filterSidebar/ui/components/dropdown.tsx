@@ -32,7 +32,7 @@ const Dropdown = ({ title, options }: { title: string; options: string[] }) => {
     <div className="mb-6">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-gray-800 capitalize hover:no-underline hover:text-[#6d62ff] transition-colors duration-150 border-b border-gray-200">
+          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-gray-800 capitalize hover:no-underline hover:text-[#6d62ff] transition-colors duration-150 border-b border-gray-200 cursor-pointer">
             {title.replace(/([A-Z])/g, " $1").trim()}
           </AccordionTrigger>
           <AccordionContent className="px-4 pb-3 mt-4">
@@ -45,7 +45,7 @@ const Dropdown = ({ title, options }: { title: string; options: string[] }) => {
                     focus === option
                       ? "bg-blue-50 text-blue-700 outline-none"
                       : ""
-                  } transition-colors duration-150 border border-transparent hover:border-blue-200`}
+                  } transition-colors duration-150 border border-transparent hover:border-blue-200 cursor-pointer`}
                 >
                   {option.charAt(0).toUpperCase() + option.slice(1)}
                 </button>

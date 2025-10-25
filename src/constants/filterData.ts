@@ -11,7 +11,17 @@ export const filterAttributes: FilterAttributes = {
     "glutenfree",
     "dairyfree",
   ],
-  drink: ["type", "alcohol", "temperature", "occasion", "flavor", "origin"],
+  drinks: [
+    "region",
+    "alcohol",
+    "alcoholcontent",
+    "vegan",
+    "sugarfree",
+    "glutenfree",
+    "dairyfree",
+    "drinktype",
+    "temperature",
+  ],
   product: ["category", "brand", "price", "rating", "availability", "features"],
   restaurant: [
     "cuisine",
