@@ -58,7 +58,7 @@ export default function WineSidebar({
         <nav className="p-4 space-y-2">
           <Button
             variant={!isDrinksOpen ? "default" : "ghost"}
-            className="w-full justify-start"
+            className="w-full justify-start cursor-pointer"
             onClick={handleHomeClick}
           >
             <Home className="mr-2 h-4 w-4" />
@@ -67,7 +67,7 @@ export default function WineSidebar({
           
           <Button
             variant={isDrinksOpen ? "default" : "ghost"}
-            className="w-full justify-start"
+            className="w-full justify-start cursor-pointer"
             onClick={handleDrinksClick}
           >
             <Wine className="mr-2 h-4 w-4" />
