@@ -25,7 +25,7 @@ const DropDownItem = ({ title, children }: SubmenuProps) => {
         className=" bg-white border-none rounded-md px-0 py-2 w-[200px]"
       >
         <ul>
-          {children.map((item) => (
+          {children?.map((item) => (
             <li
               key={item.id}
               className=" group hover:bg-gray-100 px-5 py-[2px] transition duration-200"
