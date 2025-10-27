@@ -22,7 +22,7 @@ const SubmenuItem = ({ title, children }: SubmenuProps) => {
         </AccordionTrigger>
         <AccordionContent>
           <ul className="flex flex-col mt-4 gap-2 ml-4">
-            {children.map((item) => (
+            {children?.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}

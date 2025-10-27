@@ -8,8 +8,8 @@ const AdvertisementBanner = ({
   position: "sticky" | "auto";
 }) => {
   return (
-    <div className={`${position} top-3 w-full max-w-[290px] mx-auto `}>
-      <h4 className="w-min text-[10px] tracking-widest mb-1 mx-auto uppercase mt-15 ">
+    <div className={`${position} top-3 w-full max-w-[290px] mx-auto my-15 `}>
+      <h4 className="w-min text-[10px] tracking-widest mb-1 mx-auto uppercase  ">
         advertisement
       </h4>
       <div className=" h-[580px] bg-[#FFE1DF] border border-gray-600 flex justify-center items-center ">

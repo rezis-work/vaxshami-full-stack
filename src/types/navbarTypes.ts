@@ -1,7 +1,7 @@
 export type NavItemsType = {
   id: string;
   title: string;
-  href?: string;
+  href: string;
   children?: NavItemsType[];
 };
 
@@ -14,5 +14,5 @@ export type SimpleSubmenuItem = {
 export type SubmenuProps = {
   id: string;
   title: string;
-  children: SimpleSubmenuItem[];
+  children?: SimpleSubmenuItem[];
 };
