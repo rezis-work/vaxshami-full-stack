@@ -1,10 +1,12 @@
 "use client";
+
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -19,6 +21,8 @@ import { toast } from "sonner";
 export default function ContactForm() {
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
+    mode: "onSubmit", // ✅ მხოლოდ submit-ზე შეამოწმებს ვალიდაციას
+    reValidateMode: "onSubmit", // ✅ თავიდანაც მხოლოდ submit-ზე გადაამოწმებს
     defaultValues: {
       name: "",
       email: "",
@@ -28,26 +32,18 @@ export default function ContactForm() {
 
   const handleSubmit = (values: z.infer<typeof contactFormSchema>) => {
     console.log(values);
-    toast("Message was sent successfully", { style: { background: "white" } });
-  };
-  const handleError = (formErrors: typeof form.formState.errors) => {
-    if (Object.keys(formErrors).length >= 2) {
-      toast.error("All fields are required");
-    } else if (!formErrors.email && formErrors.name) {
-      toast.error("Name is required");
-    } else if (!formErrors.name && formErrors.email) {
-      toast.error("Please provide a valid email");
-    } else if (!formErrors.name && !formErrors.email && formErrors.message) {
-      toast.error("Message can not be empty", { duration: 2000 });
-    }
+    toast("Message was sent successfully", {
+      style: { background: "white" },
+    });
   };
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(handleSubmit, handleError)}
+        onSubmit={form.handleSubmit(handleSubmit)}
         className="w-full space-y-6 font-[400] text-[17px]"
       >
+       
         <FormField
           control={form.control}
           name="name"
@@ -58,15 +54,18 @@ export default function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder=""
                   {...field}
-                  className=" !text-[17px] font-[400] rounded-none text-gray-700  
-             focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className="!text-[17px] font-[400] rounded-none text-gray-700
+                    focus-visible:outline-none focus-visible:ring-0
+                    focus-visible:border-[#80bdff] transition-colors duration-300"
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-[15px]" /> {/* 👈 ჩანს მხოლოდ Send-ზე */}
             </FormItem>
           )}
         />
+
+        
         <FormField
           control={form.control}
           name="email"
@@ -77,14 +76,18 @@ export default function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder=""
                   {...field}
-                  className=" rounded-none text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className="rounded-none text-gray-700 !text-[17px] font-[400]
+                    focus-visible:outline-none focus-visible:ring-0
+                    focus-visible:border-[#80bdff] transition-colors duration-300"
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-[15px]" />
             </FormItem>
           )}
         />
+
+        
         <FormField
           control={form.control}
           name="message"
@@ -96,13 +99,20 @@ export default function ContactForm() {
               <FormControl>
                 <Textarea
                   {...field}
-                  className=" rounded-none h-[134px] text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className="rounded-none h-[134px] text-gray-700 !text-[17px] font-[400]
+                    focus-visible:outline-none focus-visible:ring-0
+                    focus-visible:border-[#80bdff] transition-colors duration-300"
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-[15px]" />
             </FormItem>
           )}
         />
-        <Button className="bg-[#ff607d] w-[200px] h-[42px] text-white font-[400] text-[17px] rounded-[4px] cursor-pointer ">
+
+        <Button
+          type="submit"
+          className="bg-[#ff607d] w-[200px] h-[42px] text-white font-[400] text-[17px] rounded-[4px] cursor-pointer"
+        >
           Send
         </Button>
       </form>

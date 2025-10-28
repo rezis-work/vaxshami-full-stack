@@ -7,13 +7,9 @@ export default function ContactFormIntro() {
         Contact Us
       </h1>
       <p className="text-[17px] leading-[1.55]  text-[#333333] font-[400]">
-        Donec facilisis leo et bibendum pretium. Suspendisse ligula neque,
-        ultrices nec interdum faucibus, pharetra et libero. Vestibulum viverra
-        molestie nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec eros turpis, dictum vel vehicula viverra, facilisis in mauris.
-        Nullam rhoncus enim ligula, sit amet suscipit turpis dignissim non.
-        Phasellus deserunt. Convallis perspiciatis fusce fermentum accumsan,
-        arcu aliquam, velit venenatis augue proin, enim etiam dolor.
+       Have a question, idea, or just want to say hello?  
+        Fill out the form below and our team will get back to you as soon as possible.  
+        We value every message and usually respond within 24 hours.
       </p>
     </>
   );
