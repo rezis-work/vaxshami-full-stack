@@ -2,19 +2,16 @@ import React from "react";
 
 export default function ContactFormIntro() {
   return (
-    <>
-      <h1 className="font-[1000] text-[38px] leading-[1.2] tracking-tighter">
-        Contact Us
+    <div className="space-y-6">
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+        Get in Touch
       </h1>
-      <p className="text-[17px] leading-[1.55]  text-[#333333] font-[400]">
-        Donec facilisis leo et bibendum pretium. Suspendisse ligula neque,
-        ultrices nec interdum faucibus, pharetra et libero. Vestibulum viverra
-        molestie nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec eros turpis, dictum vel vehicula viverra, facilisis in mauris.
-        Nullam rhoncus enim ligula, sit amet suscipit turpis dignissim non.
-        Phasellus deserunt. Convallis perspiciatis fusce fermentum accumsan,
-        arcu aliquam, velit venenatis augue proin, enim etiam dolor.
+      
+      <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+        We'd love to hear from you. Whether you have a question about our content, 
+        a suggestion for improvement, or just want to connect, we're here and ready 
+        to engage with you.
       </p>
-    </>
+    </div>
   );
 }

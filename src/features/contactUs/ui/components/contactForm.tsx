@@ -5,6 +5,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -29,23 +30,13 @@ export default function ContactForm() {
   const handleSubmit = (values: z.infer<typeof contactFormSchema>) => {
     console.log(values);
     toast("Message was sent successfully", { style: { background: "white" } });
-  };
-  const handleError = (formErrors: typeof form.formState.errors) => {
-    if (Object.keys(formErrors).length >= 2) {
-      toast.error("All fields are required");
-    } else if (!formErrors.email && formErrors.name) {
-      toast.error("Name is required");
-    } else if (!formErrors.name && formErrors.email) {
-      toast.error("Please provide a valid email");
-    } else if (!formErrors.name && !formErrors.email && formErrors.message) {
-      toast.error("Message can not be empty", { duration: 2000 });
-    }
+    form.reset();
   };
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(handleSubmit, handleError)}
+        onSubmit={form.handleSubmit(handleSubmit)}
         className="w-full space-y-6 font-[400] text-[17px]"
       >
         <FormField
@@ -60,10 +51,14 @@ export default function ContactForm() {
                 <Input
                   placeholder=""
                   {...field}
-                  className=" !text-[17px] font-[400] rounded-none text-gray-700  
-             focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className={`!text-[17px] font-[400] rounded-none text-gray-700 focus-visible:outline-none focus-visible:ring-0 transition-colors duration-300 ${
+                    form.formState.errors.name 
+                      ? "border-red-500 focus-visible:border-red-500" 
+                      : "focus-visible:border-[#80bdff]"
+                  }`}
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-sm mt-1" />
             </FormItem>
           )}
         />
@@ -79,9 +74,14 @@ export default function ContactForm() {
                 <Input
                   placeholder=""
                   {...field}
-                  className=" rounded-none text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className={`rounded-none text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 transition-colors duration-300 ${
+                    form.formState.errors.email 
+                      ? "border-red-500 focus-visible:border-red-500" 
+                      : "focus-visible:border-[#80bdff]"
+                  }`}
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-sm mt-1" />
             </FormItem>
           )}
         />
@@ -96,9 +96,14 @@ export default function ContactForm() {
               <FormControl>
                 <Textarea
                   {...field}
-                  className=" rounded-none h-[134px] text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[#80bdff] transition-colors duration-300"
+                  className={`rounded-none h-[134px] text-gray-700 !text-[17px] font-[400] focus-visible:outline-none focus-visible:ring-0 transition-colors duration-300 ${
+                    form.formState.errors.message 
+                      ? "border-red-500 focus-visible:border-red-500" 
+                      : "focus-visible:border-[#80bdff]"
+                  }`}
                 />
               </FormControl>
+              <FormMessage className="text-red-500 text-sm mt-1" />
             </FormItem>
           )}
         />
