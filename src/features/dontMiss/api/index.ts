@@ -1,5 +1,6 @@
 import { client } from "@/lib/rpc";
 import { useQuery } from "@tanstack/react-query";
+import type { DatabasePost } from "@/types/blogCardTypes";
 
 export const useGetPostsList = () => {
   const query = useQuery({
@@ -9,7 +10,8 @@ export const useGetPostsList = () => {
 
       if (!res.ok) throw new Error("Failed to fetch the posts");
 
-      return res.json();
+      const data = await res.json();
+      return data as DatabasePost[];
     },
   });
 
