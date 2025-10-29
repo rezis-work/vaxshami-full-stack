@@ -3,14 +3,13 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
   SidebarHeader,
   useSidebar,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Links from "../components/links";
 
 const SideBar = () => {
   const { open } = useSidebar();
@@ -44,7 +43,9 @@ const SideBar = () => {
         </Link>
       </SidebarHeader>
 
-      <SidebarContent className="dark:bg-[#19202F] px-1 py-2"></SidebarContent>
+      <SidebarContent className="dark:bg-[#19202F] py-2">
+        <Links />
+      </SidebarContent>
 
       {/* <SidebarFooter /> */}
     </Sidebar>
