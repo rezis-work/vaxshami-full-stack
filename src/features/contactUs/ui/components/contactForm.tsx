@@ -21,8 +21,8 @@ import { toast } from "sonner";
 export default function ContactForm() {
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onSubmit", // ✅ მხოლოდ submit-ზე შეამოწმებს ვალიდაციას
-    reValidateMode: "onSubmit", // ✅ თავიდანაც მხოლოდ submit-ზე გადაამოწმებს
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",
