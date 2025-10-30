@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import NotFoundImage from "../components/not-fount-img";
 
-export default function NotFoundView() {
+export default function NotFoundView({ url }: { url: string }) {
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -33,7 +33,7 @@ export default function NotFoundView() {
           asChild
           className="inline-flex items-center bg-[#f47663] text-white font-semibold text-sm leading-none tracking-wide rounded-md px-[30px] py-[18px] shadow-md transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-opacity-50 hover:bg-[#9469c9] cursor-pointer"
         >
-          <Link href="/">
+          <Link href={url}>
             <span>Back to Homepage</span>
             <span className="ml-2 text-[9px] leading-none ">→</span>
           </Link>

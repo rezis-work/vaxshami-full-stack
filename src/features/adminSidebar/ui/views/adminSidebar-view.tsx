@@ -44,7 +44,7 @@ const SideBar = () => {
       </SidebarHeader>
 
       <SidebarContent className="dark:bg-[#19202F] py-2">
-        <Links />
+        <Links open={open} />
       </SidebarContent>
 
       {/* <SidebarFooter /> */}
