@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { FaPaperPlane } from "react-icons/fa";
 
 export default function ContactFormIntro() {
 
@@ -14,7 +13,6 @@ export default function ContactFormIntro() {
         Vaxshami is a place for everyone passionate about flavor, story, and inspiration! Your voice matters: share your story, taste, idea, or question with our community. Let's discover new stories together and give a voice to the world of taste and food culture.
       </p>
       <Button className="inline-flex items-center gap-3 px-8 py-6 text-lg font-bold rounded-full bg-gradient-to-br from-[#6d62ff] via-[#4095f3] to-[#521d91] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-        <FaPaperPlane className="text-xl" />
         Share your story
       </Button>
     </section>

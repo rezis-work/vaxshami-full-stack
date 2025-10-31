@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { contactFormSchema } from "@/validations/contactFormSchema";
 import { toast } from "sonner";
+import { FaPaperPlane } from "react-icons/fa";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -107,8 +108,9 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="bg-[#ff607d] w-[200px] h-[42px] text-white font-[400] text-[17px] rounded-[4px] cursor-pointer ">
-          Send
+        <Button type="submit" className="inline-flex items-center gap-3 px-8 py-6 text-lg font-bold rounded-full bg-gradient-to-br from-[#6d62ff] via-[#4095f3] to-[#521d91] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+          <FaPaperPlane className="text-xl" />
+          Send Message
         </Button>
       </form>
     </Form>
